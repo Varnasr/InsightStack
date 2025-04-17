@@ -1,48 +1,70 @@
 # Varna's Knowledge Repository
 
-Welcome! This repository serves as a structured archive of my ongoing research, code, and notes across topics I work on — including development economics, public health systems, climate resilience, gender, and evaluation methods. 
+Welcome! This is my working library of reusable research assets — notebooks, code, methods, and ideas — across development economics, public health systems, gender equity, climate resilience, and evaluation.
 
-It’s designed as a living workspace, not a finished product — a place where I keep things I reuse often, test new approaches, and build toward more formal outputs. You’re welcome to explore, borrow, and adapt.
-
----
-
-## 📘 Looking for applied R scripts?
-
-You’ll find a full companion repository here:  
-🔗 [R-Code-Repository](https://github.com/Varnasr/R-Code-Repository)
-
-This linked repo includes 30+ scripts I use across projects — for cleaning, analysis, visualisation, and integration. It covers:
-
-- Statistical modelling (OLS, logistic regression, panel data, DiD, PSM)  
-- Evaluation methods (SROI, cost-effectiveness, mixed methods)  
-- Visualisations (dashboards, maps, bullet charts using ggplot2 and `sf`)  
-- Integration with SQL, Tableau, Python (`reticulate`)  
-- Qualitative coding summaries (à la MAXQDA)
+Think of it as a living shelf: things I use often, test quietly, or build toward more polished outputs. You're welcome to browse, borrow, adapt, and remix.
 
 ---
 
-## 📂 Samples Included
+## 🧰 Featured Repositories
 
-Many scripts include **plausible example datasets** and are designed to run as-is. You’ll find:
+### 🔹 [EquityStack](https://github.com/Varnasr/EquityStack)
 
-- Reproducible examples using `tibble`, `dplyr`, `ggplot2`, and `sf`
-- Simulated evaluation data for cost-effectiveness and SROI
-- Clean visual templates and exports for Tableau
-- Cross-tool integration with SQL queries and Python scripts
+[![EquityStack Banner](https://raw.githubusercontent.com/Varnasr/EquityStack/main/equitystack_banner.png)](https://github.com/Varnasr/EquityStack)
 
-Each folder contains a `README.md` explaining what the script does and how it fits into applied research workflows.
+**Reusable Notebooks and Python Code for Evaluation and Equity Data ❤️**
+
+**EquityStack** is designed for development practitioners, MEL teams, and data researchers working across sectors like health, education, WEE, and gender equity.
+
+It includes:
+- Colab-ready Jupyter notebooks (some functional, some templated)
+- Modular `.py` scripts for cleaning, modeling, mapping, and validation
+- Sample datasets, test coverage with `pytest`, and GitHub Actions CI
+- Clear folder structure with readme documentation in each module
 
 ---
 
-## ✉️ Contact
+### 🔹 [R-Code-Repository](https://github.com/Varnasr/R-Code-Repository)
 
-If you'd like to connect, collaborate, or have questions about anything here:
+**Applied R scripts for evaluation, modelling, and field-driven analysis**
 
-- 📧 **Email**: varna[dot]sr [at] gmail [dot] com  
-- 🌐 [https://varnasr.github.io](https://varnasr.github.io)  
-- 🧵 [Threads](https://www.threads.net/@varnasriraman)  
+This is where I keep reusable R code for cleaning messy datasets, estimating impact, creating visual summaries, and connecting with other tools (SQL, Python, Tableau, etc.).
+
+What you’ll find:
+- Statistical models (OLS, DiD, PSM, panel regression)
+- Evaluation frameworks (SROI, cost-effectiveness, mixed methods)
+- Visualisation layers (ggplot dashboards, maps, bullet charts)
+- Toolchain integration (`reticulate`, Tableau templates, SQL queries)
+- MAXQDA-style qualitative summaries, converted to code-ready formats
+
+All scripts are commented, and many use plausible sample datasets so you can run them out of the box.
+
+---
+
+## 🧪 Samples + Reuse
+
+Both repositories include working examples using:
+- Simulated public health and education data
+- Gender-disaggregated WEE indicators
+- Survey-weighted tables and MEL reporting formats
+- Modular exports (Excel, visual, tabular)
+- README files per folder explaining what each script or notebook does
+
+Everything is meant to be lightweight, understandable, and field-relevant — no enterprise setups needed.
+
+---
+
+## ✉️ Connect
+
+If you'd like to collaborate, build something together, or just talk shop:
+
+- 📧 **varna[dot]sr [at] gmail [dot] com**
+- 🌐 [varnasr.github.io](https://varnasr.github.io)
+- 🧵 [Threads](https://www.threads.net/@varnasriraman)
 - 💼 [LinkedIn](https://www.linkedin.com/in/varna)
 
+Always happy to share, learn, and iterate.
+
 ---
 
-Thanks for visiting. Always open to sharing and learning.
+Thanks for visiting 🪷
