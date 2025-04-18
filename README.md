@@ -1,7 +1,7 @@
 
-<<<<<<< HEAD
+
 # KnowledgeStack 📚  
-Your personal archive of research, code, data, and writing on development, public health, and social impact.
+A personal archive of research, code, data, and writing on development, public health, and social impact.
 
 ![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)
 ![Pages](https://img.shields.io/badge/GitHub-Pages-Enabled-brightgreen)
