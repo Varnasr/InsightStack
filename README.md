@@ -1,10 +1,10 @@
 
 
-# KnowledgeStack 📚  
+# InsightStack 📚  
 A personal archive of research, code, data, and writing on development, public health, and social impact.
 
 ![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)
-![Pages](https://img.shields.io/badge/GitHub-Pages-Enabled-brightgreen)
+
 ![DOI: Zenodo](https://img.shields.io/badge/DOI-Zenodo%20Pending-lightgrey)
 
 ---
@@ -71,14 +71,14 @@ Each folder includes `README.md` files where relevant and reflects current work 
 
 ---
 
-## 🌟 Why KnowledgeStack?
+## 🌟 Why InsightStack?
 
 This repo isn’t polished or final. It’s a workspace.  
 It grows as I learn, build, and write — and you’re welcome to explore, fork, adapt, or cite anything useful here.
 
 Thanks for visiting.
 =======
-Welcome! This is my working library of reusable research assets — notebooks, code, methods, and ideas — across development economics, public health systems, gender equity, climate resilience, and evaluation.
+Welcome! This is my working library of reusable research assets — notebooks, code, methods, and ideas — across development economics, public health systems, gender equity, climate resilience, education and MLE.
 
 Think of it as a living shelf: things I use often, test quietly, or build toward more polished outputs. You're welcome to browse, borrow, adapt, and remix.
 
@@ -102,7 +102,7 @@ It includes:
 
 ---
 
-### 🔹 [R-Code-Repository](https://github.com/Varnasr/R-Code-Repository)
+### 🔹 [FieldStack](https://github.com/Varnasr/FieldStack)
 
 **Applied R scripts for evaluation, modelling, and field-driven analysis**
 
