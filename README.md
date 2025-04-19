@@ -1,9 +1,3 @@
-![License](https://img.shields.io/github/license/Varnasr/InsightStack)
-![Issues](https://img.shields.io/github/issues/Varnasr/InsightStack)
-![Last Commit](https://img.shields.io/github/last-commit/Varnasr/InsightStack)
-![Repo Size](https://img.shields.io/github/repo-size/Varnasr/InsightStack)
-
-
 ![InsightStack Banner](banner/insightstack_banner.png)
 
 # InsightStack
@@ -25,6 +19,7 @@ As a development economist working in public health, education, gender equity, a
 | 📎 `annotated_research/` | Real research notes with inline comments explaining methods and framing |
 | 🧠 `learning_layers/` | Conceptual tools and frameworks to build a learning organization |
 | 🧰 `KM_tools/` | SOPs, file naming conventions, tagging systems, and other KM infrastructure |
+| 🧮 `calculators/` | District- and block-level planning tools: HTML calculators + logic |
 | 🖼️ `banner/` | Repository banner image for GitHub display (see above) |
 
 ---
@@ -46,6 +41,7 @@ Whether you're building a MEL system from scratch, training a new team, or tryin
 - [x] Build core folders (`writing_guides/`, `eval_docs/`, `annotated_research/`)
 - [x] Add banner and restructure README to match other repos
 - [x] Add `KM_tools/` with SOPs and tagging practices
+- [x] Build and document 6 fully working planning calculators
 - [ ] Add sample slide decks, briefing formats, visual knowledge tools
 - [ ] Add `learning_layers/` explanatory notes + workflow examples
 - [ ] Add badge system and CI for docs + spell checks
@@ -57,18 +53,6 @@ Whether you're building a MEL system from scratch, training a new team, or tryin
 
 - 📊 [EquityStack](https://github.com/Varnasr/EquityStack): Data and Python-based tools for MEL, evaluation, WEE, and policy
 - 📈 [FieldStack](https://github.com/Varnasr/R-Code-Repository): R code, notebooks, and spatial/statistical logic for MEL and public systems
-
----
-
-## 📜 License
-
-This repository is licensed under the MIT License.  
-You’re welcome to reuse, remix, and adapt — with attribution.
-
----
-
-Made with ♥ by [Varna Sri Raman](https://on-web.link/varna)
-
 
 ---
 
@@ -87,3 +71,7 @@ If you use or adapt any part of this repo in your work, please cite it as:
   note         = {GitHub repository}
 }
 ```
+
+---
+
+Made with ♥ by [Varna Sri Raman](https://on-web.link/varna)
