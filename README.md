@@ -2,9 +2,11 @@
 
 # InsightStack
 
-**InsightStack** is a living archive of tools, templates, and thoughtful knowledge work created for development professionals — especially those working in health, education, WEE, climate resilience, and public systems in South Asia.
+**InsightStack** is a personal knowledge repository — not just a collection of templates, but a reflection of how I think, work, document, and support program learning across development spaces in India.
 
-This isn’t a template warehouse. Everything here is real, clean, reusable, and designed for actual use in program settings.
+As a development economist working in public health, education, gender equity, and climate resilience, I’ve often found that the *real work* — the thinking, structuring, explaining, and translating of knowledge — happens between formal outputs. This repo captures those layers.
+
+**InsightStack** brings together real tools, notes, writing samples, evaluation frameworks, and KM methods that I’ve built or used. They're here for others who think and work like I do — researchers, MEL professionals, program leads, and knowledge managers trying to make their documentation cleaner, sharper, and more usable.
 
 ---
 
@@ -26,7 +28,7 @@ This isn’t a template warehouse. Everything here is real, clean, reusable, and
 Most repositories focus on code — but what about all the *thinking work* around it?  
 **InsightStack** helps capture and share that layer of tacit knowledge: how we write, structure, design, document, evaluate, and reflect.
 
-Whether you're training a new team, designing your MEL system, or writing a brief, this stack gives you building blocks that are:
+Whether you're building a MEL system from scratch, training a new team, or trying to write a better theory of change, this stack gives you building blocks that are:
 - Human-centered
 - Program-relevant
 - Completely open
