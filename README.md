@@ -1,5 +1,12 @@
 ![InsightStack Banner](banner/insightstack_banner.png)
 
+[![License](https://img.shields.io/github/license/Varnasr/InsightStack)](https://github.com/Varnasr/InsightStack/blob/main/LICENSE)
+[![Issues](https://img.shields.io/github/issues/Varnasr/InsightStack)](https://github.com/Varnasr/InsightStack/issues)
+[![Last Commit](https://img.shields.io/github/last-commit/Varnasr/InsightStack)](https://github.com/Varnasr/InsightStack/commits/main)
+[![Repo Size](https://img.shields.io/github/repo-size/Varnasr/InsightStack)](https://github.com/Varnasr/InsightStack)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.11019642.svg)](https://doi.org/10.5281/zenodo.11019642)
+[![GitHub release](https://img.shields.io/github/v/release/Varnasr/InsightStack)](https://github.com/Varnasr/InsightStack/releases)
+
 # InsightStack
 
 **InsightStack** is a personal knowledge repository — not just a collection of templates, but a reflection of how I think, work, document, and support program learning across development spaces in India.
@@ -7,6 +14,33 @@
 As a development economist working in public health, education, gender equity, and climate resilience, I’ve often found that the *real work* — the thinking, structuring, explaining, and translating of knowledge — happens between formal outputs. This repo captures those layers.
 
 **InsightStack** brings together real tools, notes, writing samples, evaluation frameworks, and KM methods that I’ve built or used. They're here for others who think and work like I do — researchers, MEL professionals, program leads, and knowledge managers trying to make their documentation cleaner, sharper, and more usable.
+
+---
+
+## 📦 What You'll Find Here
+
+This repository includes:
+
+- Reusable tools and real documentation samples for MEL and KM
+- Step-by-step logic files for program planning and indicator estimation
+- HTML-based calculators that work offline and require no setup
+- Examples that draw from actual use in Indian districts, generalized for reuse
+- Clean folder and tagging standards to support good documentation practices
+
+It is designed for use in real programs — not just as templates, but as thinking tools.
+
+---
+
+## 🌍 Who Is This For?
+
+InsightStack is built for:
+
+- MEL specialists and program evaluators
+- Knowledge managers and documentation leads
+- Development professionals working on health, education, gender, and climate
+- Fellows, researchers, and policy practitioners building institutional memory
+
+If you're setting up a KM system, planning a program, or translating data into decisions — this is for you.
 
 ---
 
@@ -60,7 +94,7 @@ Whether you're building a MEL system from scratch, training a new team, or tryin
 
 If you use or adapt any part of this repo in your work, please cite it as:
 
-> Varna Sri Raman. *InsightStack: Knowledge Documentation Tools for Development Practice*. GitHub. https://github.com/Varnasr/InsightStack
+> Varna Sri Raman. *InsightStack: Knowledge Documentation Tools for Development Practice*. GitHub. https://github.com/Varnasr/InsightStack. DOI: [10.5281/zenodo.11019642](https://doi.org/10.5281/zenodo.11019642)
 
 ```bibtex
 @misc{insightstack2025,
@@ -68,6 +102,7 @@ If you use or adapt any part of this repo in your work, please cite it as:
   title        = {InsightStack: Knowledge Documentation Tools for Development Practice},
   year         = {2025},
   url          = {https://github.com/Varnasr/InsightStack},
+  doi          = {10.5281/zenodo.11019642},
   note         = {GitHub repository}
 }
 ```
