@@ -1,0 +1,20 @@
+name: Render Quarto Docs
+
+on:
+  push:
+    paths:
+      - 'docs/**'
+      - '.github/workflows/render-quarto.yml'
+
+jobs:
+  build-docs:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Install Quarto
+        run: |
+          sudo apt-get install -y curl
+          curl -sLO https://quarto.org/download/latest/quarto-linux-amd64.deb
+          sudo dpkg -i quarto-linux-amd64.deb
+      - name: Render all Quarto docs
+        run: quarto render docs/

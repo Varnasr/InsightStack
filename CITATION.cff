@@ -1,0 +1,10 @@
+cff-version: 1.2.0
+message: "If you use this repository, please cite it as follows."
+title: "InsightStack: MEL Tools and Documentation for Public Knowledge Work"
+version: "1.0"
+doi: "10.5281/zenodo.15245182"
+authors:
+  - family-names: "Sri Raman"
+    given-names: "Varna"
+date-released: "2025-04-19"
+repository-code: "https://github.com/Varnasr/InsightStack"

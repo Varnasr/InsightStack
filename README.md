@@ -13,6 +13,9 @@ InsightStack is a documentation-first, logic-driven knowledge repository built f
 
 ---
 
+<!-- Paste TOC here -->
+
+
 ## 📁 What’s Inside
 
 | Folder | Description |
@@ -56,6 +59,7 @@ If you use **InsightStack** in your work, please cite it as:
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue?label=license)](LICENSE)  
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.15245182.svg)](https://doi.org/10.5281/zenodo.15245182)
+<!-- Paste export-to-bibtex and ORCID badges here -->
 
 ---
 
