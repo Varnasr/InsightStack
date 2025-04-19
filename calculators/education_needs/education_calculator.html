@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Education Needs Projection Calculator</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 2rem; max-width: 700px; }
+        label { display: block; margin-top: 1rem; font-weight: bold; }
+        input { margin-top: 0.5rem; padding: 0.4rem; width: 100%; max-width: 300px; }
+        button { margin-top: 1.5rem; padding: 0.6rem 1.5rem; }
+        #results { margin-top: 2rem; background: #f1f1f1; padding: 1rem; border-radius: 8px; }
+    </style>
+</head>
+<body>
+
+<h2>📚 Education Needs Projection Calculator</h2>
+<p><strong>Example: Chitrakoot District, Uttar Pradesh</strong></p>
+
+<label for="population">Current School-Age Population (6–14)</label>
+<input type="number" id="population" placeholder="e.g., 82000">
+
+<label for="growth">Annual Population Growth Rate (%)</label>
+<input type="number" id="growth" step="0.01" placeholder="e.g., 1.85">
+
+<label for="years">Number of Years to Project</label>
+<input type="number" id="years" placeholder="e.g., 3">
+
+<label for="norm">Norm: Students per School</label>
+<input type="number" id="norm" placeholder="e.g., 150">
+
+<label for="currentSchools">Current Number of Schools</label>
+<input type="number" id="currentSchools" placeholder="e.g., 530">
+
+<button onclick="calculate()">Calculate</button>
+
+<div id="results"></div>
+
+<script>
+function calculate() {
+    const pop = parseFloat(document.getElementById('population').value);
+    const growth = parseFloat(document.getElementById('growth').value) / 100;
+    const years = parseInt(document.getElementById('years').value);
+    const norm = parseFloat(document.getElementById('norm').value);
+    const currentSchools = parseInt(document.getElementById('currentSchools').value);
+
+    if (isNaN(pop) || isNaN(growth) || isNaN(years) || isNaN(norm) || isNaN(currentSchools)) {
+        alert("Please fill in all fields with valid numbers.");
+        return;
+    }
+
+    let projected = pop;
+    for (let i = 0; i < years; i++) {
+        projected *= (1 + growth);
+    }
+
+    const neededSchools = Math.ceil(projected / norm);
+    const gap = neededSchools - currentSchools;
+
+    document.getElementById("results").innerHTML = `
+        <h3>📊 Results</h3>
+        <p><strong>Projected School-Age Population:</strong> ${Math.round(projected)}</p>
+        <p><strong>Schools Needed:</strong> ${neededSchools}</p>
+        <p><strong>Current Schools:</strong> ${currentSchools}</p>
+        <p><strong>Gap:</strong> ${gap >= 0 ? gap + " more schools needed" : Math.abs(gap) + " schools in surplus"}</p>
+    `;
+}
+</script>
+
+</body>
+</html>

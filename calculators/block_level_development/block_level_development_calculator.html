@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Block-Level Development Estimator</title>
+  <style>
+    body { font-family: sans-serif; margin: 2rem; max-width: 700px; }
+    label { display: block; margin-top: 1rem; font-weight: bold; }
+    input { padding: 0.5rem; margin-top: 0.3rem; width: 100%; max-width: 300px; }
+    button { margin-top: 1.5rem; padding: 0.6rem 1.5rem; }
+    #results { margin-top: 2rem; background: #f9f9f9; padding: 1rem; border-radius: 6px; }
+  </style>
+</head>
+<body>
+  <h2>🧱 Block-Level Development Estimator</h2>
+
+  <label for="districtPop">District Population</label>
+  <input type="number" id="districtPop" placeholder="e.g., 600000">
+
+  <label for="blockPop">Block Population</label>
+  <input type="number" id="blockPop" placeholder="e.g., 75000">
+
+  <label for="districtValue">District Value of the Indicator</label>
+  <input type="number" id="districtValue" placeholder="e.g., 30 (PHCs, schools, etc.)">
+
+  <button onclick="calculate()">Calculate</button>
+
+  <div id="results"></div>
+
+  <script>
+    function calculate() {
+      const districtPop = parseFloat(document.getElementById("districtPop").value);
+      const blockPop = parseFloat(document.getElementById("blockPop").value);
+      const districtValue = parseFloat(document.getElementById("districtValue").value);
+
+      if ([districtPop, blockPop, districtValue].some(isNaN)) {
+        alert("Please enter all values correctly.");
+        return;
+      }
+
+      const share = blockPop / districtPop;
+      const blockEstimate = districtValue * share;
+
+      document.getElementById("results").innerHTML = `
+        <h3>📊 Block-Level Estimate</h3>
+        <p><strong>Block Share:</strong> ${(share * 100).toFixed(2)}%</p>
+        <p><strong>Block-Level Value:</strong> ${blockEstimate.toFixed(2)}</p>
+        <p>This assumes population-based disaggregation.</p>
+      `;
+    }
+  </script>
+</body>
+</html>

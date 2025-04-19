@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Environmental Change Risk Estimator</title>
+  <style>
+    body { font-family: sans-serif; margin: 2rem; max-width: 700px; }
+    label { display: block; margin-top: 1rem; font-weight: bold; }
+    input { padding: 0.5rem; margin-top: 0.3rem; width: 100%; max-width: 300px; }
+    button { margin-top: 1.5rem; padding: 0.6rem 1.5rem; }
+    #results { margin-top: 2rem; background: #f3f7f3; padding: 1rem; border-radius: 6px; }
+  </style>
+</head>
+<body>
+  <h2>🌱 Environmental Change Risk Estimator</h2>
+
+  <label for="forest">Forest Cover (%)</label>
+  <input type="number" id="forest" placeholder="e.g., 21">
+
+  <label for="water">Households with Nearby Drinking Water (%)</label>
+  <input type="number" id="water" placeholder="e.g., 55">
+
+  <label for="rain">Annual Rainfall Deviation (mm)</label>
+  <input type="number" id="rain" placeholder="e.g., 120">
+
+  <label for="temp">Temperature Increase (°C)</label>
+  <input type="number" id="temp" placeholder="e.g., 1.8">
+
+  <button onclick="calculate()">Calculate</button>
+
+  <div id="results"></div>
+
+  <script>
+    function calculate() {
+      const forest = parseFloat(document.getElementById("forest").value);
+      const water = parseFloat(document.getElementById("water").value);
+      const rain = parseFloat(document.getElementById("rain").value);
+      const temp = parseFloat(document.getElementById("temp").value);
+
+      if ([forest, water, rain, temp].some(isNaN)) {
+        alert("Please enter all values correctly.");
+        return;
+      }
+
+      const forestScore = forest < 25 ? 1 : forest < 35 ? 0.5 : 0;
+      const waterScore = water < 60 ? 1 : water < 75 ? 0.5 : 0;
+      const rainScore = rain > 100 ? 1 : rain > 50 ? 0.5 : 0;
+      const tempScore = temp > 1.5 ? 1 : temp > 1.0 ? 0.5 : 0;
+
+      const score = (forestScore * 0.3) + (waterScore * 0.3) + (rainScore * 0.2) + (tempScore * 0.2);
+
+      let risk = "Low Risk";
+      if (score >= 0.7) risk = "High Environmental Fragility";
+      else if (score >= 0.4) risk = "Moderate Fragility";
+
+      document.getElementById("results").innerHTML = `
+        <h3>🌍 Estimated Environmental Risk</h3>
+        <p><strong>Composite Risk Score:</strong> ${score.toFixed(2)}</p>
+        <p><strong>Category:</strong> ${risk}</p>
+      `;
+    }
+  </script>
+</body>
+</html>

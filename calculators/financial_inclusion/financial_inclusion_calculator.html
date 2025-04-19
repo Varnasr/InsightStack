@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Financial Access Gap Calculator</title>
+  <style>
+    body { font-family: sans-serif; margin: 2rem; max-width: 700px; }
+    label { display: block; margin-top: 1rem; font-weight: bold; }
+    input { padding: 0.5rem; margin-top: 0.3rem; width: 100%; max-width: 300px; }
+    button { margin-top: 1.5rem; padding: 0.6rem 1.5rem; }
+    #results { margin-top: 2rem; background: #f8f8f8; padding: 1rem; border-radius: 6px; }
+  </style>
+</head>
+<body>
+  <h2>🏦 Financial Inclusion Calculator</h2>
+
+  <label for="population">District Population</label>
+  <input type="number" id="population" placeholder="e.g., 675000">
+
+  <label for="norm">People per Access Point (Norm)</label>
+  <input type="number" id="norm" placeholder="e.g., 2000">
+
+  <label for="commercial">Commercial Banks</label>
+  <input type="number" id="commercial" placeholder="e.g., 42">
+
+  <label for="rural">Rural Banks</label>
+  <input type="number" id="rural" placeholder="e.g., 18">
+
+  <label for="atm">ATMs</label>
+  <input type="number" id="atm" placeholder="e.g., 64">
+
+  <label for="mitras">Bank Mitras / CSPs</label>
+  <input type="number" id="mitras" placeholder="e.g., 156">
+
+  <button onclick="calculate()">Calculate</button>
+
+  <div id="results"></div>
+
+  <script>
+    function calculate() {
+      const pop = parseFloat(document.getElementById("population").value);
+      const norm = parseFloat(document.getElementById("norm").value);
+      const commercial = parseInt(document.getElementById("commercial").value);
+      const rural = parseInt(document.getElementById("rural").value);
+      const atm = parseInt(document.getElementById("atm").value);
+      const mitras = parseInt(document.getElementById("mitras").value);
+
+      if (isNaN(pop) || isNaN(norm) || isNaN(commercial) || isNaN(rural) || isNaN(atm) || isNaN(mitras)) {
+        alert("Please fill all fields with valid numbers.");
+        return;
+      }
+
+      const needed = Math.ceil(pop / norm);
+      const current = commercial + rural + atm + mitras;
+      const gap = needed - current;
+
+      document.getElementById("results").innerHTML = `
+        <h3>📊 Results</h3>
+        <p><strong>Access Points Needed:</strong> ${needed}</p>
+        <p><strong>Current Access Points:</strong> ${current}</p>
+        <p><strong>Gap:</strong> ${gap >= 0 ? gap + " more points needed" : Math.abs(gap) + " points in surplus"}</p>
+      `;
+    }
+  </script>
+</body>
+</html>

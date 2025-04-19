@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>District Health Indicator Estimator</title>
+  <style>
+    body { font-family: sans-serif; max-width: 700px; margin: 2rem; }
+    label { display: block; margin-top: 1rem; font-weight: bold; }
+    select, input { width: 100%; max-width: 300px; padding: 0.5rem; margin-top: 0.5rem; }
+    button { margin-top: 1.5rem; padding: 0.6rem 1.5rem; }
+    #results { margin-top: 2rem; background: #eef; padding: 1rem; border-radius: 6px; }
+  </style>
+</head>
+<body>
+  <h2>🩺 District Health Indicator Estimator</h2>
+
+  <label for="stateValue">State-level NFHS Indicator Value (%)</label>
+  <input type="number" id="stateValue" placeholder="e.g., 72.4" step="0.1">
+
+  <label for="infra">Health Infrastructure</label>
+  <select id="infra">
+    <option value="0.9">Low</option>
+    <option value="1.0" selected>Average</option>
+    <option value="1.1">High</option>
+  </select>
+
+  <label for="roads">Road Access</label>
+  <select id="roads">
+    <option value="0.95">Poor</option>
+    <option value="1.0" selected>Average</option>
+    <option value="1.05">Good</option>
+  </select>
+
+  <label for="tribal">Tribal / SC/ST Density</label>
+  <select id="tribal">
+    <option value="0.9">High</option>
+    <option value="1.0" selected>Medium</option>
+    <option value="1.1">Low</option>
+  </select>
+
+  <button onclick="calculate()">Calculate</button>
+
+  <div id="results"></div>
+
+<script>
+function calculate() {
+  const stateValue = parseFloat(document.getElementById("stateValue").value);
+  const infra = parseFloat(document.getElementById("infra").value);
+  const roads = parseFloat(document.getElementById("roads").value);
+  const tribal = parseFloat(document.getElementById("tribal").value);
+
+  if (isNaN(stateValue)) {
+    alert("Please enter a valid state value.");
+    return;
+  }
+
+  const adjusted = stateValue * infra * roads * tribal;
+  document.getElementById("results").innerHTML = `
+    <h3>📊 Estimated District Value</h3>
+    <p><strong>${adjusted.toFixed(1)}%</strong></p>
+    <p>This estimate is adjusted based on infrastructure, road access, and social demographics.</p>
+  `;
+}
+</script>
+</body>
+</html>
