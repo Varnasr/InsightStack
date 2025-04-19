@@ -1,0 +1,27 @@
+name: R Tests
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  test-r:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+
+    - name: Setup R
+      uses: r-lib/actions/setup-r@v2
+
+    - name: Install dependencies
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y libcurl4-openssl-dev libssl-dev libxml2-dev
+
+    - name: Run test script
+      run: |
+        Rscript tests/test_dummy_population.R
