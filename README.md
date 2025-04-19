@@ -1,69 +1,62 @@
-# KnowledgeStack 📚
+![InsightStack Banner](banner/insightstack_banner.png)
 
-**KnowledgeStack** is a practical, research-grounded repository for development professionals working in public health, education, gender equity, and climate resilience in South Asia.
+# InsightStack
 
-It houses complete and reusable examples of real-world knowledge products used in research, MEL (Monitoring, Evaluation & Learning), and program design — not placeholder templates.
+**InsightStack** is a living archive of tools, templates, and thoughtful knowledge work created for development professionals — especially those working in health, education, WEE, climate resilience, and public systems in South Asia.
+
+This isn’t a template warehouse. Everything here is real, clean, reusable, and designed for actual use in program settings.
 
 ---
 
 ## 📁 Repository Structure
 
-| Folder | Description |
-|--------|-------------|
-| `writing_guides/` | Clean guides for writing ToC notes, research briefs, policy memos, and other KM content |
-| `eval_docs/` | Sample MEL frameworks, logframes, indicator matrices, and evaluation plans |
-| `annotated_research/` | Research notes and briefs with inline commentary explaining framing, design, and analysis logic |
+| 📁 Folder | Description |
+|-----------|-------------|
+| 📝 `writing_guides/` | How to write better ToC notes, briefs, and research memos |
+| 📊 `eval_docs/` | MEL frameworks, logframes, and indicator sets |
+| 📎 `annotated_research/` | Real research notes with inline comments explaining methods and framing |
+| 🧠 `learning_layers/` | Conceptual tools and frameworks to build a learning organization |
+| 🧰 `KM_tools/` | SOPs, file naming conventions, tagging systems, and other KM infrastructure |
+| 🖼️ `banner/` | Repository banner image for GitHub display (see above) |
 
 ---
 
-## 🧠 Why this repo?
+## 💡 Why InsightStack?
 
-- Most public repositories contain code — this one focuses on **thoughtful, field-tested documentation**
-- It’s meant for **practitioners**, **trainers**, and **policy teams** who want to improve written outputs, evaluations, and learning
-- All files are real, functional, and reusable (not one-liners or empty shells)
+Most repositories focus on code — but what about all the *thinking work* around it?  
+**InsightStack** helps capture and share that layer of tacit knowledge: how we write, structure, design, document, evaluate, and reflect.
 
----
-
-## 🛠 How to use
-
-- Browse each folder to find materials relevant to your context (e.g., school health, ToC design, annotated research)
-- Adapt content freely — all materials are licensed under MIT
-- Use in your MEL training sessions, donor reports, program documentation, or KM strategies
+Whether you're training a new team, designing your MEL system, or writing a brief, this stack gives you building blocks that are:
+- Human-centered
+- Program-relevant
+- Completely open
 
 ---
 
-## 🧩 Sample Use Cases
+## 🛣️ Roadmap (2025)
 
-- New hires or fellows learning how to write better ToC or MEL notes
-- Field staff using logframes and indicators for monthly tracking
-- MEL officers analyzing framing of rapid assessments
-- Researchers converting research findings into readable briefs
-
----
-
-## 🚧 Roadmap (2025)
-
-- [ ] Add examples of knowledge-sharing formats (slide decks, briefs, etc.)
-- [ ] Create reusable sectoral evaluation summaries (public health, education, WEE)
-- [ ] Expand glossary and how-to guides
-- [ ] Add a `learning_layers/` folder for methods notes and frameworks
-- [ ] Link across to `EquityStack` and `FieldStack` repositories for complementary analysis
+- [x] Build core folders (`writing_guides/`, `eval_docs/`, `annotated_research/`)
+- [x] Add banner and restructure README to match other repos
+- [x] Add `KM_tools/` with SOPs and tagging practices
+- [ ] Add sample slide decks, briefing formats, visual knowledge tools
+- [ ] Add `learning_layers/` explanatory notes + workflow examples
+- [ ] Add badge system and CI for docs + spell checks
+- [ ] Cross-reference `EquityStack` and `FieldStack` where relevant
 
 ---
 
 ## 🔗 Related Repositories
 
-- 📊 [EquityStack](https://github.com/Varnasr/EquityStack): Python-based data and analysis notebooks for public health, WEE, MEL, and education
-- 📈 [FieldStack](https://github.com/Varnasr/R-Code-Repository): R notebooks and reproducible logic for MEL, survey analytics, SROI, spatial mapping, and dashboards
+- 📊 [EquityStack](https://github.com/Varnasr/EquityStack): Data and Python-based tools for MEL, evaluation, WEE, and policy
+- 📈 [FieldStack](https://github.com/Varnasr/R-Code-Repository): R code, notebooks, and spatial/statistical logic for MEL and public systems
 
 ---
 
 ## 📜 License
 
 This repository is licensed under the MIT License.  
-Feel free to reuse, adapt, and remix with credit.
+You’re welcome to reuse, remix, and adapt — with attribution.
 
 ---
 
-© 2025 Varna Sri Raman  
-[on-web.link/varna](https://on-web.link/varna)
+Made with ♥ by [Varna Sri Raman](https://on-web.link/varna)

@@ -1,0 +1,59 @@
+---
+title: "How to Write a Theory of Change (ToC) Note"
+subtitle: "For Development Programs in India"
+format: gfm
+toc: true
+author: "KnowledgeStack"
+---
+
+## What is a Theory of Change Note?
+
+A Theory of Change (ToC) note is a short, structured explanation of *how* and *why* your program will lead to desired outcomes. It’s especially useful for donor communications, program design alignment, and MEL planning.
+
+### Core Components
+
+1. **Problem Statement**  
+2. **Target Population**  
+3. **Change Pathway**  
+4. **Assumptions**  
+5. **Outcomes**  
+6. **Indicators (optional)**
+
+---
+
+## Sample Structure
+
+```
+Problem: High adolescent anemia in tribal blocks of X district...
+
+Activities:  
+1. Community nutrition sessions for adolescent girls  
+2. Health worker engagement using visual aids  
+3. School-based distribution tracking system  
+...
+```
+
+---
+
+## Do's and Don'ts
+
+| Do's | Don'ts |
+|------|--------|
+| Use plain language | Overload with jargon |
+| Ground assumptions in reality | Leave out local risks/barriers |
+| Align with MEL plans | Treat ToC as fixed — it evolves |
+| Make outcomes measurable | Use vague claims like “empowerment” with no link |
+
+---
+
+## Checklist
+
+- [x] Clear problem + target group  
+- [x] Plausible, evidence-based causal pathway  
+- [x] Articulated assumptions  
+- [x] Measurable outcome stages  
+- [x] Consistent with program design  
+
+::: callout-note
+See attached sample: `sample_theory_of_change_note.pdf`
+:::
