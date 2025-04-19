@@ -1,0 +1,36 @@
+name: KM Documentation Check
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  doc-check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 🧾 Checkout Repository
+        uses: actions/checkout@v3
+
+      - name: 🛠️ Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+
+      - name: 🧹 Install codespell
+        run: pip install codespell
+
+      - name: 🔍 Spellcheck Markdown Files
+        run: |
+          codespell --skip="*.min.js,*.min.css,.git" --ignore-words-list="nd" -q 2 -S '*.png,*.pdf,*.xlsx,*.zip' .
+
+      - name: 📁 Check Folder Structure
+        run: |
+          echo "Checking that all content folders contain README.md"
+          for dir in writing_guides eval_docs annotated_research KM_tools learning_layers; do
+            if [ ! -f "$dir/README.md" ]; then
+              echo "::error file=$dir::Missing README.md in $dir"
+              exit 1
+            fi
+          done

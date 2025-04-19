@@ -1,3 +1,9 @@
+![License](https://img.shields.io/github/license/Varnasr/InsightStack)
+![Issues](https://img.shields.io/github/issues/Varnasr/InsightStack)
+![Last Commit](https://img.shields.io/github/last-commit/Varnasr/InsightStack)
+![Repo Size](https://img.shields.io/github/repo-size/Varnasr/InsightStack)
+
+
 ![InsightStack Banner](banner/insightstack_banner.png)
 
 # InsightStack
@@ -62,3 +68,22 @@ You’re welcome to reuse, remix, and adapt — with attribution.
 ---
 
 Made with ♥ by [Varna Sri Raman](https://on-web.link/varna)
+
+
+---
+
+## 📚 Cite this Repository
+
+If you use or adapt any part of this repo in your work, please cite it as:
+
+> Varna Sri Raman. *InsightStack: Knowledge Documentation Tools for Development Practice*. GitHub. https://github.com/Varnasr/InsightStack
+
+```bibtex
+@misc{insightstack2025,
+  author       = {Varna Sri Raman},
+  title        = {InsightStack: Knowledge Documentation Tools for Development Practice},
+  year         = {2025},
+  url          = {https://github.com/Varnasr/InsightStack},
+  note         = {GitHub repository}
+}
+```
