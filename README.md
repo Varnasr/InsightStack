@@ -44,13 +44,6 @@ This repo is for anyone working in:
 
 ---
 
-## 🔖 Badges
-
-![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)  
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.15245182.svg)](https://doi.org/10.5281/zenodo.15245182)
-
----
-
 ## 📘 Citation
 
 If you use **InsightStack** in your work, please cite it as:
