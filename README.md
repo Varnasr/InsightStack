@@ -1,149 +1,69 @@
+# KnowledgeStack 📚
 
+**KnowledgeStack** is a practical, research-grounded repository for development professionals working in public health, education, gender equity, and climate resilience in South Asia.
 
-# InsightStack 📚  
-A personal archive of research, code, data, and writing on development, public health, and social impact.
-
-![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)
-
-![DOI: Zenodo](https://img.shields.io/badge/DOI-Zenodo%20Pending-lightgrey)
+It houses complete and reusable examples of real-world knowledge products used in research, MEL (Monitoring, Evaluation & Learning), and program design — not placeholder templates.
 
 ---
 
-## 👋 About This Repository
+## 📁 Repository Structure
 
-This is my main **knowledge management repository** — a living archive of reusable work across research, implementation, and policy domains. It brings together:
-
-- 📊 R and Python scripts used in field projects  
-- ✍️ Writing drafts, op-eds, and publications  
-- 📈 Presentations and visuals from public talks  
-- 🔍 Evaluation methods, survey tools, and frameworks  
-- 📚 Blog pieces, linked citations, and learning modules  
-
-Everything here reflects the reality of working across development, health systems, gender, and climate — especially in the Indian and South Asian context.
+| Folder | Description |
+|--------|-------------|
+| `writing_guides/` | Clean guides for writing ToC notes, research briefs, policy memos, and other KM content |
+| `eval_docs/` | Sample MEL frameworks, logframes, indicator matrices, and evaluation plans |
+| `annotated_research/` | Research notes and briefs with inline commentary explaining framing, design, and analysis logic |
 
 ---
 
-## 🗂 What’s Inside
+## 🧠 Why this repo?
 
-| Folder / Theme     | Description                                                |
-|--------------------|------------------------------------------------------------|
-| `r-code/`          | Reusable R logic (analysis, dashboards, visualisations)    |
-| `python-code/`     | Python scripts and notebooks for social data workflows     |
-| `presentations/`   | Slides and PDFs from talks and lectures                    |
-| `writing/`         | Articles, policy briefs, opinion pieces                    |
-| `evaluation-tools/`| MEL guides, indicators, survey tools                       |
-| `blog/`            | Markdown drafts and reading notes                          |
-| `data/`            | Sample datasets (public sources or anonymised)            |
-
-Each folder includes `README.md` files where relevant and reflects current work and archived material.
+- Most public repositories contain code — this one focuses on **thoughtful, field-tested documentation**
+- It’s meant for **practitioners**, **trainers**, and **policy teams** who want to improve written outputs, evaluations, and learning
+- All files are real, functional, and reusable (not one-liners or empty shells)
 
 ---
 
-## 🔄 How I Use It
+## 🛠 How to use
 
-- 🔁 To **reuse** code and frameworks across projects  
-- 📤 To **share** ideas and writing with collaborators  
-- 📚 To **organise** research ideas, concepts, and reading trails  
-- 🧠 To keep documentation linked to real practice
-
----
-
-## 🧾 Citation (if useful)
-
-```bibtex
-@misc{sriraman2025knowledgestack,
-  author       = {Varna Sri Raman},
-  title        = {KnowledgeStack: A Personal Archive of Research, Code, and Ideas},
-  year         = {2025},
-  howpublished = {\url{https://github.com/Varnasr/KnowledgeStack}},
-  note         = {GitHub repository}
-}
-```
+- Browse each folder to find materials relevant to your context (e.g., school health, ToC design, annotated research)
+- Adapt content freely — all materials are licensed under MIT
+- Use in your MEL training sessions, donor reports, program documentation, or KM strategies
 
 ---
 
-## ✨ Contact
+## 🧩 Sample Use Cases
 
-- 📧 varna[DOT]sr [AT] gmail [DOT] com  
-- 🌐 [varnasr.github.io](https://varnasr.github.io)  
-- 💼 [LinkedIn](https://www.linkedin.com/in/varna)  
-- 🧵 [Threads](https://www.threads.net/@varnasriraman)
-
----
-
-## 🌟 Why InsightStack?
-
-This repo isn’t polished or final. It’s a workspace.  
-It grows as I learn, build, and write — and you’re welcome to explore, fork, adapt, or cite anything useful here.
-
-Thanks for visiting.
-=======
-Welcome! This is my working library of reusable research assets — notebooks, code, methods, and ideas — across development economics, public health systems, gender equity, climate resilience, education and MLE.
-
-Think of it as a living shelf: things I use often, test quietly, or build toward more polished outputs. You're welcome to browse, borrow, adapt, and remix.
+- New hires or fellows learning how to write better ToC or MEL notes
+- Field staff using logframes and indicators for monthly tracking
+- MEL officers analyzing framing of rapid assessments
+- Researchers converting research findings into readable briefs
 
 ---
 
-## 🧰 Featured Repositories
+## 🚧 Roadmap (2025)
 
-### 🔹 [EquityStack](https://github.com/Varnasr/EquityStack)
-
-[![EquityStack Banner](https://raw.githubusercontent.com/Varnasr/EquityStack/main/equitystack_banner.png)](https://github.com/Varnasr/EquityStack)
-
-**Reusable Notebooks and Python Code for Evaluation and Equity Data ❤️**
-
-**EquityStack** is designed for development practitioners, MEL teams, and data researchers working across sectors like health, education, WEE, and gender equity.
-
-It includes:
-- Colab-ready Jupyter notebooks (some functional, some templated)
-- Modular `.py` scripts for cleaning, modeling, mapping, and validation
-- Sample datasets, test coverage with `pytest`, and GitHub Actions CI
-- Clear folder structure with readme documentation in each module
+- [ ] Add examples of knowledge-sharing formats (slide decks, briefs, etc.)
+- [ ] Create reusable sectoral evaluation summaries (public health, education, WEE)
+- [ ] Expand glossary and how-to guides
+- [ ] Add a `learning_layers/` folder for methods notes and frameworks
+- [ ] Link across to `EquityStack` and `FieldStack` repositories for complementary analysis
 
 ---
 
-### 🔹 [FieldStack](https://github.com/Varnasr/FieldStack)
+## 🔗 Related Repositories
 
-**Applied R scripts for evaluation, modelling, and field-driven analysis**
-
-This is where I keep reusable R code for cleaning messy datasets, estimating impact, creating visual summaries, and connecting with other tools (SQL, Python, Tableau, etc.).
-
-What you’ll find:
-- Statistical models (OLS, DiD, PSM, panel regression)
-- Evaluation frameworks (SROI, cost-effectiveness, mixed methods)
-- Visualisation layers (ggplot dashboards, maps, bullet charts)
-- Toolchain integration (`reticulate`, Tableau templates, SQL queries)
-- MAXQDA-style qualitative summaries, converted to code-ready formats
-
-All scripts are commented, and many use plausible sample datasets so you can run them out of the box.
+- 📊 [EquityStack](https://github.com/Varnasr/EquityStack): Python-based data and analysis notebooks for public health, WEE, MEL, and education
+- 📈 [FieldStack](https://github.com/Varnasr/R-Code-Repository): R notebooks and reproducible logic for MEL, survey analytics, SROI, spatial mapping, and dashboards
 
 ---
 
-## 🧪 Samples + Reuse
+## 📜 License
 
-Both repositories include working examples using:
-- Simulated public health and education data
-- Gender-disaggregated WEE indicators
-- Survey-weighted tables and MEL reporting formats
-- Modular exports (Excel, visual, tabular)
-- README files per folder explaining what each script or notebook does
-
-Everything is meant to be lightweight, understandable, and field-relevant — no enterprise setups needed.
+This repository is licensed under the MIT License.  
+Feel free to reuse, adapt, and remix with credit.
 
 ---
 
-## ✉️ Connect
-
-If you'd like to collaborate, build something together, or just talk shop:
-
-- 📧 **varna[dot]sr [at] gmail [dot] com**
-- 🌐 [varnasr.github.io](https://varnasr.github.io)
-- 🧵 [Threads](https://www.threads.net/@varnasriraman)
-- 💼 [LinkedIn](https://www.linkedin.com/in/varna)
-
-Always happy to share, learn, and iterate.
-
----
-
-Thanks for visiting 🪷
->>>>>>> bf2636ebf4d500261d760b27e209da89a62c86ed
+© 2025 Varna Sri Raman  
+[on-web.link/varna](https://on-web.link/varna)
