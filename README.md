@@ -59,6 +59,13 @@ If you use **InsightStack** in your work, please cite it as:
 
 ---
 
+## 📊 Repository Status & Metadata
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue?label=license)](LICENSE)  
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.15245182.svg)](https://doi.org/10.5281/zenodo.15245182)
+
+---
+
 ## 🧠 Related Repositories
 
 - 🔬 [EquityStack](https://github.com/Varnasr/EquityStack): Modular Python workflows for public health, WEE, MEL, and education data analysis  
