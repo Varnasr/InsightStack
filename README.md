@@ -1,13 +1,16 @@
 ![InsightStack Banner](banner/insightstack_banner.png)
 
-[![License](https://img.shields.io/github/license/Varnasr/InsightStack)](https://github.com/Varnasr/InsightStack/blob/main/LICENSE)
-[![Issues](https://img.shields.io/github/issues/Varnasr/InsightStack)](https://github.com/Varnasr/InsightStack/issues)
-[![Last Commit](https://img.shields.io/github/last-commit/Varnasr/InsightStack)](https://github.com/Varnasr/InsightStack/commits/main)
-[![Repo Size](https://img.shields.io/github/repo-size/Varnasr/InsightStack)](https://github.com/Varnasr/InsightStack)
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.11019642.svg)](https://doi.org/10.5281/zenodo.11019642)
-[![GitHub release](https://img.shields.io/github/v/release/Varnasr/InsightStack)](https://github.com/Varnasr/InsightStack/releases)
+<p align="center">
+  <a href="https://github.com/Varnasr/InsightStack/blob/main/LICENSE"><img src="https://img.shields.io/github/license/Varnasr/InsightStack" /></a>
+  <a href="https://github.com/Varnasr/InsightStack/issues"><img src="https://img.shields.io/github/issues/Varnasr/InsightStack" /></a>
+  <a href="https://github.com/Varnasr/InsightStack/commits/main"><img src="https://img.shields.io/github/last-commit/Varnasr/InsightStack" /></a>
+  <a href="https://github.com/Varnasr/InsightStack"><img src="https://img.shields.io/github/repo-size/Varnasr/InsightStack" /></a><br>
+  <a href="https://doi.org/10.5281/zenodo.11019642"><img src="https://zenodo.org/badge/DOI/10.5281/zenodo.11019642.svg" /></a>
+  <a href="https://github.com/Varnasr/InsightStack/releases"><img src="https://img.shields.io/github/v/release/Varnasr/InsightStack" /></a>
+</p>
 
-# InsightStack
+<!-- (rest of README content continues unchanged from previous version) -->
+
 
 **InsightStack** is a personal knowledge repository — not just a collection of templates, but a reflection of how I think, work, document, and support program learning across development spaces in India.
 
