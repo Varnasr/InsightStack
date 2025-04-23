@@ -19,7 +19,21 @@ InsightStack is a documentation-first, logic-driven knowledge repository built f
 ## 📁 What’s Inside
 
 | Folder | Description |
-|--------|-------------|
+|
+| `observable_notebooks/` | Interactive data storytelling and district dashboards (Observable notebooks) |
+| `open_data_editor/` | Drag-and-drop visual exploration using Open Data Editor, RawGraphs, and Datawrapper |
+| `taguette_coding/` | Qualitative coding files and FGD transcripts in Taguette format |
+| `visual_ethnography_descript/` | Visual narrative transcripts and editing layers using Descript |
+| `kumu_maps/` | Systems maps and stakeholder networks for MEL and strategic planning |
+| `stata_snippets/` | Reusable `.do` files for survey analysis, equity plots, and DiD |
+| `excel_visuals/` | Gantt, waterfall, and bullet chart templates for MEL visualisation |
+| `powerbi_reports/` | Example `.pbix` dashboard and MEL visualization screenshot |
+| `spss_scripts/` | Recoding and tabulation `.sps` syntax for field-level public sector data |
+| `flourish_charts/` | Embedded interactive charts and storytelling dashboards |
+| `excalidraw_frameworks/` | Hand-drawn MEL/system frameworks built with Excalidraw |
+
+
+--------|-------------|
 | `calculators/` | Planning tools — population projections, development estimators, environmental change calculators |
 | `KM_tools/` | Templates and SOPs for documentation, tagging, and version control in knowledge work |
 | `learning_layers/` | Explanatory modules and frameworks on building institutional knowledge and learning systems |

@@ -17,6 +17,9 @@ This roadmap lays out our planned enhancements for 2025 and beyond.
 ---
 
 ## 🔄 Phase 2: Content Expansion (Q2 2025)
+
+- [x] Added `observable_notebooks/`, `taguette_coding/`, `open_data_editor/`, and other documentation-first field tools
+
 - [ ] Complete all calculators in:
   - `block_level_development/`
   - `population_projection/`
