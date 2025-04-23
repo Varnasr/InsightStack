@@ -15,31 +15,21 @@ InsightStack is a documentation-first, logic-driven knowledge repository built f
 
 <!-- Paste TOC here -->
 
-
 ## 📁 What’s Inside
 
 | Folder | Description |
-|
-| `observable_notebooks/` | Interactive data storytelling and district dashboards (Observable notebooks) |
-| `open_data_editor/` | Drag-and-drop visual exploration using Open Data Editor, RawGraphs, and Datawrapper |
-| `taguette_coding/` | Qualitative coding files and FGD transcripts in Taguette format |
-| `visual_ethnography_descript/` | Visual narrative transcripts and editing layers using Descript |
-| `kumu_maps/` | Systems maps and stakeholder networks for MEL and strategic planning |
-| `stata_snippets/` | Reusable `.do` files for survey analysis, equity plots, and DiD |
-| `excel_visuals/` | Gantt, waterfall, and bullet chart templates for MEL visualisation |
-| `powerbi_reports/` | Example `.pbix` dashboard and MEL visualization screenshot |
-| `spss_scripts/` | Recoding and tabulation `.sps` syntax for field-level public sector data |
-| `flourish_charts/` | Embedded interactive charts and storytelling dashboards |
-| `excalidraw_frameworks/` | Hand-drawn MEL/system frameworks built with Excalidraw |
-
-
---------|-------------|
-| `calculators/` | Planning tools — population projections, development estimators, environmental change calculators |
-| `KM_tools/` | Templates and SOPs for documentation, tagging, and version control in knowledge work |
-| `learning_layers/` | Explanatory modules and frameworks on building institutional knowledge and learning systems |
-| `banner/` | Visual assets for repo identity |
-
----
+|--------|-------------|
+| [`observable_notebooks/`](observable_notebooks/) | Interactive data storytelling and dashboards using Observable |
+| [`open_data_editor/`](open_data_editor/) | Drag-and-drop charting with RawGraphs, Datawrapper, and Open Data Editor |
+| [`taguette_coding/`](taguette_coding/) | Qualitative coding projects for FGDs and transcripts |
+| [`visual_ethnography_descript/`](visual_ethnography_descript/) | Narrative editing workflows using Descript |
+| [`kumu_maps/`](kumu_maps/) | Systems maps and network diagrams for MEL planning |
+| [`stata_snippets/`](stata_snippets/) | `.do` scripts for survey weights, DiD, and equity graphs |
+| [`excel_visuals/`](excel_visuals/) | Gantt, waterfall, bullet charts for MEL reporting |
+| [`powerbi_reports/`](powerbi_reports/) | Example dashboard `.pbix` file and visualization |
+| [`spss_scripts/`](spss_scripts/) | `.sps` syntax for tabulations, recodes, and exports |
+| [`flourish_charts/`](flourish_charts/) | Storytelling dashboards using Flourish embeds |
+| [`excalidraw_frameworks/`](excalidraw_frameworks/) | Hand-drawn MEL/system maps using Excalidraw |
 
 ## 🛠️ What It’s For
 
