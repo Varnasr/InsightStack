@@ -1,0 +1,34 @@
+
+# SAMPLE MIRO BOARD LINKS
+# These are public boards or templates that can be remixed for participatory workshops in MEL, HCD, or strategy planning.
+
+1. Theory of Change Workshop Template (Miroverse)
+https://miro.com/miroverse/theory-of-change-template/
+- A classic layout for co-creating ToC diagrams. Can be used with NGO staff, district officials, or field fellows in strategy sessions.
+
+2. Journey Mapping for Human-Centered Design
+https://miro.com/miroverse/journey-map-template/
+- Useful for designing services based on user stories (e.g. adolescent girls navigating public health access). Great for reflection-based participatory design.
+
+3. Iceberg Model for Systems Thinking
+https://miro.com/miroverse/iceberg-model-template/
+- Helps participants explore deeper causes beneath events. Ideal for exploring education system failures, gender gaps, or governance breakdowns.
+
+4. Retrospective Wall for Program Review
+https://miro.com/miroverse/team-retro-wall/
+- Excellent for MEL or internal reviews. Stakeholders can share ‘What worked’, ‘What didn’t’, and ‘Ideas moving forward’ on sticky zones.
+
+5. Empathy Map for Field-Based Personas
+https://miro.com/miroverse/empathy-map-template/
+- Good for generating user-centric insights for behavior change campaigns or grassroots health interventions.
+
+6. COVID-19 Community Response Map (Archived Example)
+https://miro.com/app/board/uXjVOnUut9Y=/
+- Captures how teams mapped community responses and flows during the COVID crisis. Can be adapted for disaster planning or rapid response sessions.
+
+7. Participatory Budgeting Workshop Board
+https://miro.com/miroverse/participatory-budget-template/
+- Useful when discussing program budgets with community stakeholders or NGO teams. Can simplify fiscal decisions for broader participation.
+
+# Note:
+Always check the sharing settings of Miroverse boards. Some may ask you to duplicate the board to your own account before editing.

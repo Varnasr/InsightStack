@@ -1,0 +1,71 @@
+
+\documentclass[12pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{setspace}
+\usepackage{titlesec}
+\usepackage{booktabs}
+\usepackage{amsmath}
+\usepackage{fontspec}  % For xelatex users using Unicode fonts
+\usepackage{polyglossia}
+\setmainlanguage{english}
+%\setotherlanguage{hindi}
+%\newfontfamily\devanagarifont[Script=Devanagari]{Lohit Devanagari}
+
+\titleformat{\section}{\large\bfseries}{\thesection}{1em}{}
+
+\title{A Quick Start Template for Social Research Reports}
+\author{Your Name \\
+Your Institution or Organization}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+This is a sample LaTeX document for generating clean, professional reports in the development and research sectors. You can compile this using Overleaf or an offline LaTeX setup with XeLaTeX. Sections are fully annotated for use by social scientists, NGOs, and MEL teams in India.
+\end{abstract}
+
+\section{Introduction}
+This template is structured to support public interest research, field documentation, and knowledge production. Use it to write theory of change documents, program evaluations, or academic reflections.
+
+\section{Background and Rationale}
+You can include citations using \texttt{BibTeX} and control formatting precisely. This helps you maintain consistent styles across sections, making your reports easier to share and read.
+
+\section{Methodology}
+Here is how you include a bullet list:
+\begin{itemize}
+  \item Field visits to Khunti and Dhubri
+  \item Key informant interviews (12 participants)
+  \item Mixed-method evaluation using primary + secondary sources
+\end{itemize}
+
+\subsection*{A Sample Table}
+\begin{table}[h!]
+\centering
+\begin{tabular}{lcc}
+\toprule
+District & % ANC Coverage & % Institutional Delivery \\
+\midrule
+Khunti & 71\% & 83\% \\
+Dhubri & 64\% & 76\% \\
+\bottomrule
+\end{tabular}
+\caption{Sample Health Outcomes by District}
+\end{table}
+
+\section{Key Insights}
+Use bold, italics, footnotes\footnote{Like this.} and cross-referencing as needed. Add graphics using:
+\begin{verbatim}
+\includegraphics[width=0.8\textwidth]{your-image.png}
+\end{verbatim}
+
+\section{Conclusion}
+LaTeX helps create future-proof, reproducible, and version-controlled documentation. With GitHub or Overleaf, your work becomes both collaborative and publishable.
+
+\section*{Acknowledgements}
+This work was supported by [Insert program or funder]. We thank all community researchers and local partners for their participation.
+
+\end{document}

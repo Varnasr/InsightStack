@@ -1,0 +1,80 @@
+
+# 🧰 LaTeX Community & Tool Links (India-Relevant)
+
+These links are handpicked to help social sector practitioners and researchers in India get started or deepen their use of LaTeX.
+
+---
+
+## 📘 Learning LaTeX (Beginner to Advanced)
+
+1. Overleaf Learn Portal
+https://www.overleaf.com/learn
+- Best beginner resource for learning LaTeX basics interactively
+
+2. LaTeX Wikibook
+https://en.wikibooks.org/wiki/LaTeX
+- A community-maintained book covering all LaTeX commands and environments
+
+3. LaTeX Stack Exchange
+https://tex.stackexchange.com/
+- A searchable Q&A forum for all your LaTeX problems (from table layouts to language issues)
+
+---
+
+## 🇮🇳 India-Relevant Font & Script Support
+
+1. Using Hindi and Indian Scripts with LaTeX
+https://www.overleaf.com/learn/latex/Multilingual_support
+- Explains how to use `polyglossia` + `fontspec` for Hindi, Tamil, Bengali etc.
+
+2. Devanagari Fonts (Free)
+https://smc.org.in/fonts/
+- Includes Lohit, Tunga, and Noto Sans Devanagari — ideal for official reports
+
+3. XeLaTeX and LuaLaTeX for Unicode scripts
+https://tug.org/xetex/
+- Use these engines when writing in Indian languages with non-Latin scripts
+
+---
+
+## 📄 Report, Thesis, and NGO-Style Templates
+
+1. Social Science Working Paper Template
+https://www.overleaf.com/latex/templates/social-sciences-working-paper-template/jbhhjkhrmcqz
+- A clean, professional template for development economics, sociology, and MEL reports
+
+2. Indian Thesis Templates
+https://www.overleaf.com/latex/templates/tagged/india
+- Templates used at IITs, JNU, TISS etc. Can be repurposed for research documentation
+
+3. LaTeX Poster + Brochure Layouts (for field displays)
+https://www.overleaf.com/gallery/tagged/poster
+- Use for creating conference-style field posters
+
+---
+
+## 🛠 Tools and Enhancers
+
+1. Tables Generator
+https://www.tablesgenerator.com/latex_tables
+- Easy GUI to design tables and export LaTeX code
+
+2. Detexify
+https://detexify.kirelabs.org/classify.html
+- Draw a math symbol to find its LaTeX command
+
+3. BibTeX Generator
+https://zbib.org/
+- Build citation databases for LaTeX reports without manually editing `.bib` files
+
+---
+
+## 💬 Community & Support (India)
+
+- Reddit: r/LaTeX
+- GitHub: Search for repositories tagged `latex`, `social-science`, or `development-research`
+- Telegram: “LaTeX India” user-run help channel (check local invites)
+
+---
+
+📦 Tip: Save this list inside your GitHub or Notion workspace for quick reuse.
