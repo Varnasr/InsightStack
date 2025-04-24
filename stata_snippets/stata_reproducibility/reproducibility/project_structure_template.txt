@@ -1,0 +1,15 @@
+Project_Folder/
+├── data/
+│   ├── raw/
+│   └── processed/
+├── do_files/
+│   ├── 01_cleaning/
+│   ├── 02_analysis/
+│   └── 03_outputs/
+├── outputs/
+│   ├── logs/
+│   ├── tables/
+│   └── graphs/
+├── README.md
+├── master_script.do
+└── logs/
