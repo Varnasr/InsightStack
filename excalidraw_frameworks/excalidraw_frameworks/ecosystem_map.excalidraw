@@ -1,0 +1,67 @@
+{
+  "type": "excalidraw",
+  "version": 2,
+  "source": "insightstack",
+  "elements": [
+    {
+      "type": "ellipse",
+      "id": "c1",
+      "x": 100,
+      "y": 200,
+      "width": 120,
+      "height": 60,
+      "angle": 0,
+      "text": "CHW"
+    },
+    {
+      "type": "ellipse",
+      "id": "c2",
+      "x": 300,
+      "y": 200,
+      "width": 120,
+      "height": 60,
+      "angle": 0,
+      "text": "PHC"
+    },
+    {
+      "type": "ellipse",
+      "id": "c3",
+      "x": 500,
+      "y": 200,
+      "width": 120,
+      "height": 60,
+      "angle": 0,
+      "text": "Block Officer"
+    },
+    {
+      "type": "arrow",
+      "id": "c4",
+      "points": [
+        [
+          220,
+          230
+        ],
+        [
+          300,
+          230
+        ]
+      ],
+      "endArrowhead": "arrow"
+    },
+    {
+      "type": "arrow",
+      "id": "c5",
+      "points": [
+        [
+          420,
+          230
+        ],
+        [
+          500,
+          230
+        ]
+      ],
+      "endArrowhead": "arrow"
+    }
+  ]
+}

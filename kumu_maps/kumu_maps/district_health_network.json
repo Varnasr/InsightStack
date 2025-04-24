@@ -1,0 +1,34 @@
+{
+  "elements": [
+    {
+      "id": "PHC",
+      "label": "Primary Health Centre",
+      "type": "node",
+      "group": "health_system"
+    },
+    {
+      "id": "CHW",
+      "label": "Community Health Worker",
+      "type": "node",
+      "group": "frontline"
+    },
+    {
+      "id": "Beneficiary",
+      "label": "Pregnant Woman",
+      "type": "node",
+      "group": "community"
+    },
+    {
+      "id": "Supervises",
+      "source": "PHC",
+      "target": "CHW",
+      "type": "link"
+    },
+    {
+      "id": "Visits",
+      "source": "CHW",
+      "target": "Beneficiary",
+      "type": "link"
+    }
+  ]
+}

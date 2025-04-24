@@ -1,0 +1,35 @@
+{
+  "tags": [
+    {
+      "tag": "climate_heat",
+      "spans": [
+        [
+          50,
+          90
+        ],
+        [
+          220,
+          280
+        ]
+      ]
+    },
+    {
+      "tag": "community_response",
+      "spans": [
+        [
+          100,
+          160
+        ]
+      ]
+    },
+    {
+      "tag": "adaptation_strategies",
+      "spans": [
+        [
+          300,
+          380
+        ]
+      ]
+    }
+  ]
+}

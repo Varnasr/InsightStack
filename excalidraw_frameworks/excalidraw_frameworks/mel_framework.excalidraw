@@ -1,0 +1,69 @@
+{
+  "type": "excalidraw",
+  "version": 2,
+  "source": "insightstack",
+  "elements": [
+    {
+      "type": "rectangle",
+      "id": "1",
+      "x": 100,
+      "y": 100,
+      "width": 160,
+      "height": 50,
+      "angle": 0,
+      "text": "Inputs"
+    },
+    {
+      "type": "rectangle",
+      "id": "2",
+      "x": 300,
+      "y": 100,
+      "width": 160,
+      "height": 50,
+      "angle": 0,
+      "text": "Activities"
+    },
+    {
+      "type": "rectangle",
+      "id": "3",
+      "x": 500,
+      "y": 100,
+      "width": 160,
+      "height": 50,
+      "angle": 0,
+      "text": "Outputs"
+    },
+    {
+      "type": "arrow",
+      "id": "a1",
+      "points": [
+        [
+          260,
+          125
+        ],
+        [
+          300,
+          125
+        ]
+      ],
+      "startArrowhead": null,
+      "endArrowhead": "arrow"
+    },
+    {
+      "type": "arrow",
+      "id": "a2",
+      "points": [
+        [
+          460,
+          125
+        ],
+        [
+          500,
+          125
+        ]
+      ],
+      "startArrowhead": null,
+      "endArrowhead": "arrow"
+    }
+  ]
+}
