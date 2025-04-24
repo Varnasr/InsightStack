@@ -87,4 +87,11 @@ This repository is licensed under the [MIT License](./LICENSE). Use freely, adap
 
 ---
 
+## 📑 Changelog
+
+You can view all updates and commit-based changes in the [CHANGELOG.md](./CHANGELOG.md).
+
+This file is automatically updated via GitHub Actions.
+
+
 © 2025 Varna Sri Raman. Built for open knowledge, shared learning, and programmatic memory.
