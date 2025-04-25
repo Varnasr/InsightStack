@@ -1,0 +1,131 @@
+respondent_id,age,education_level,employment_type,weekly_hours,wages
+1,28,Graduate,Casual,25,8632
+2,39,Secondary,Self-employed,19,14082
+3,38,Secondary,Self-employed,58,12651
+4,23,Graduate,Regular,34,3014
+5,44,Primary,Self-employed,50,13079
+6,31,Primary,Regular,34,4322
+7,48,Secondary,Regular,33,3086
+8,40,Graduate,Casual,30,3654
+9,27,Secondary,Regular,18,6217
+10,34,Primary,Casual,52,13394
+11,21,Primary,Casual,30,10565
+12,38,Higher Secondary,Self-employed,25,3553
+13,31,Primary,Regular,30,11404
+14,37,Higher Secondary,Self-employed,58,3917
+15,49,Primary,Regular,12,13220
+16,44,Primary,Casual,30,5401
+17,44,Secondary,Self-employed,11,13149
+18,38,Primary,Casual,38,6213
+19,42,Graduate,Casual,12,14992
+20,40,Primary,Casual,44,10465
+21,47,Primary,Self-employed,20,7148
+22,41,Higher Secondary,Casual,44,8920
+23,27,Secondary,Casual,11,12864
+24,39,Primary,Self-employed,59,12442
+25,33,Secondary,Casual,25,7030
+26,31,Secondary,Regular,50,11874
+27,49,Secondary,Casual,29,3840
+28,21,Primary,Self-employed,28,13078
+29,49,Secondary,Self-employed,32,11214
+30,49,Secondary,Casual,18,13115
+31,19,Secondary,Casual,58,13188
+32,46,Higher Secondary,Casual,36,14086
+33,43,Primary,Casual,37,14244
+34,21,Primary,Casual,52,13686
+35,33,Secondary,Regular,26,7048
+36,45,Graduate,Casual,54,2726
+37,37,Graduate,Regular,22,9352
+38,39,Primary,Regular,22,2292
+39,19,Higher Secondary,Regular,41,8815
+40,49,Higher Secondary,Self-employed,43,7935
+41,36,Secondary,Regular,19,11951
+42,18,Primary,Casual,48,7934
+43,25,Higher Secondary,Casual,16,13201
+44,45,Secondary,Self-employed,32,13273
+45,22,Graduate,Casual,50,11597
+46,23,Graduate,Regular,27,8795
+47,21,Secondary,Regular,56,9211
+48,35,Secondary,Regular,57,6494
+49,37,Secondary,Casual,15,7646
+50,45,Primary,Self-employed,48,11155
+51,30,Higher Secondary,Self-employed,33,3735
+52,19,Primary,Casual,51,2972
+53,23,Graduate,Regular,32,7285
+54,23,Graduate,Self-employed,35,10513
+55,45,Graduate,Casual,59,12657
+56,47,Secondary,Regular,43,10396
+57,33,Secondary,Casual,12,6128
+58,22,Graduate,Casual,31,3280
+59,31,Secondary,Casual,12,4744
+60,19,Higher Secondary,Self-employed,38,14262
+61,39,Secondary,Self-employed,29,12469
+62,35,Primary,Casual,14,10885
+63,20,Secondary,Self-employed,54,2216
+64,37,Primary,Self-employed,28,9614
+65,19,Secondary,Self-employed,45,12211
+66,45,Secondary,Self-employed,33,13716
+67,36,Graduate,Regular,15,3959
+68,30,Graduate,Casual,33,5311
+69,49,Higher Secondary,Self-employed,52,11259
+70,18,Graduate,Casual,48,14970
+71,47,Higher Secondary,Regular,48,2244
+72,48,Primary,Casual,57,8922
+73,33,Higher Secondary,Casual,11,13799
+74,41,Primary,Casual,48,2982
+75,18,Graduate,Self-employed,27,6771
+76,37,Graduate,Self-employed,47,11852
+77,31,Graduate,Self-employed,12,12151
+78,49,Higher Secondary,Self-employed,53,7582
+79,47,Graduate,Self-employed,59,12772
+80,44,Higher Secondary,Regular,33,4080
+81,43,Secondary,Self-employed,36,12192
+82,40,Higher Secondary,Casual,52,8859
+83,19,Primary,Regular,54,2240
+84,31,Secondary,Self-employed,39,9569
+85,47,Higher Secondary,Self-employed,34,7479
+86,23,Higher Secondary,Regular,23,6182
+87,46,Graduate,Self-employed,59,5265
+88,49,Higher Secondary,Regular,13,12664
+89,23,Higher Secondary,Regular,42,9750
+90,48,Secondary,Casual,41,11288
+91,26,Primary,Casual,15,14865
+92,47,Secondary,Regular,27,5042
+93,41,Higher Secondary,Self-employed,26,2736
+94,25,Secondary,Casual,49,5354
+95,32,Primary,Regular,42,14923
+96,40,Primary,Regular,30,4071
+97,48,Secondary,Regular,46,13781
+98,41,Secondary,Casual,32,5896
+99,24,Secondary,Self-employed,11,4328
+100,48,Secondary,Casual,47,8204
+101,34,Secondary,Casual,15,12058
+102,41,Graduate,Regular,25,13475
+103,39,Primary,Casual,34,13958
+104,38,Primary,Regular,44,14853
+105,39,Primary,Self-employed,38,10840
+106,47,Higher Secondary,Self-employed,17,6307
+107,30,Graduate,Casual,35,6222
+108,18,Graduate,Regular,39,8407
+109,23,Primary,Regular,14,12281
+110,18,Higher Secondary,Self-employed,14,4775
+111,40,Secondary,Self-employed,37,3808
+112,21,Graduate,Regular,30,5512
+113,29,Higher Secondary,Regular,27,7995
+114,33,Secondary,Self-employed,46,4332
+115,25,Graduate,Regular,28,14530
+116,35,Primary,Regular,28,11173
+117,34,Higher Secondary,Regular,16,6358
+118,42,Graduate,Casual,47,14519
+119,29,Primary,Casual,31,13615
+120,36,Higher Secondary,Self-employed,24,2562
+121,20,Higher Secondary,Regular,45,5324
+122,28,Graduate,Self-employed,34,11476
+123,39,Higher Secondary,Regular,48,6130
+124,49,Secondary,Self-employed,21,10007
+125,44,Higher Secondary,Casual,11,6282
+126,25,Secondary,Regular,21,5570
+127,22,Primary,Regular,44,14665
+128,30,Graduate,Casual,49,10968
+129,18,Secondary,Regular,44,11454
+130,19,Primary,Casual,29,14370
