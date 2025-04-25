@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<vensim_model>
+  <variables>
+    <variable>
+      <name>New_Variable</name>
+      <equation>0</equation>
+      <units>units</units>
+      <comment>Insert a description of this variable</comment>
+    </variable>
+  </variables>
+  <flows>
+    <flow>
+      <source>New_Variable</source>
+      <destination>New_Variable</destination>
+      <equation>0</equation>
+      <comment>Flow logic here</comment>
+    </flow>
+  </flows>
+</vensim_model>

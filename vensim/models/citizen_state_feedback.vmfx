@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<vensim_model>
+  <variables>
+    <variable>
+      <name>Service_Access</name>
+      <equation>INIT(60)</equation>
+      <units>access index</units>
+    </variable>
+    <variable>
+      <name>Citizen_Trust</name>
+      <equation>INIT(50)</equation>
+      <units>trust index</units>
+    </variable>
+    <variable>
+      <name>Grievance_Redress</name>
+      <equation>10</equation>
+      <units>cases/day</units>
+    </variable>
+    <variable>
+      <name>Access_Improvement_Rate</name>
+      <equation>0.02 * Citizen_Trust</equation>
+    </variable>
+    <variable>
+      <name>Trust_Change_Rate</name>
+      <equation>0.015 * Service_Access - 0.01 * Grievance_Redress</equation>
+    </variable>
+    <variable>
+      <name>dService_Access/dt</name>
+      <equation>Access_Improvement_Rate</equation>
+    </variable>
+    <variable>
+      <name>dCitizen_Trust/dt</name>
+      <equation>Trust_Change_Rate</equation>
+    </variable>
+  </variables>
+  <flows>
+    <flow>
+      <source>Service_Access</source>
+      <destination>Service_Access</destination>
+      <equation>dService_Access/dt</equation>
+    </flow>
+    <flow>
+      <source>Citizen_Trust</source>
+      <destination>Citizen_Trust</destination>
+      <equation>dCitizen_Trust/dt</equation>
+    </flow>
+  </flows>
+</vensim_model>

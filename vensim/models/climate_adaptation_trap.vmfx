@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<vensim_model>
+  <variables>
+    <variable>
+      <name>Climate_Risk</name>
+      <equation>INIT(100)</equation>
+      <units>risk index</units>
+    </variable>
+    <variable>
+      <name>Adaptation_Effort</name>
+      <equation>0.1 * Investment</equation>
+      <units>risk reduction per day</units>
+    </variable>
+    <variable>
+      <name>Investment</name>
+      <equation>10</equation>
+      <units>currency units per day</units>
+    </variable>
+    <variable>
+      <name>Funding_Gap</name>
+      <equation>MAX(0, 20 - Investment)</equation>
+      <units>currency units</units>
+    </variable>
+    <variable>
+      <name>dClimate_Risk/dt</name>
+      <equation>- Adaptation_Effort + 0.5</equation>
+      <comment>Risk increases unless adaptation effort exceeds baseline pressure</comment>
+    </variable>
+    <variable>
+      <name>Donor_Confidence</name>
+      <equation>MAX(0, 1 - (Funding_Gap / 20))</equation>
+      <units>0 to 1</units>
+    </variable>
+    <variable>
+      <name>Adjusted_Investment</name>
+      <equation>Investment * Donor_Confidence</equation>
+    </variable>
+  </variables>
+  <flows>
+    <flow>
+      <source>Climate_Risk</source>
+      <destination>Climate_Risk</destination>
+      <equation>dClimate_Risk/dt</equation>
+    </flow>
+  </flows>
+</vensim_model>

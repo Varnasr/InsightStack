@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<vensim_model>
+  <variables>
+    <variable>
+      <name>Trust_in_Public_Health</name>
+      <equation>INIT(70)</equation>
+      <units>index</units>
+    </variable>
+    <variable>
+      <name>Misinformation_Spread</name>
+      <equation>1.2</equation>
+      <units>index</units>
+    </variable>
+    <variable>
+      <name>Community_Education</name>
+      <equation>15</equation>
+      <units>effort units/day</units>
+    </variable>
+    <variable>
+      <name>Trust_Erosion_Rate</name>
+      <equation>0.01 * Misinformation_Spread</equation>
+    </variable>
+    <variable>
+      <name>Trust_Recovery_Rate</name>
+      <equation>0.015 * Community_Education</equation>
+    </variable>
+    <variable>
+      <name>Vaccine_Uptake</name>
+      <equation>0.5 + 0.01 * Trust_in_Public_Health</equation>
+      <units>fraction</units>
+    </variable>
+    <variable>
+      <name>dTrust_in_Public_Health/dt</name>
+      <equation>Trust_Recovery_Rate - Trust_Erosion_Rate</equation>
+    </variable>
+  </variables>
+  <flows>
+    <flow>
+      <source>Trust_in_Public_Health</source>
+      <destination>Trust_in_Public_Health</destination>
+      <equation>dTrust_in_Public_Health/dt</equation>
+    </flow>
+  </flows>
+</vensim_model>

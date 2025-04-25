@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<vensim_model>
+  <variables>
+    <variable>
+      <name>Enrolled_Students</name>
+      <equation>INIT(500)</equation>
+      <units>students</units>
+      <comment>Number of students currently enrolled</comment>
+    </variable>
+    <variable>
+      <name>Dropout_Rate</name>
+      <equation>0.01 + 0.001 * Economic_Pressure</equation>
+      <units>fraction per day</units>
+    </variable>
+    <variable>
+      <name>Economic_Pressure</name>
+      <equation>50</equation>
+      <units>index</units>
+    </variable>
+    <variable>
+      <name>School_Quality</name>
+      <equation>1.2</equation>
+      <units>index</units>
+      <comment>Higher values mean better schooling experience</comment>
+    </variable>
+    <variable>
+      <name>Retention_Rate</name>
+      <equation>0.02 * School_Quality</equation>
+      <units>fraction per day</units>
+    </variable>
+    <variable>
+      <name>dEnrolled_Students/dt</name>
+      <equation>- Dropout_Rate * Enrolled_Students + Retention_Rate * (1000 - Enrolled_Students)</equation>
+      <comment>Net change in enrollment</comment>
+    </variable>
+  </variables>
+  <flows>
+    <flow>
+      <source>Enrolled_Students</source>
+      <destination>Enrolled_Students</destination>
+      <equation>dEnrolled_Students/dt</equation>
+    </flow>
+  </flows>
+</vensim_model>

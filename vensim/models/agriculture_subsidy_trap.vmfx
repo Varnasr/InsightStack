@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<vensim_model>
+  <variables>
+    <variable>
+      <name>Soil_Health</name>
+      <equation>INIT(100)</equation>
+      <units>soil index</units>
+      <comment>Quality of soil; higher is better</comment>
+    </variable>
+    <variable>
+      <name>Subsidy_Level</name>
+      <equation>1</equation>
+      <units>index</units>
+      <comment>Represents policy pressure to subsidize fertilizer</comment>
+    </variable>
+    <variable>
+      <name>Fertilizer_Use</name>
+      <equation>10 * Subsidy_Level</equation>
+      <units>units per day</units>
+    </variable>
+    <variable>
+      <name>Soil_Degradation_Rate</name>
+      <equation>0.01 * Fertilizer_Use</equation>
+      <units>index per day</units>
+    </variable>
+    <variable>
+      <name>Agricultural_Output</name>
+      <equation>Soil_Health * 1.5</equation>
+      <units>output units per day</units>
+    </variable>
+    <variable>
+      <name>dSoil_Health/dt</name>
+      <equation>- Soil_Degradation_Rate</equation>
+    </variable>
+    <variable>
+      <name>Subsidy_Response</name>
+      <equation>IF THEN ELSE(Agricultural_Output &lt; 100, 1.5, 1)</equation>
+      <comment>Government increases subsidy if output is low</comment>
+    </variable>
+  </variables>
+  <flows>
+    <flow>
+      <source>Soil_Health</source>
+      <destination>Soil_Health</destination>
+      <equation>dSoil_Health/dt</equation>
+    </flow>
+  </flows>
+</vensim_model>

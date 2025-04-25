@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<vensim_model>
+  <variables>
+    <variable>
+      <name>Rural_Workforce</name>
+      <equation>INIT(1000)</equation>
+      <units>people</units>
+      <comment>Population in rural labor force</comment>
+    </variable>
+    <variable>
+      <name>Urban_Attractiveness</name>
+      <equation>1.2</equation>
+      <units>index</units>
+      <comment>Relative attractiveness of urban jobs</comment>
+    </variable>
+    <variable>
+      <name>Migration_Rate</name>
+      <equation>0.01 * Urban_Attractiveness</equation>
+      <units>fraction per day</units>
+      <comment>Rate of rural to urban migration</comment>
+    </variable>
+    <variable>
+      <name>Remittance_Per_Person</name>
+      <equation>5</equation>
+      <units>currency units per day</units>
+    </variable>
+    <variable>
+      <name>Urban_Workers</name>
+      <equation>INIT(0)</equation>
+      <units>people</units>
+    </variable>
+    <variable>
+      <name>Daily_Remittances</name>
+      <equation>Remittance_Per_Person * Urban_Workers</equation>
+      <units>currency units per day</units>
+    </variable>
+    <variable>
+      <name>dRural_Workforce/dt</name>
+      <equation>- Migration_Rate * Rural_Workforce</equation>
+    </variable>
+    <variable>
+      <name>dUrban_Workers/dt</name>
+      <equation>Migration_Rate * Rural_Workforce</equation>
+    </variable>
+  </variables>
+  <flows>
+    <flow>
+      <source>Rural_Workforce</source>
+      <destination>Rural_Workforce</destination>
+      <equation>dRural_Workforce/dt</equation>
+    </flow>
+    <flow>
+      <source>Urban_Workers</source>
+      <destination>Urban_Workers</destination>
+      <equation>dUrban_Workers/dt</equation>
+    </flow>
+  </flows>
+</vensim_model>

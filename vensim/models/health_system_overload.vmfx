@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<vensim_model>
+  <variables>
+    <variable>
+      <name>Patient_Inflow</name>
+      <equation>100</equation>
+      <units>patients per day</units>
+      <comment>New patients entering the health system daily</comment>
+    </variable>
+    <variable>
+      <name>Staff_Capacity</name>
+      <equation>50</equation>
+      <units>patients per staff</units>
+      <comment>How many patients one staff member can handle daily</comment>
+    </variable>
+    <variable>
+      <name>Healthcare_Staff</name>
+      <equation>INIT(100)</equation>
+      <units>staff members</units>
+      <comment>Total available healthcare workers</comment>
+    </variable>
+    <variable>
+      <name>Staff_Burnout_Rate</name>
+      <equation>0.01 * Overload_Level</equation>
+      <units>fraction per day</units>
+      <comment>Fraction of staff leaving due to burnout</comment>
+    </variable>
+    <variable>
+      <name>Patient_Load</name>
+      <equation>Patient_Inflow</equation>
+      <units>patients</units>
+    </variable>
+    <variable>
+      <name>Overload_Level</name>
+      <equation>MAX(0, (Patient_Load / (Healthcare_Staff * Staff_Capacity)) - 1)</equation>
+      <units>dimensionless</units>
+      <comment>Overload ratio; 0 if within capacity, positive if overloaded</comment>
+    </variable>
+    <variable>
+      <name>dHealthcare_Staff/dt</name>
+      <equation>- Staff_Burnout_Rate * Healthcare_Staff</equation>
+      <comment>Change in healthcare staff due to burnout</comment>
+    </variable>
+    <variable>
+      <name>Recovery_Hiring</name>
+      <equation>IF THEN ELSE(Overload_Level &gt; 0.5, 5, 0)</equation>
+      <units>staff per day</units>
+      <comment>New staff hired if overload exceeds threshold</comment>
+    </variable>
+  </variables>
+  <flows>
+    <flow>
+      <source>Healthcare_Staff</source>
+      <destination>Healthcare_Staff</destination>
+      <equation>dHealthcare_Staff/dt + Recovery_Hiring</equation>
+      <comment>Net change in staff (burnout and recovery hiring)</comment>
+    </flow>
+  </flows>
+</vensim_model>
