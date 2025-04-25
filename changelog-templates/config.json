@@ -1,0 +1,7 @@
+{
+  "template": "## 📦 {{tag_name | default('Unreleased')}}\n{{changes}}\n",
+  "changeTemplate": "- {{commitMessage}} ({{author}})",
+  "noChangesTemplate": "- No significant changes found.",
+  "categories": [],
+  "sort": "ASC"
+}
