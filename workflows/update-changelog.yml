@@ -1,34 +1,28 @@
-name: Build Smart Changelog
+name: Auto Update CHANGELOG
 
 on:
   push:
-    tags:
-      - 'v*'
     branches:
       - main
-
-permissions:
-  contents: write
-  pull-requests: read
+  workflow_dispatch:
 
 jobs:
-  build_changelog:
+  update-changelog:
     runs-on: ubuntu-latest
-
     steps:
-      - name: 📦 Checkout
+      - name: Checkout Repository
         uses: actions/checkout@v4
 
-      - name: 🧠 Generate changelog from commit diffs or PRs
-        uses: mikepenz/release-changelog-builder-action@v4
+      - name: Generate CHANGELOG
+        uses: heinrichreimer/github-changelog-generator-action@v2.2
         with:
-          configuration: .github/changelog-templates/config.json
-          outputFile: CHANGELOG.md
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.GITHUB_TOKEN }}
+          output: CHANGELOG.md
 
-      - name: ✅ Commit updated CHANGELOG.md
-        uses: stefanzweifel/git-auto-commit-action@v5
-        with:
-          commit_message: "docs: auto-update CHANGELOG.md"
-          file_pattern: CHANGELOG.md
+      - name: Commit and Push CHANGELOG
+        run: |
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+          git add CHANGELOG.md
+          git commit -m "Auto-update CHANGELOG [skip ci]" || echo "No changes to commit"
+          git push
