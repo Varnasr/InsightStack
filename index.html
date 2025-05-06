@@ -1,53 +1,105 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>InsightStack</title>
-  <link rel="stylesheet" href="assets/css/style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
   <style>
-    header {
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+      background-color: #ffffff;
+      color: #222;
       margin: 0;
       padding: 0;
     }
-    header img {
-      display: block;
-      width: 100%;
+    header {
+      background: #e5f4f7;
+      padding: 1rem 2rem;
+    }
+    header h1 {
+      font-size: 2rem;
       margin: 0;
-      padding: 0;
+    }
+    main {
+      padding: 2rem;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+    .tile {
+      background-color: #f8f8f8;
+      padding: 1rem;
+      border-radius: 10px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    .tile a {
+      text-decoration: none;
+      color: #222;
+      font-weight: 500;
+    }
+    .tile a:hover {
+      color: #007acc;
+    }
+    footer {
+      text-align: center;
+      padding: 2rem;
+      font-size: 0.9rem;
+      background-color: #f0f0f0;
+      margin-top: 3rem;
+    }
+    img {
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      max-width: 1000px;
+      width: 100%;
+      margin: 1rem auto;
+      display: block;
     }
   </style>
 </head>
 <body>
+  <img src="./banner/insightstack_banner.png" alt="InsightStack Banner" />
 
-<header>
-  <img src="https://raw.githubusercontent.com/Varnasr/InsightStack/main/banner/insightstack_banner.png" alt="InsightStack banner">
-</header>
+  <header>
+    <h1>🧠 InsightStack</h1>
+    <p>A documentation-first knowledge repository for social impact research, MEL, and data tools.</p>
+  </header>
 
-<h1>Welcome to InsightStack</h1>
-<p><strong>InsightStack</strong> is a real-world documentation and knowledge repository for public interest work in India — created by <a href="https://on-web.link/varna">Varna Sri Raman</a>. It includes working calculators, KM standards, annotated MEL tools, and real research artefacts from health, education, climate, and gender systems.</p>
+  <main>
+    <h2>📁 Key Folders</h2>
+    <div class="grid">
+      <div class="tile"><a href="observable_notebooks/">📊 Observable Notebooks</a></div>
+      <div class="tile"><a href="open_data_editor/">📈 Open Data Editor</a></div>
+      <div class="tile"><a href="taguette_coding/">🔖 Taguette Coding</a></div>
+      <div class="tile"><a href="visual_ethnography_descript/">🎙️ Descript Visual Ethnography</a></div>
+      <div class="tile"><a href="kumu_maps/">🧭 Kumu Maps</a></div>
+      <div class="tile"><a href="stata_snippets/">📉 Stata Snippets</a></div>
+      <div class="tile"><a href="excel_visuals/">📊 Excel Visuals</a></div>
+      <div class="tile"><a href="powerbi_reports/">📊 Power BI Reports</a></div>
+      <div class="tile"><a href="spss_scripts/">📊 SPSS Scripts</a></div>
+      <div class="tile"><a href="flourish_charts/">📈 Flourish Charts</a></div>
+      <div class="tile"><a href="excalidraw_frameworks/">🖍️ Excalidraw Frameworks</a></div>
+      <div class="tile"><a href="survey_to_codebook/">🧾 Survey to Codebook</a></div>
+      <div class="tile"><a href="data_validation/">🧪 Data Validation</a></div>
+      <div class="tile"><a href="label_variables/">🏷️ Label Variables</a></div>
+      <div class="tile"><a href="replication/">🔁 Replication</a></div>
+      <div class="tile"><a href="vensim/">🔄 Vensim Models</a></div>
+    </div>
 
-<h2>📦 Key Folders</h2>
-<div class="folder-grid">
-  <div class="folder-tile"><strong>📝 writing_guides</strong><br> Notes on writing theory of change, briefs, memos</div>
-  <div class="folder-tile"><strong>📊 eval_docs</strong><br> MEL frameworks, logframes, indicators, documentation flows</div>
-  <div class="folder-tile"><strong>📎 annotated_research</strong><br> Annotated field notes and research frameworks</div>
-  <div class="folder-tile"><strong>🧠 learning_layers</strong><br> Tools for building reflection and learning into programs</div>
-  <div class="folder-tile"><strong>🧰 KM_tools</strong><br> SOPs, tagging conventions, file structuring protocols</div>
-  <div class="folder-tile"><strong>🧮 calculators</strong><br> Working HTML tools for district/block-level planning</div>
-</div>
+    <h2 style="margin-top:3rem;">📈 InsightStack Data Flow</h2>
+    <p>This visual shows how tools in this repository connect across the data pipeline:</p>
+    <img src="docs/data_flow_diagram.png" alt="InsightStack data flow diagram" />
 
-<h2>📚 How to Cite</h2>
-<p>
-Varna Sri Raman. <em>InsightStack: Knowledge Documentation Tools for Development Practice.</em><br>
-GitHub. <a href="https://github.com/Varnasr/InsightStack">https://github.com/Varnasr/InsightStack</a><br>
-DOI: <a href="https://doi.org/10.5281/zenodo.11019642">10.5281/zenodo.11019642</a>
-</p>
+    <h2 style="margin-top:3rem;">📑 Changelog</h2>
+    <p>This site uses GitHub Actions to auto-update the <a href="CHANGELOG.md">changelog file</a>.</p>
+  </main>
 
-<div class="footer">
-Made with ♥ by <a href="https://on-web.link/varna">Varna Sri Raman</a> · MIT License
-</div>
-
+  <footer>
+    <p>© 2025 Varna Sri Raman · Built for open knowledge 🧠</p>
+    <p>Made by Varna · Licensed under the <a href="LICENSE" target="_blank">MIT License</a>.</p>
+  </footer>
 </body>
 </html>
