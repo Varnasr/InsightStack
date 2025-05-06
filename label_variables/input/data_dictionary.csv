@@ -1,0 +1,5 @@
+variable,label
+id,Unique ID of respondent
+age,Age in completed years
+gender,Gender of respondent
+income,Monthly income in INR
