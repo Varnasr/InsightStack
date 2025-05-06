@@ -1,0 +1,3 @@
+- Vensim PLE (free)
+- Diagrams: Excalidraw and Draw.io
+- Compatible with InsightMaker, Stella
