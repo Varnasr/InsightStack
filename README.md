@@ -31,6 +31,15 @@ InsightStack is a documentation-first, logic-driven knowledge repository built f
 | [`flourish_charts/`](flourish_charts/) | Storytelling dashboards using Flourish embeds |
 | [`excalidraw_frameworks/`](excalidraw_frameworks/) | Hand-drawn MEL/system maps using Excalidraw |
 
+<!-- NEW: Added May 2025 -->
+| [`vensim/`](vensim/) | System dynamics models for health, education, and environment |
+| [`data_validation/`](data_validation/) | Scripts to check missing data, duplicates, invalid values |
+| [`survey_to_codebook/`](survey_to_codebook/) | Convert XLSForms to human-readable Markdown codebooks |
+| [`label_variables/`](label_variables/) | Apply variable labels using dictionaries in R, Python, Stata |
+| [`replication/`](replication/) | Simulated study for testing reproducibility of analysis |
+| [`docs/`](docs/) | Visual diagrams and data flow architecture |
+| [`KM_tools/`](KM_tools/) | SOPs and templates for building documentation systems |
+
 ## 🛠️ What It’s For
 
 This repo is for anyone working in:
@@ -48,6 +57,34 @@ This repo is for anyone working in:
 - Plug in your own data into calculators or adapt them to your setting
 - Use the SOPs in `KM_tools/` to create your own tagging systems, documentation trackers, and research logs
 - Contribute back via pull requests or suggestions
+
+---
+
+## 🗺️ Data Flow
+
+A typical workflow in InsightStack looks like this:
+
+1. Raw data is collected from XLSForms or CSV inputs  
+2. Validation scripts detect missing or invalid values  
+3. Variables are labeled for readability using lookup dictionaries  
+4. Data is analyzed using standard R/Python scripts  
+5. Results and tools are documented or packaged for replication
+
+📘 See [`data_flow.md`](./data_flow.md)  
+🖼️ View the [InsightStack Flow Diagram](./docs/InsightStack_data_flow_diagram_clean.png)
+
+---
+
+## 🧰 Tools Used
+
+InsightStack includes real, working scripts using:
+
+- **Python:** `pandas`, `statsmodels`, `pyreadstat`, Jupyter
+- **R:** `haven`, `labelled`, `dplyr`
+- **Stata & SPSS:** Labeling, validation, and transformation
+- **Other:** XLSForms, Markdown, Miro, Excalidraw, LaTeX
+
+📘 See [`tools_used.md`](./tools_used.md) for a full list
 
 ---
 
@@ -93,5 +130,6 @@ You can view all updates and commit-based changes in the [CHANGELOG.md](./CHANGE
 
 This file is automatically updated via GitHub Actions.
 
+---
 
 © 2025 Varna Sri Raman. Built for open knowledge, shared learning, and programmatic memory.
