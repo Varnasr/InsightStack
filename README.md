@@ -15,6 +15,7 @@ InsightStack is a documentation-first, logic-driven knowledge repository built f
 
 <!-- Paste TOC here -->
 
+
 ## 📁 What’s Inside
 
 | Folder | Description |
@@ -30,16 +31,13 @@ InsightStack is a documentation-first, logic-driven knowledge repository built f
 | [`spss_scripts/`](spss_scripts/) | `.sps` syntax for tabulations, recodes, and exports |
 | [`flourish_charts/`](flourish_charts/) | Storytelling dashboards using Flourish embeds |
 | [`excalidraw_frameworks/`](excalidraw_frameworks/) | Hand-drawn MEL/system maps using Excalidraw |
-
-<!-- NEW: Added May 2025 -->
-| [`vensim/`](vensim/) | System dynamics models for health, education, and environment |
-| [`data_validation/`](data_validation/) | Scripts to check missing data, duplicates, invalid values |
-| [`survey_to_codebook/`](survey_to_codebook/) | Convert XLSForms to human-readable Markdown codebooks |
-| [`label_variables/`](label_variables/) | Apply variable labels using dictionaries in R, Python, Stata |
-| [`replication/`](replication/) | Simulated study for testing reproducibility of analysis |
-| [`docs/`](docs/) | Visual diagrams and data flow architecture |
-| [`KM_tools/`](KM_tools/) | SOPs and templates for building documentation systems |
-
+| [`survey_to_codebook/`](survey_to_codebook/) | Convert XLSForms to Markdown codebooks automatically |
+| [`data_validation/`](data_validation/) | Scripts for missingness, duplicates, value range checks |
+| [`label_variables/`](label_variables/) | Label variables using dictionaries (R, Python, Stata) |
+| [`replication/`](replication/) | Reproducible statistical analyses using synthetic data |
+| [`vensim/`](vensim/) | System dynamics models for development sectors |
+| [`docs/`](docs/) | Architecture diagrams and visuals |
+| [`KM_tools/`](KM_tools/) | SOPs and templates for research documentation |
 ## 🛠️ What It’s For
 
 This repo is for anyone working in:
