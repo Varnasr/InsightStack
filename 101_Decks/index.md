@@ -1,8 +1,23 @@
-## InsightStack 101 Learning Series
+![ImpactMojo 101 Banner](docs/ImpactMojo_101_Banner.png)
 
-Please visit the repository folders for each deck.
+# 📚 ImpactMojo 101 Knowledge Series
+
+Welcome to the **ImpactMojo 101 Learning Series** — a repository of professionally curated, 60-slide teaching decks on core topics in development, equity, and justice.
+
+These decks are built for **real-world use**: classrooms, training programs, staff onboarding, field engagement, and public communication.
 
 ---
+
+## 🌟 Features
+
+- Regionally contextualized for India and South Asia
+- Rich examples and data from real development programs
+- Designed for learning, not just presentation
+- Fully open access (CC BY-NC-SA)
+
+---
+
+## 📁 Available Decks
 
 - [Development Economics 101](Development_Economics_101/)
 - [Climate Resilience 101](Climate_Resilience_101/)
@@ -32,3 +47,7 @@ Please visit the repository folders for each deck.
 - [Instructional Design 101](Instructional_Design_101/)
 - [Humanitarian vs Development 101](Humanitarian_vs_Development_101/)
 - [LDCs and Global Development 101](LDCs_and_Global_Development_101/)
+
+---
+
+© ImpactMojo / InsightStack
