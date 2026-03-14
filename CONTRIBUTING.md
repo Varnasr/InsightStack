@@ -1,53 +1,72 @@
+# Contributing to OpenStacks
 
-# 🤝 Contributing to InsightStack
+Thank you for your interest in contributing to [OpenStacks for Change](https://openstacks.dev). This guide applies to all repositories in the ecosystem.
 
-Thank you for your interest in contributing to **InsightStack** — a knowledge-first repository for structured documentation, tools, and templates in development research, MEL, and public systems work.
+## Who Can Contribute
 
-We welcome thoughtful and usable contributions from anyone interested in strengthening open access workflows and documentation.
+OpenStacks welcomes contributions from:
 
----
+- **Development practitioners** — Share tools, templates, and workflows from your own work (anonymised)
+- **Researchers and evaluators** — Contribute analysis scripts, methodologies, and replication files
+- **Data analysts and engineers** — Improve code quality, add tests, fix bugs
+- **Writers and editors** — Improve documentation, add use case guides, fix errors
+- **Students** — Practice with real-world development data and contribute improvements
 
-## 📁 Project Structure
+## How to Contribute
 
-This repository includes:
-- `learning_layers/` — concept notes, methodologies, and frameworks.
-- `KM_tools/` — templates, SOPs, tagging structures for knowledge systems.
-- `calculators/` — reusable planning and estimation tools.
-- `README.md`, `ROADMAP.md`, and other project metadata.
+### Reporting Issues
 
----
+- Use the repository's **Issues** tab to report bugs, suggest features, or ask questions
+- Check existing issues first to avoid duplicates
+- Use issue templates where available
 
-## 🧪 How to Contribute
+### Submitting Changes
 
-### 🧷 1. Fixes and Improvements
-- Typos, broken links, doc clean-ups: just open a pull request.
-- Feel free to suggest better structure, phrasing, or organization.
+1. **Fork** the repository
+2. **Create a branch** for your change (`git checkout -b feature/your-feature-name`)
+3. **Make your changes** with clear, descriptive commit messages
+4. **Test your changes** — ensure scripts run and notebooks execute without errors
+5. **Submit a pull request** with a clear description of what you changed and why
 
-### 📦 2. Add a Tool or Template
-- Submit new `.md`, `.xlsx`, `.qmd`, or `.py` files.
-- Ensure files are:
-  - **Fully working** (no placeholders)
-  - **Well-documented** with comments or markdown
-  - **Relevant** to knowledge systems, evaluation, or development research
+### What Makes a Good Contribution
 
-### 🧮 3. Add Calculators or Methods
-- Include:
-  - A short `README.md` in the subfolder
-  - A dummy/sample input file (if needed)
-  - Notes on assumptions and logic
+- **Self-contained** — Scripts should work independently with sample data
+- **Documented** — Include comments, a header description, and usage instructions
+- **Anonymised** — Never include real participant data, names, or identifying information
+- **Reproducible** — Include sample data or clear instructions for obtaining test data
+- **Tested** — Verify that your code runs without errors
 
----
+## Contribution Ideas by Stack
 
-## 🚥 Code of Conduct
+| Stack | Good Contributions |
+|-------|-------------------|
+| **InsightStack** | MEL calculators, Stata/SPSS scripts, research templates |
+| **FieldStack** | R notebooks, survey tools, evaluation frameworks |
+| **EquityStack** | Python scripts, Jupyter notebooks, data workflows |
+| **SignalStack** | Research tool recommendations, method spotlights |
+| **RootStack** | Database schemas, seed data, SQL queries |
+| **BridgeStack** | FastAPI endpoints, data models, API tests |
+| **ViewStack** | Frontend components, chart templates, dashboard designs |
+| **PolicyStack** | Policy data, budget analysis scripts, government data scrapers |
 
-We follow a simple rule: be respectful, kind, and collaborative.
+## Code Style
 
----
+- **Python:** Follow PEP 8. Use descriptive variable names.
+- **R:** Follow the tidyverse style guide. Use snake_case.
+- **Stata:** Use clear variable labels and value labels.
+- **Markdown:** Use ATX-style headers (`#`). Keep lines under 120 characters.
 
-## 💌 Contact
+## Data Standards
 
-For substantial suggestions, reach out to [varna.sr@gmail.com](mailto:varna.sr@gmail.com).
+- Use **CSV** for tabular data (UTF-8 encoding)
+- Include a **data dictionary** or codebook for any new datasets
+- **Never commit** real participant data, credentials, or API keys
+- Use **sample_data/** directories for test datasets
 
----
+## Questions?
 
-_InsightStack is maintained as a public-good repository. Contributions should align with principles of open knowledge, reproducibility, and inclusion._
+Open an issue in the relevant repository or email varna.sr@gmail.com.
+
+## Code of Conduct
+
+All contributors are expected to follow our [Code of Conduct](CODE_OF_CONDUCT.md).

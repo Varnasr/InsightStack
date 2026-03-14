@@ -1,133 +1,103 @@
-![InsightStack Banner](./banner/insightstack_banner.png)
+# InsightStack
 
-# 🧠 InsightStack
+**MEL tools, calculators, and research documentation for development work.**
 
-**InsightStack is a personal response to a recurring problem:**  
-in development work, we talk about knowledge — but rarely structure it.  
-Reports are scattered, templates are recreated from scratch, and institutional memory is fragile.  
-This repository is my attempt to change that.
-
-InsightStack is a documentation-first, logic-driven knowledge repository built from years of work across research, evaluation, program design, and policy strategy. It brings together tools, templates, and methods that help answer one core question:
-
-🧩 **How do we build systems that learn, instead of start over every time?**
-
----
-
-<!-- Paste TOC here -->
-
-
-## 📁 What’s Inside
-
-| Folder | Description |
-|--------|-------------|
-| [`observable_notebooks/`](observable_notebooks/) | Interactive data storytelling and dashboards using Observable |
-| [`open_data_editor/`](open_data_editor/) | Drag-and-drop charting with RawGraphs, Datawrapper, and Open Data Editor |
-| [`taguette_coding/`](taguette_coding/) | Qualitative coding projects for FGDs and transcripts |
-| [`visual_ethnography_descript/`](visual_ethnography_descript/) | Narrative editing workflows using Descript |
-| [`kumu_maps/`](kumu_maps/) | Systems maps and network diagrams for MEL planning |
-| [`stata_snippets/`](stata_snippets/) | `.do` scripts for survey weights, DiD, and equity graphs |
-| [`excel_visuals/`](excel_visuals/) | Gantt, waterfall, bullet charts for MEL reporting |
-| [`powerbi_reports/`](powerbi_reports/) | Example dashboard `.pbix` file and visualization |
-| [`spss_scripts/`](spss_scripts/) | `.sps` syntax for tabulations, recodes, and exports |
-| [`flourish_charts/`](flourish_charts/) | Storytelling dashboards using Flourish embeds |
-| [`excalidraw_frameworks/`](excalidraw_frameworks/) | Hand-drawn MEL/system maps using Excalidraw |
-| [`survey_to_codebook/`](survey_to_codebook/) | Convert XLSForms to Markdown codebooks automatically |
-| [`data_validation/`](data_validation/) | Scripts for missingness, duplicates, value range checks |
-| [`label_variables/`](label_variables/) | Label variables using dictionaries (R, Python, Stata) |
-| [`replication/`](replication/) | Reproducible statistical analyses using synthetic data |
-| [`vensim/`](vensim/) | System dynamics models for development sectors |
-| [`docs/`](docs/) | Architecture diagrams and visuals |
-| [`KM_tools/`](KM_tools/) | SOPs and templates for research documentation |
-## 🛠️ What It’s For
-
-This repo is for anyone working in:
-- Public health, climate, education, or WEE programs in South Asia
-- MEL teams building documentation systems that go beyond Excel trackers
-- Researchers and analysts writing reports that need to live longer than a funding cycle
-- Program leads tired of reinventing logic models and tagging templates
-
----
-
-## 🧭 How to Use
-
-- Clone or download the repository
-- Explore individual folders — everything is open, documented, and editable
-- Plug in your own data into calculators or adapt them to your setting
-- Use the SOPs in `KM_tools/` to create your own tagging systems, documentation trackers, and research logs
-- Contribute back via pull requests or suggestions
-
----
-
-## 🗺️ Data Flow
-
-A typical workflow in InsightStack looks like this:
-
-1. Raw data is collected from XLSForms or CSV inputs  
-2. Validation scripts detect missing or invalid values  
-3. Variables are labeled for readability using lookup dictionaries  
-4. Data is analyzed using standard R/Python scripts  
-5. Results and tools are documented or packaged for replication
-
-📘 See [`data_flow.md`](./data_flow.md)  
-🖼️ View the [InsightStack Flow Diagram](./docs/InsightStack_data_flow_diagram_clean.png)
-
----
-
-## 🧰 Tools Used
-
-InsightStack includes real, working scripts using:
-
-- **Python:** `pandas`, `statsmodels`, `pyreadstat`, Jupyter
-- **R:** `haven`, `labelled`, `dplyr`
-- **Stata & SPSS:** Labeling, validation, and transformation
-- **Other:** XLSForms, Markdown, Miro, Excalidraw, LaTeX
-
-📘 See [`tools_used.md`](./tools_used.md) for a full list
-
----
-
-## 📘 Citation
-
-If you use **InsightStack** in your work, please cite it as:
-
-> Varna Sri Raman. (2025). *InsightStack: Knowledge Documentation for Development Research* [Data & Tools]. Zenodo. [https://doi.org/10.5281/zenodo.15245182](https://doi.org/10.5281/zenodo.15245182)
-
----
-
-## 📊 Repository Status & Metadata
-
-[![License: MIT](https://img.shields.io/badge/License-MIT-blue?label=license)](LICENSE)  
+[![Part of OpenStacks](https://img.shields.io/badge/Part%20of-OpenStacks-blue)](https://openstacks.dev)
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.15245182.svg)](https://doi.org/10.5281/zenodo.15245182)
-<!-- Paste export-to-bibtex and ORCID badges here -->
+
+> In development work, we talk about knowledge — but rarely structure it. InsightStack organises the tools, templates, and workflows that make research, evaluation, and program design actually work.
 
 ---
 
-## 🧠 Related Repositories
+## What This Is
 
-- 🔬 [EquityStack](https://github.com/Varnasr/EquityStack): Modular Python workflows for public health, WEE, MEL, and education data analysis  
-- 📊 [FieldStack](https://github.com/Varnasr/FieldStack): Applied R templates and calculators for social sector research and dashboard-ready outputs  
+InsightStack is a collection of practical scripts, templates, and tools for **monitoring, evaluation, and learning (MEL)** work in the development sector. It covers research documentation, data validation, econometrics, qualitative coding, system dynamics modelling, and visual storytelling.
+
+This is the **knowledge systems layer** of [OpenStacks for Change](https://openstacks.dev) — an open ecosystem of tools for public interest research and evaluation.
+
+## What's Inside
+
+| Directory | What It Contains | Language |
+|-----------|-----------------|----------|
+| `calculators/` | MEL calculators (sample size, power analysis, cost-effectiveness) | Stata, Python |
+| `stata_snippets/` | Reusable Stata code for common analysis tasks | Stata |
+| `spss_scripts/` | SPSS syntax for survey analysis | SPSS |
+| `econometrics/` | Regression, DiD, RDD, and causal inference templates | Stata, R |
+| `data_validation/` | Data cleaning and validation workflows | Python |
+| `label_variables/` | Variable labelling and codebook generation | Stata |
+| `survey_to_codebook/` | Survey instrument to codebook conversion tools | Python |
+| `observable_notebooks/` | Interactive Observable notebooks for data exploration | JavaScript |
+| `excalidraw_frameworks/` | Visual frameworks and diagrams for program design | Excalidraw |
+| `miro/` | Miro board templates for participatory analysis | Miro |
+| `flourish_charts/` | Chart templates for Flourish data visualisation | JSON |
+| `powerbi_reports/` | Power BI report templates | PBIX |
+| `kumu_maps/` | Network and systems mapping templates | Kumu |
+| `vensim/` | System dynamics models | Vensim |
+| `taguette_coding/` | Qualitative coding workflows | Taguette |
+| `visual_ethnography_descript/` | Ethnographic documentation tools | Descript |
+| `latex/` | LaTeX templates for research reports | TeX |
+| `writing_guides/` | Style guides and writing templates | Markdown |
+| `annotated_research/` | Annotated bibliography and research notes | Markdown |
+| `learning_layers/` | Learning design frameworks | Markdown |
+| `learning_library/` | Curated learning resources | Markdown |
+| `replication/` | Replication files for published analysis | Various |
+| `sample_data/` | Practice datasets for testing workflows | CSV |
+| `tests/` | Test scripts for validation | Various |
+| `workflows/` | End-to-end analysis workflow guides | Markdown |
+| `docs/` | Additional documentation | Markdown |
+
+## Getting Started
+
+1. **Browse by need** — Each directory is self-contained. Pick the tool that matches your task.
+2. **Check the sample data** — Use `sample_data/` to test scripts before using your own data.
+3. **Read the workflows** — `workflows/` contains step-by-step guides that tie multiple tools together.
+
+### Prerequisites
+
+Different tools require different software:
+- **Stata 15+** for Stata scripts
+- **Python 3.8+** with pandas, statsmodels for Python scripts
+- **R 4.0+** with tidyverse for R scripts
+- **Observable** account for notebooks (free tier works)
+- **Flourish**, **Miro**, **Kumu** accounts for visual tools (free tiers available)
+
+## How It Connects
+
+InsightStack is one of several stacks in the [OpenStacks](https://openstacks.dev) ecosystem:
+
+| Stack | Focus | Link |
+|-------|-------|------|
+| **InsightStack** (this repo) | MEL tools, calculators, documentation | You are here |
+| [FieldStack](https://github.com/Varnasr/FieldStack) | R notebooks for fieldwork & evaluation | Applied data work |
+| [EquityStack](https://github.com/Varnasr/EquityStack) | Python workflows for development data | Data pipelines |
+| [SignalStack](https://github.com/Varnasr/SignalStack) | Research Rundown newsletter archive | Knowledge curation |
+
+## Contributing
+
+Contributions welcome — especially from practitioners who use these tools in real fieldwork. See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
+
+Useful contributions include:
+- New calculator templates (sample size, power, cost-effectiveness)
+- Stata/R/Python scripts for common MEL tasks
+- Annotated research examples
+- Workflow documentation from your own projects (anonymised)
+
+## Citation
+
+```bibtex
+@software{insightstack,
+  author = {Sri Raman, Varna},
+  title = {InsightStack: MEL Tools for Development Work},
+  url = {https://github.com/Varnasr/InsightStack},
+  doi = {10.5281/zenodo.15245182}
+}
+```
+
+## License
+
+MIT — free to use, modify, and share. See [LICENSE](LICENSE).
 
 ---
 
-## 💬 Contact
-
-Want to contribute or adapt it for your own org?  
-Drop a message via GitHub issues or email me: [varna.sr@gmail.com](mailto:varna.sr@gmail.com)
-
----
-
-### 📄 License
-
-This repository is licensed under the [MIT License](./LICENSE). Use freely, adapt creatively, credit generously.
-
----
-
-## 📑 Changelog
-
-You can view all updates and commit-based changes in the [CHANGELOG.md](./CHANGELOG.md).
-
-This file is automatically updated via GitHub Actions.
-
----
-
-© 2025 Varna Sri Raman. Built for open knowledge, shared learning, and programmatic memory.
+**Created by [Varna Sri Raman](https://github.com/Varnasr)** — Development Economist & Social Researcher
