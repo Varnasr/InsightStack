@@ -1,1 +1,0 @@
-Simulated content for wolfram_alpha_prompt.txt
