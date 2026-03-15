@@ -4,6 +4,22 @@ All notable changes to InsightStack are documented here.
 
 ---
 
+## [v1.3.0] - 2025-04-28
+
+### Added
+- `econometrics/` module fully built with 7 implementations:
+  - `difference_in_differences.py` — DiD estimation with parallel trends test, covariate controls, and visualization
+  - `propensity_score_matching.py` — PSM with nearest-neighbor matching, balance assessment, and ATT estimation
+  - `regression_discontinuity.py` — Sharp RDD with bandwidth selection, McCrary density test, and visualization
+  - `instrumental_variables.py` — 2SLS estimation with first-stage F-test diagnostics
+  - `sensitivity_analysis.py` — Rosenbaum bounds, placebo tests, permutation inference
+  - `did_analysis.R` — DiD in R with event study plot using ggplot2
+  - `psm_analysis.R` — PSM in R using MatchIt package with balance diagnostics
+- `econometrics/sample_program_data.csv` — 20-row simulated program evaluation dataset
+
+### Improved
+- README updated: econometrics module status changed from Planned to Ready
+
 ## [v1.2.0] - 2025-04-24
 
 ### Added

@@ -30,7 +30,7 @@ This is the **knowledge systems layer** of [OpenStacks for Change](https://opens
 | `replication/` | Replication template with parallel Python and R implementations | Python, R | Ready |
 | `label_variables/` | Variable labelling and codebook generation | Stata | Ready |
 | `survey_to_codebook/` | Survey instrument to codebook conversion | Python | Ready |
-| `econometrics/` | Causal inference and advanced methods (DiD, PSM, IV, RDD) | — | Planned |
+| `econometrics/` | Causal inference: DiD, PSM, IV/2SLS, RDD, sensitivity analysis — with Python, R, and sample data | Python, R | Ready |
 
 ### Visual and Interactive Tools
 

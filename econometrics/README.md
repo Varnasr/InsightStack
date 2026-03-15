@@ -1,17 +1,35 @@
 # Econometrics
 
-Planned: regression, causal inference, and advanced methods for development research.
+Causal inference and regression methods for development research, implemented in Python and R.
 
-This directory will contain implementations of:
+## Contents
 
-- **Treatment effects** estimation (DiD, propensity score matching, IV)
-- **Regression discontinuity** designs
-- **Sensitivity analysis** for causal claims
-- **Endogeneity correction** methods
-- **Partial correlations** and mediation analysis
+| Script | Method | Language |
+|--------|--------|----------|
+| `difference_in_differences.py` | DiD with parallel trends test | Python |
+| `propensity_score_matching.py` | PSM with nearest-neighbor and caliper matching | Python |
+| `regression_discontinuity.py` | Sharp RDD with bandwidth selection | Python |
+| `instrumental_variables.py` | 2SLS estimation with diagnostics | Python |
+| `sensitivity_analysis.py` | Rosenbaum bounds for causal claims | Python |
+| `did_analysis.R` | DiD with event study plot | R |
+| `psm_analysis.R` | PSM using MatchIt package | R |
 
-Scripts will be provided in Python (statsmodels), R, and Stata.
+## Sample Data
 
-**Status:** Not yet implemented. Contributions welcome — see [CONTRIBUTING.md](../CONTRIBUTING.md).
+`sample_program_data.csv` contains simulated data for a development program evaluation:
+- 500 observations (250 treatment, 250 control)
+- Pre/post periods with outcome, covariates, and treatment assignment
+- Includes a running variable for RDD examples
 
-For working causal inference tools in Stata, see the impact evaluation scripts in `stata_snippets/stata_impact_evaluation/`.
+## Usage
+
+```bash
+# Python
+pip install pandas numpy statsmodels scipy matplotlib
+python difference_in_differences.py
+
+# R
+Rscript did_analysis.R
+```
+
+For Stata implementations, see `stata_snippets/stata_impact_evaluation/`.
