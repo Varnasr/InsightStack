@@ -12,76 +12,87 @@
 
 ## What This Is
 
-InsightStack is a collection of practical scripts, templates, and tools for **monitoring, evaluation, and learning (MEL)** work in the development sector. It covers research documentation, data validation, econometrics, qualitative coding, system dynamics modelling, and visual storytelling.
+InsightStack is a collection of practical scripts, templates, and tools for **monitoring, evaluation, and learning (MEL)** work in the development sector. It covers data validation, survey analysis, system dynamics modelling, network analysis, qualitative coding, and visual storytelling.
 
 This is the **knowledge systems layer** of [OpenStacks for Change](https://openstacks.dev) — an open ecosystem of tools for public interest research and evaluation.
 
 ## What's Inside
 
-| Directory | What It Contains | Language |
-|-----------|-----------------|----------|
-| `calculators/` | MEL calculators (sample size, power analysis, cost-effectiveness) | Stata, Python |
-| `stata_snippets/` | Reusable Stata code for common analysis tasks | Stata |
-| `spss_scripts/` | SPSS syntax for survey analysis | SPSS |
-| `econometrics/` | Regression, DiD, RDD, and causal inference templates | Stata, R |
-| `data_validation/` | Data cleaning and validation workflows | Python |
-| `label_variables/` | Variable labelling and codebook generation | Stata |
-| `survey_to_codebook/` | Survey instrument to codebook conversion tools | Python |
-| `observable_notebooks/` | Interactive Observable notebooks for data exploration | JavaScript |
-| `excalidraw_frameworks/` | Visual frameworks and diagrams for program design | Excalidraw |
-| `miro/` | Miro board templates for participatory analysis | Miro |
-| `flourish_charts/` | Chart templates for Flourish data visualisation | JSON |
-| `powerbi_reports/` | Power BI report templates | PBIX |
-| `kumu_maps/` | Network and systems mapping templates | Kumu |
-| `vensim/` | System dynamics models | Vensim |
-| `taguette_coding/` | Qualitative coding workflows | Taguette |
-| `visual_ethnography_descript/` | Ethnographic documentation tools | Descript |
-| `latex/` | LaTeX templates for research reports | TeX |
-| `writing_guides/` | Style guides and writing templates | Markdown |
-| `annotated_research/` | Annotated bibliography and research notes | Markdown |
-| `learning_layers/` | Learning design frameworks | Markdown |
-| `learning_library/` | Curated learning resources | Markdown |
-| `replication/` | Replication files for published analysis | Various |
-| `sample_data/` | Practice datasets for testing workflows | CSV |
-| `tests/` | Test scripts for validation | Various |
-| `workflows/` | End-to-end analysis workflow guides | Markdown |
-| `docs/` | Additional documentation | Markdown |
+### Analysis Tools
+
+| Directory | What It Does | Language | Status |
+|-----------|-------------|----------|--------|
+| `calculators/` | District-level calculators for health, education, finance, environment, and population | HTML, JavaScript | Ready |
+| `data_validation/` | Data cleaning and validation workflows with intentionally messy test data | Python, R, Stata | Ready |
+| `stata_snippets/` | Reusable Stata code: data management, graphs, regression, impact evaluation, surveys | Stata | Ready |
+| `spss_scripts/` | Survey analysis syntax: cleaning, regression, missing data, frequencies | SPSS | Ready |
+| `network_effects_sni/` | Peer effects estimation, centrality analysis, diffusion modelling for SHG networks | Python | Ready |
+| `replication/` | Replication template with parallel Python and R implementations | Python, R | Ready |
+| `label_variables/` | Variable labelling and codebook generation | Stata | Ready |
+| `survey_to_codebook/` | Survey instrument to codebook conversion | Python | Ready |
+| `econometrics/` | Causal inference and advanced methods (DiD, PSM, IV, RDD) | — | Planned |
+
+### Visual and Interactive Tools
+
+| Directory | What It Does | Tool |
+|-----------|-------------|------|
+| `vensim/` | 8 system dynamics models (health, agriculture, climate, migration, education) | Vensim |
+| `observable_notebooks/` | Interactive district vulnerability dashboard | Observable |
+| `excalidraw_frameworks/` | MEL framework and ecosystem map diagrams | Excalidraw |
+| `flourish_charts/` | Data visualisation templates | Flourish |
+| `miro/` | Participatory analysis board templates | Miro |
+| `kumu_maps/` | Network and systems mapping | Kumu |
+| `powerbi_reports/` | Report templates | Power BI |
+| `excel_visuals/` | Excel visualisation templates | Excel |
+
+### Knowledge and Documentation
+
+| Directory | What It Contains |
+|-----------|-----------------|
+| `learning_library/` | Curated PDFs across 10 categories: programming, data science, research methods, AI tools, MLE resources |
+| `writing_guides/` | Style guides and writing templates |
+| `annotated_research/` | Annotated bibliography and research notes |
+| `learning_layers/` | Learning design frameworks |
+| `taguette_coding/` | Qualitative coding workflows |
+| `visual_ethnography_descript/` | Ethnographic documentation tools |
+| `latex/` | LaTeX templates for research reports |
+| `workflows/` | End-to-end analysis workflow guides |
 
 ## Getting Started
 
 1. **Browse by need** — Each directory is self-contained. Pick the tool that matches your task.
-2. **Check the sample data** — Use `sample_data/` to test scripts before using your own data.
-3. **Read the workflows** — `workflows/` contains step-by-step guides that tie multiple tools together.
+2. **Check the sample data** — Use `sample_data/` and the test data in `data_validation/` to try scripts.
+3. **Read the workflows** — `workflows/` ties multiple tools together into end-to-end processes.
 
 ### Prerequisites
 
 Different tools require different software:
-- **Stata 15+** for Stata scripts
-- **Python 3.8+** with pandas, statsmodels for Python scripts
+- **Stata 15+** for Stata scripts and snippets
+- **Python 3.8+** with pandas, statsmodels, networkx for Python scripts
 - **R 4.0+** with tidyverse for R scripts
-- **Observable** account for notebooks (free tier works)
-- **Flourish**, **Miro**, **Kumu** accounts for visual tools (free tiers available)
+- **SPSS** for survey analysis syntax
+- **Observable**, **Flourish**, **Miro**, **Kumu** accounts for visual tools (free tiers available)
 
 ## How It Connects
 
 InsightStack is one of several stacks in the [OpenStacks](https://openstacks.dev) ecosystem:
 
-| Stack | Focus | Link |
-|-------|-------|------|
-| **InsightStack** (this repo) | MEL tools, calculators, documentation | You are here |
-| [FieldStack](https://github.com/Varnasr/FieldStack) | R notebooks for fieldwork & evaluation | Applied data work |
-| [EquityStack](https://github.com/Varnasr/EquityStack) | Python workflows for development data | Data pipelines |
-| [SignalStack](https://github.com/Varnasr/SignalStack) | Research Rundown newsletter archive | Knowledge curation |
+| Stack | Focus |
+|-------|-------|
+| **InsightStack** (this repo) | MEL tools, calculators, documentation |
+| [FieldStack](https://github.com/Varnasr/FieldStack) | R notebooks for fieldwork and evaluation |
+| [EquityStack](https://github.com/Varnasr/EquityStack) | Python workflows for development data |
+| [SignalStack](https://github.com/Varnasr/SignalStack) | Research Rundown newsletter archive |
 
 ## Contributing
 
 Contributions welcome — especially from practitioners who use these tools in real fieldwork. See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
 
-Useful contributions include:
-- New calculator templates (sample size, power, cost-effectiveness)
-- Stata/R/Python scripts for common MEL tasks
-- Annotated research examples
-- Workflow documentation from your own projects (anonymised)
+High-impact areas:
+- **Econometrics** — causal inference implementations (DiD, PSM, IV, RDD) in Python, R, or Stata
+- **Calculators** — new district-level planning tools
+- **Stata/SPSS scripts** — analysis templates for common MEL tasks
+- **Sample data** — synthetic datasets for testing
 
 ## Citation
 
@@ -100,4 +111,4 @@ MIT — free to use, modify, and share. See [LICENSE](LICENSE).
 
 ---
 
-**Created by [Varna Sri Raman](https://github.com/Varnasr)** — Development Economist & Social Researcher
+Part of [OpenStacks for Change](https://openstacks.dev). Created by [Varna Sri Raman](https://on-web.link/varna).

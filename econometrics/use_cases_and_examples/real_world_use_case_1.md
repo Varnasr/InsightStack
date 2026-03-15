@@ -1,1 +1,0 @@
-Simulated content for real_world_use_case_1.md

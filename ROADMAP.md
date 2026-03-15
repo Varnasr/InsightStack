@@ -1,47 +1,49 @@
+# InsightStack Roadmap
 
-# 🛣️ InsightStack: ROADMAP (2025)
-
-InsightStack is designed to support **documentation-first knowledge systems** across evaluation, development programming, and institutional learning.
-
-This roadmap lays out our planned enhancements for 2025 and beyond.
+Current development priorities and planned work.
 
 ---
 
-## ✅ Phase 1: Foundation Setup *(Complete or In Progress)*
-- [x] Created initial folder structure for `calculators/`, `KM_tools/`, `learning_layers/`
-- [x] Developed README.md with repo purpose and related links
-- [x] Added first sample files and templates
-- [x] Set up GitHub Pages site for repo navigation
-- [ ] Add footer, badges, and visuals for improved presentation
+## Phase 1: Foundation — Complete
+
+- [x] Directory structure for calculators, KM tools, learning layers, and field tools
+- [x] README with ecosystem links and badges
+- [x] Sample files, templates, and curated learning library
+- [x] Zenodo DOI registration (10.5281/zenodo.15245182)
+- [x] GitHub Pages site
+
+## Phase 2: Content Expansion — In Progress
+
+- [x] Observable notebooks, Taguette coding, Open Data Editor, and other field tools
+- [x] SPSS scripts for survey analysis (14 syntax files)
+- [x] Vensim system dynamics models (8 models)
+- [x] Network effects and peer analysis tools
+- [x] Data validation scripts (Python, R, Stata)
+- [ ] Complete remaining calculators (block-level development, population projection, environmental change)
+- [ ] Add worked examples under learning_layers/ with diagrams
+- [ ] Upload full KM tools documentation (SOPs, tagging taxonomies)
+
+## Phase 3: Econometrics and Causal Inference — Planned
+
+- [ ] Implement treatment effects estimation (DiD, PSM, IV) in Python, R, and Stata
+- [ ] Regression discontinuity designs
+- [ ] Sensitivity analysis for causal claims
+- [ ] Endogeneity correction methods
+- [ ] Connect with Stata impact evaluation snippets already in the repo
+
+## Phase 4: Testing and CI
+
+- [ ] Expand synthetic datasets for all calculators
+- [ ] Reproducibility checks across Stata, Python, and R scripts
+- [ ] Notebook rendering workflows (Quarto, Observable)
+- [ ] CI checks for script execution
+
+## Phase 5: Community
+
+- [ ] Blog post on building open knowledge repositories
+- [ ] Invite contributions from development researchers
+- [ ] Cross-link workflows with FieldStack and EquityStack
 
 ---
 
-## 🔄 Phase 2: Content Expansion (Q2 2025)
-
-- [x] Added `observable_notebooks/`, `taguette_coding/`, `open_data_editor/`, and other documentation-first field tools
-
-- [ ] Complete all calculators in:
-  - `block_level_development/`
-  - `population_projection/`
-  - `environmental_change/`
-- [ ] Add 2–3 worked examples under `learning_layers/` with diagrams
-- [ ] Upload full `KM_tools/` documentation set (SOPs, tagging taxonomies)
-- [ ] Add at least one Markdown-based tutorial on knowledge system design
-
----
-
-## 🧪 Phase 3: Interactivity & Testing (Q3 2025)
-- [ ] Add dummy data + validation tests for calculators
-- [ ] Introduce a `tests/` folder with reproducibility checks
-- [ ] Optional: integrate markdown or notebook rendering workflows
-
----
-
-## 🌐 Phase 4: External Engagement (Late 2025)
-- [ ] Add Zenodo registration + citation badge
-- [ ] Prepare a blog post or note on “Building Open Knowledge Repos”
-- [ ] Invite contributions from other researchers
-
----
-
-This roadmap will evolve. For suggestions, open an issue or email [varna.sr@gmail.com](mailto:varna.sr@gmail.com).
+For suggestions, open an [issue](https://github.com/Varnasr/InsightStack/issues) or start a [discussion](https://github.com/Varnasr/InsightStack/discussions).
