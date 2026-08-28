@@ -31,7 +31,7 @@ Each folder includes:
 ## 🧭 Quick Access Index
 
 - 🔄 [USE_CASES.md](USE_CASES.md) – Suggested learning paths by goal
-- 🧰 [workbooks/](workbooks/) – Markdown-based templates, cheatsheets, and prompt guides
+- 🧰 [workbooks/](06_workbooks/) – Markdown-based templates, cheatsheets, and prompt guides
 - 📘 [ABOUT_THIS_LIBRARY.md](ABOUT_THIS_LIBRARY.md) – Background, use rationale, licensing
 - 🤝 [CONTRIBUTING.md](CONTRIBUTING.md) – How to add summaries, templates, or new resources
 - 🧾 [docs/index.md](docs/index.md) – Offline-friendly guide to the full structure

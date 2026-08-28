@@ -5,8 +5,14 @@
 [![Part of OpenStacks](https://img.shields.io/badge/Part%20of-OpenStacks-blue)](https://openstacks.dev)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.15245182.svg)](https://doi.org/10.5281/zenodo.15245182)
+[![Status: Stable](https://img.shields.io/badge/Status-Stable-0969da?style=flat-square)](https://github.com/Varnasr/OpenStacks-for-Change/blob/main/MAINTENANCE.md)
 
 > In development work, we talk about knowledge — but rarely structure it. InsightStack organises the tools, templates, and workflows that make research, evaluation, and program design actually work.
+
+> **Status: Stable.** This repository works and is correct, but it is not under active
+> development. Bug reports are welcome and issues stay open; new features are unlikely,
+> and replies are measured in weeks rather than days. Dependencies are pinned deliberately
+> so that a clone still runs years from now. See the [maintenance policy](https://github.com/Varnasr/OpenStacks-for-Change/blob/main/MAINTENANCE.md).
 
 ---
 
@@ -86,7 +92,7 @@ InsightStack is one of several stacks in the [OpenStacks](https://openstacks.dev
 
 ## Contributing
 
-Contributions welcome — especially from practitioners who use these tools in real fieldwork. See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
+Contributions welcome — especially from practitioners who use these tools in real fieldwork. See [contributing guidelines](https://github.com/Varnasr/.github/blob/main/CONTRIBUTING.md) for guidelines.
 
 High-impact areas:
 - **Econometrics** — causal inference implementations (DiD, PSM, IV, RDD) in Python, R, or Stata
