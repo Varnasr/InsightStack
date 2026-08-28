@@ -18,7 +18,7 @@ You’ll find books, handbooks, visual aids, and templates across:
 | [USE_CASES.md](../USE_CASES.md) | Suggested learning paths |
 | [ABOUT_THIS_LIBRARY.md](../ABOUT_THIS_LIBRARY.md) | Background + Licensing |
 | [CONTRIBUTING.md](../CONTRIBUTING.md) | How to contribute |
-| [workbooks/](../workbooks/) | Cheat sheets and templates |
+| [workbooks/](../06_workbooks/) | Cheat sheets and templates |
 | [labels/](../labels/) | Tagging metadata |
 
 ---
