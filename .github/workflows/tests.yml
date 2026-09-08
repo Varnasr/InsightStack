@@ -1,0 +1,83 @@
+name: Tests
+
+# These suites exist to be run. Before this workflow they were not: the
+# repository had no CI at all while carrying 120 checks across four suites in
+# two languages, which reads as assurance without being any.
+#
+# Pull requests and pushes to main only. No schedule: nothing here reaches an
+# external service, so there is nothing that can rot between commits, and the
+# maintenance policy is against workflows that demand attention on a quiet day.
+
+on:
+  pull_request:
+    branches: [ main ]
+  push:
+    branches: [ main ]
+
+jobs:
+  python:
+    name: Python
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install numpy pandas pyreadstat
+
+      # No survey data ships or can. Each folder builds seeded synthetic files
+      # carrying the structure and nobody's data.
+      - name: DHS South Asia
+        working-directory: data_starters/dhs-south-asia
+        run: |
+          python make_fixture.py --outdir fixtures
+          python test_load_dhs.py
+
+      - name: PLFS India
+        working-directory: data_starters/plfs-india
+        run: |
+          python make_fixture.py --outdir fixtures
+          python test_load_plfs.py
+
+  r:
+    name: R
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+
+      - uses: r-lib/actions/setup-r@v2
+        with:
+          use-public-rspm: true
+
+      - name: Install R packages
+        run: install.packages(c("haven", "survey", "readr"))
+        shell: Rscript {0}
+
+      # The R suites read the same fixtures the Python ones do, which is what
+      # makes "both languages return the same numbers" a check rather than a claim.
+      - name: Build fixtures
+        run: |
+          pip install numpy pandas pyreadstat
+          (cd data_starters/dhs-south-asia && python make_fixture.py --outdir fixtures)
+          (cd data_starters/plfs-india && python make_fixture.py --outdir fixtures)
+
+      - name: DHS South Asia
+        working-directory: data_starters/dhs-south-asia
+        run: Rscript test_load_dhs.R
+
+      - name: PLFS India
+        working-directory: data_starters/plfs-india
+        run: Rscript test_load_plfs.R
+
+      - name: Sample data
+        working-directory: tests
+        run: Rscript test_dummy_population.R
