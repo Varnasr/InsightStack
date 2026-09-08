@@ -1,5 +1,5 @@
 
-# 📚 Field Use Case: Using LaTeX for Community Documentation in Assam
+# Field Use Case: Using LaTeX for Community Documentation in Assam
 
 ## Context
 

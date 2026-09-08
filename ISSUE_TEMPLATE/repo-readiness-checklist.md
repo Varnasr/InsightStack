@@ -7,7 +7,7 @@ assignees: ''
 
 ---
 
-# 🗂️ Repo Hygiene Checklist
+# Repo Hygiene Checklist
 
 - [ ] LICENSE.md present (MIT)
 - [ ] README.md complete (badges, overview, folders)

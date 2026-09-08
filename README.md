@@ -1,117 +1,92 @@
 # InsightStack
 
-**MEL tools, calculators, and research documentation for development work.**
+MEL tools, calculators, research documentation and loaders for survey
+microdata, in Stata, Python, R and SPSS. Part of
+[OpenStacks](https://openstacks.dev). Status: Stable, per the family
+[maintenance policy](https://github.com/Varnasr/OpenStacks-for-Change/blob/main/MAINTENANCE.md).
+DOI: [10.5281/zenodo.15245182](https://doi.org/10.5281/zenodo.15245182).
 
-[![Part of OpenStacks](https://img.shields.io/badge/Part%20of-OpenStacks-blue)](https://openstacks.dev)
-[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.15245182.svg)](https://doi.org/10.5281/zenodo.15245182)
-[![Status: Stable](https://img.shields.io/badge/Status-Stable-0969da?style=flat-square)](https://github.com/Varnasr/OpenStacks-for-Change/blob/main/MAINTENANCE.md)
+Site: [varnasr.github.io/InsightStack](https://varnasr.github.io/InsightStack/).
 
-> In development work, we talk about knowledge — but rarely structure it. InsightStack organises the tools, templates, and workflows that make research, evaluation, and program design actually work.
+## Code and data
 
-> **Status: Stable.** This repository works and is correct, but it is not under active
-> development. Bug reports are welcome and issues stay open; new features are unlikely,
-> and replies are measured in weeks rather than days. Dependencies are pinned deliberately
-> so that a clone still runs years from now. See the [maintenance policy](https://github.com/Varnasr/OpenStacks-for-Change/blob/main/MAINTENANCE.md).
+| Directory | What it does | Language |
+| --- | --- | --- |
+| `data_starters/` | Loaders for DHS (28 surveys, seven South Asian countries) and PLFS (India) that open the files as distributed, with the weight and scale rules applied. Tested on synthetic fixtures; no data ships | Stata, R, Python |
+| `calculators/` | Six browser calculators for district planning: population projection, school needs, banking access, district health indicators, block-level estimates, environmental fragility | HTML, JavaScript |
+| `econometrics/` | Difference-in-differences, propensity score matching, instrumental variables, regression discontinuity, sensitivity analysis, with sample data | Python, R |
+| `stata_snippets/` | 44 do-files: data management, descriptives, regression, impact evaluation, graphs, survey settings | Stata |
+| `spss_scripts/` | 20 files: cleaning, recoding, tabulation, regression, Excel export | SPSS |
+| `network_effects_sni/` | Centrality, peer association with leave-one-out means, and threshold diffusion for self-help group data. 17 tests | Python |
+| `data_validation/` | Checks from a data dictionary: duplicates, required fields, ranges, allowed values, types, column set, cross-file ids. One row per problem. 18 tests | Python; Stata, R, SPSS companions |
+| `label_variables/` | Variable and value labels from a dictionary, written into `.dta` and `.sav`. 8 tests | Python; Stata, R, SPSS companions |
+| `survey_to_codebook/` | An XLSForm to a Markdown codebook and a label dictionary. 9 tests | Python |
+| `replication/` | A replication package with one entry point, a recorded result and an R cross-check. 4 tests | Python, R |
+| `vensim/` | Eight system dynamics models | Vensim |
 
----
+## Documents and notes
 
-## What This Is
+| Directory | What it holds |
+| --- | --- |
+| `tool_notes/` | Nine notes on visual and document tools (Excalidraw, Kumu, Observable, RawGraphs, Flourish, Power BI, Miro, Excel, LaTeX), each with one example file |
+| `writing_guides/` | Theory of change, results chain, evaluation report structure, policy brief, writing about uncertainty |
+| `eval_docs/` | Logframe, indicator reference sheet and MEL framework templates, with a completed example |
+| `annotated_research/` | Five illustrative research briefs annotated with one eight-tag scheme |
+| `learning_layers/` | Learning in the MEL cycle as scheduled decisions |
+| `KM_tools/` | Folder structure, README template, file naming, tagging |
+| `taguette_coding/` | One focus group coded in Taguette, with the method |
+| `visual_ethnography_descript/` | Recorded interviews: consent, transcription, clips, quotes |
+| `learning_library/` | PDFs and guides in five categories |
 
-InsightStack is a collection of practical scripts, templates, and tools for **monitoring, evaluation, and learning (MEL)** work in the development sector. It covers data validation, survey analysis, system dynamics modelling, network analysis, qualitative coding, and visual storytelling.
+## Tests
 
-This is the **knowledge systems layer** of [OpenStacks for Change](https://openstacks.dev) — an open ecosystem of tools for public interest research and evaluation.
+```
+cd data_starters/dhs-south-asia && python make_fixture.py --outdir fixtures
+python test_load_dhs.py && Rscript test_load_dhs.R
+cd ../plfs-india && python make_fixture.py --outdir fixtures
+python test_load_plfs.py && Rscript test_load_plfs.R
+python -m network_effects_sni.test_network_effects
+python data_validation/test_data_validation.py
+python label_variables/test_label_variables.py
+python survey_to_codebook/test_survey_to_codebook.py
+python replication/test_replication.py
+```
 
-## What's Inside
+All of these run in CI on every pull request. The Stata files are not
+tested, since Stata has no free runtime; each carries a fixture check at the
+bottom.
 
-### Analysis Tools
+## Requirements
 
-| Directory | What It Does | Language | Status |
-|-----------|-------------|----------|--------|
-| `data_starters/` | Loaders for real public-use survey microdata, one folder per dataset. DHS across South Asia, and PLFS | Stata, R, Python | Ready |
-| `calculators/` | District-level calculators for health, education, finance, environment, and population | HTML, JavaScript | Ready |
-| `data_validation/` | Rule-driven validation from a data dictionary: duplicates, required, ranges, allowed values, types, name style, column set, cross-file ids; one issue row per problem, by identifier | Python (18 tests); Stata, R, SPSS companions |
-| `stata_snippets/` | Reusable Stata code: data management, graphs, regression, impact evaluation, surveys | Stata | Ready |
-| `spss_scripts/` | Survey analysis syntax: cleaning, regression, missing data, frequencies | SPSS | Ready |
-| `network_effects_sni/` | Peer effects estimation, centrality analysis, diffusion modelling for SHG networks | Python | Ready |
-| `replication/` | A replication package that verifies itself: one entry point, a recorded result, a Python-against-R cross-check, and a test that the verification can fail | Python, R (4 tests) |
-| `label_variables/` | Variable and value labels from a dictionary, written into `.dta` and `.sav` where they survive; round-trips both ways | Python (8 tests); Stata, R, SPSS companions |
-| `survey_to_codebook/` | XLSForm to Markdown codebook and to a label dictionary; resolves groups, repeats and choice lists; reports form defects | Python (9 tests) |
-| `econometrics/` | Causal inference: DiD, PSM, IV/2SLS, RDD, sensitivity analysis — with Python, R, and sample data | Python, R | Ready |
+Stata 15 or later for the do-files. Python 3.8 or later with pandas,
+statsmodels and networkx. R 4.0 or later with tidyverse, survey and haven.
+SPSS for the syntax files.
 
-### Visual and Interactive Tools
+## The family
 
-| Directory | What It Does | Tool |
-|-----------|-------------|------|
-| `vensim/` | 8 system dynamics models (health, agriculture, climate, migration, education) | Vensim |
-| `tool_notes/` | Nine tool notes (Excalidraw, Kumu, Observable, RawGraphs, Flourish, Power BI, Miro, Excel, LaTeX): when each is worth the setup, when it is not, what goes wrong, with one worked file each | Notes |
+| Repository | What it is for | Language |
+| --- | --- | --- |
+| **InsightStack** (this repository) | MEL tools, calculators, research documentation, loaders for survey microdata | Stata, Python, R, SPSS |
+| [FieldStack](https://github.com/Varnasr/FieldStack) | Field operations while a survey is in the field; sampling and weighted estimation after | R |
+| [EquityStack](https://github.com/Varnasr/EquityStack) | Inequality measurement and design-based survey estimation | Python |
 
-### Knowledge and Documentation
+[openstacks.dev](https://openstacks.dev) is the index.
+[SignalStack](https://github.com/Varnasr/SignalStack) is the companion archive
+for the [Research Rundown](https://varna.substack.com) newsletter, beside the
+stacks rather than one of them.
+[PolicyStack](https://github.com/Varnasr/PolicyStack) is superseded by
+[PolicyDhara](https://github.com/Varnasr/PolicyDhara). RootStack, BridgeStack
+and ViewStack are archived.
 
-| Directory | What It Contains |
-|-----------|-----------------|
-| `learning_library/` | Curated PDFs across 10 categories: programming, data science, research methods, AI tools, MLE resources |
-| `writing_guides/` | Theory of change, results chain, evaluation report structure, policy brief, writing about uncertainty; the verb is decided by the design | Markdown |
-| `eval_docs/` | Logframe template, indicator reference sheet, MEL framework outline, indicator guidance, with a completed example | Markdown, CSV, XLSX |
-| `KM_tools/` | Folder structure, project README template, file naming, tagging | Markdown |
-| `annotated_research/` | Five research briefs marked up with one eight-tag annotation scheme, weakest design to strongest; illustrative, for teaching critical reading | Markdown |
-| `learning_layers/` | Embedding learning in the MEL cycle as scheduled decisions at three tempos | Markdown, PDF |
-| `taguette_coding/` | One focus group coded start to finish in Taguette, with the method: frame first, double-code two transcripts, count carefully | Qualitative |
-| `visual_ethnography_descript/` | From recording to clip to quote: three consents, quotes checked against audio, clips cut with context visible | Qualitative |
-| `workflows/` | End-to-end analysis workflow guides |
-
-## Getting Started
-
-1. **Browse by need** — Each directory is self-contained. Pick the tool that matches your task.
-2. **Check the sample data** — Use `sample_data/` and the test data in `data_validation/` to try scripts.
-3. **Read the workflows** — `workflows/` ties multiple tools together into end-to-end processes.
-
-### Prerequisites
-
-Different tools require different software:
-- **Stata 15+** for Stata scripts and snippets
-- **Python 3.8+** with pandas, statsmodels, networkx for Python scripts
-- **R 4.0+** with tidyverse for R scripts
-- **SPSS** for survey analysis syntax
-- **Observable**, **Flourish**, **Miro**, **Kumu** accounts for visual tools (free tiers available)
-
-## How It Connects
-
-InsightStack is one of several stacks in the [OpenStacks](https://openstacks.dev) ecosystem:
-
-| Stack | Focus |
-|-------|-------|
-| **InsightStack** (this repo) | MEL tools, calculators, research documentation, and loaders for real survey microdata. Stata, Python, R, SPSS |
-| [FieldStack](https://github.com/Varnasr/FieldStack) | Field operations while a survey is being collected, and survey analysis after. R |
-| [EquityStack](https://github.com/Varnasr/EquityStack) | Equity from a development economics perspective: distributional analysis, the concentration index, and design-based survey estimation. Python |
-
-[openstacks.dev](https://openstacks.dev) is the index for all of it. [SignalStack](https://github.com/Varnasr/SignalStack) is the companion archive for the [Research Rundown](https://varna.substack.com) newsletter, alongside the stacks rather than one of them. [PolicyStack](https://github.com/Varnasr/PolicyStack) is superseded by [PolicyDhara](https://github.com/Varnasr/PolicyDhara). RootStack, BridgeStack and ViewStack are archived.
-
-## Contributing
-
-Contributions welcome — especially from practitioners who use these tools in real fieldwork. See [contributing guidelines](https://github.com/Varnasr/.github/blob/main/CONTRIBUTING.md) for guidelines.
-
-High-impact areas:
-- **Econometrics** — causal inference implementations (DiD, PSM, IV, RDD) in Python, R, or Stata
-- **Calculators** — new district-level planning tools
-- **Stata/SPSS scripts** — analysis templates for common MEL tasks
-- **Sample data** — synthetic datasets for testing
-
-## Citation
+## Citation and license
 
 ```bibtex
 @software{insightstack,
   author = {Sri Raman, Varna},
-  title = {InsightStack: MEL Tools for Development Work},
+  title = {InsightStack: MEL tools, calculators and survey data loaders},
   url = {https://github.com/Varnasr/InsightStack},
   doi = {10.5281/zenodo.15245182}
 }
 ```
 
-## License
-
-MIT — free to use, modify, and share. See [LICENSE](LICENSE).
-
----
-
-Part of [OpenStacks for Change](https://openstacks.dev). Created by [Varna Sri Raman](https://on-web.link/varna).
+MIT. See [LICENSE](LICENSE).

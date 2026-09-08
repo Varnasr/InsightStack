@@ -1,12 +1,12 @@
-# SPSS MEL Scripts
+# SPSS scripts
 
-This folder includes real `.sps` syntax files for MEL-related recoding, tabulations, and Excel exports — based on field research formats in India.
+Syntax files for recoding, tabulation and export, in the formats used in
+field research in India.
 
-## 📂 Folder Contents
-- `recode_demographics.sps` – Recode gender and education variables
-- `tabulate_indicators.sps` – Crosstab indicators by gender and district
-- `export_results_excel.sps` – OMS command to export SPSS tables to `.xlsx`
-- `sample_spss_data.csv` – Cleaned data file to test logic
+- `recode_demographics.sps`: recode gender and education variables
+- `tabulate_indicators.sps`: crosstab indicators by gender and district
+- `export_results_excel.sps`: OMS command to export tables to `.xlsx`
+- `sample_spss_data.csv`: a data file to test the syntax on
 
-## 🧠 Use Case
-SPSS is still widely used in government programs and legacy research contexts in India. These scripts match the workflows of health surveys, education assessments, and program evaluations.
+`spss_tools/` holds further files for cleaning, regression, missing data
+and frequencies.

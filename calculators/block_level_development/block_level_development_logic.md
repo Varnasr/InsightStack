@@ -1,10 +1,10 @@
-# 🧱 Block-Level Development Estimation – Logic
+# Block-Level Development Estimation – Logic
 
 This tool helps estimate block-level indicator values by disaggregating district-level data using population or area shares.
 
 ---
 
-## 🔢 Inputs
+## Inputs
 
 - Total District Population
 - Block Population
@@ -12,7 +12,7 @@ This tool helps estimate block-level indicator values by disaggregating district
 
 ---
 
-## 📈 Disaggregation Logic
+## Disaggregation Logic
 
 ### Method 1: Population-Based Disaggregation
 
@@ -32,7 +32,7 @@ Block Estimate = District Value × Block Area Share
 
 ---
 
-## 🧠 Example
+## Example
 
 District has 600,000 population and 30 PHCs. A block with 75,000 population:
 

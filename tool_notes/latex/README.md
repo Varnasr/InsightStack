@@ -25,7 +25,7 @@ reviewer who does not write it. Overleaf softens this and does not remove it.
 For a donor report, a policy brief, or anything a non-technical colleague
 must edit, use Word or Quarto, which renders to Word.
 
-Quarto is the honest middle: Markdown with code chunks, rendering to PDF
+Quarto is the middle option: Markdown with code chunks, rendering to PDF
 through LaTeX when you want that and to Word when you do not. FieldStack's
 `notebooks/` and `automated_reporting/` are Quarto.
 

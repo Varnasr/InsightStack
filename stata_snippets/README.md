@@ -1,6 +1,6 @@
-## 📂 Repository Structure: Folder-by-Folder
+# Stata snippets
 
-This repository is organized by functional workflow. Each folder contains complete `.do` files and simulated Indian datasets. All code is runnable and documented for clarity and reproducibility.
+Do-files organised by task, each with the simulated dataset it reads.
 
 | Folder               | Description                                              | Scripts Inside                                  | Dataset(s) Used                |
 |----------------------|----------------------------------------------------------|------------------------------------------------|--------------------------------|

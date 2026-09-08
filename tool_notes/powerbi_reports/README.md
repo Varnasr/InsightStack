@@ -1,8 +1,7 @@
 # Power BI
 
-An adaptation note. No `.pbix` file ships here, and none is going to: a Power BI
-report is bound to its data source, and a template with no data behind it is a
-blank canvas with a menu.
+An adaptation note. No `.pbix` file ships: a Power BI report is bound to its
+data source, and a template without data is an empty canvas.
 
 | File | What it is |
 |---|---|
@@ -30,7 +29,7 @@ PDF export works without asking anyone to buy anything.
 
 ## What goes wrong
 
-**The refresh schedule is the product.** A dashboard is only as current as its
+A dashboard is only as current as its
 last refresh, and a `.pbix` on someone's laptop refreshes when they open it.
 Publishing to the service with a scheduled refresh against a source the
 organisation controls is the whole setup; without it you have a screenshot

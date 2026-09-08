@@ -4,7 +4,7 @@ Visual-first resources to reinforce learning — ideal for refreshing concepts q
 
 ## Contents
 
-### 📘 101 Data Science Drawings
+### 101 Data Science Drawings
 **Author:** Raymond Lim (@MinuteData)  
 **Tags:** #visuallearning #ml #stats #sketchnotes  
 A collection of colorful, informal one-pagers explaining concepts like regression, p-values, A/B tests, and more.

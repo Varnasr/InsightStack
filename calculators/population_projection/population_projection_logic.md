@@ -1,10 +1,10 @@
-# 📈 Population Projection Calculator – Logic
+# Population Projection Calculator – Logic
 
 This tool helps project district or block population over time using a compound annual growth formula.
 
 ---
 
-## 🔢 Inputs
+## Inputs
 
 - Current population (base year)
 - Annual growth rate (%)
@@ -12,7 +12,7 @@ This tool helps project district or block population over time using a compound 
 
 ---
 
-## 📈 Formula Used
+## Formula Used
 
 ```
 Population in Year N = Base Population × (1 + Growth Rate)^N
@@ -24,7 +24,7 @@ Where:
 
 ---
 
-## 🧠 Example
+## Example
 
 - Current population = 520,000
 - Growth rate = 1.85%

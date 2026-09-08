@@ -1,10 +1,10 @@
-# 🧮 Education Needs Calculator
+# Education Needs Calculator
 
 This tool estimates the number of schools needed in a district over a given period, based on growth in the school-age population (6–14 years).
 
 ---
 
-## 📦 Files
+## Files
 
 - `education_calculator.html`: Lightweight calculator (no login, no libraries needed)
 - `education_logic.md`: Full logic breakdown with formulas and generalization steps
@@ -12,7 +12,7 @@ This tool estimates the number of schools needed in a district over a given peri
 
 ---
 
-## 🧠 How It Works
+## How It Works
 
 You enter:
 - Current school-age population
@@ -25,4 +25,4 @@ The calculator projects population, computes schools needed, and shows the infra
 
 ---
 
-📍 Example district used: *Chitrakoot, Uttar Pradesh*
+ Example district used: *Chitrakoot, Uttar Pradesh*
