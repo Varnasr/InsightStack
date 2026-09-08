@@ -27,9 +27,9 @@
 
 <section class="hero">
   <h1 class="word">Insight<span class="s2">Stack</span></h1>
-  <p class="lede">Tools, templates and thinking for knowledge work in development. Calculators you
-    can use in a browser, econometrics you can run, and loaders that open real survey microdata
-    as it actually arrives. Part of <a href="https://openstacks.dev">OpenStacks</a>.</p>
+  <p class="lede">Tools, templates and thinking for knowledge work in development. Calculators that run in
+    a browser, econometrics you can actually execute, and loaders that open survey microdata
+    in the state it arrives in. Part of <a href="https://openstacks.dev">OpenStacks</a>.</p>
   <div class="counts">
     <div class="hi"><b>6</b><span>Calculators</span></div>
     <div><b>2</b><span>Dataset loaders</span></div>
@@ -83,8 +83,8 @@
       <p class="go">Open &rarr;</p>
     </a>
   </div>
-  <p class="note">Each one states its assumption on the page. They are estimators for thinking
-    with, not measurements: where a published district figure exists, cite that instead.</p>
+  <p class="note">Each one states its assumption on the page. Treat the output as an estimate to
+    think with. Where a published district figure exists, cite that figure instead.</p>
 </section>
 
 <section class="band navy" id="data">
@@ -97,20 +97,21 @@
       <p class="meta">28 surveys · 7 countries</p>
       <h3>DHS, South Asia</h3>
       <p>One loader for every DHS in the region, from India's NFHS-1 to NFHS-5 through Bangladesh,
-         Nepal, Pakistan, Maldives, Afghanistan and Sri Lanka. Handles the weight scaling, the
-         per-recode design variables and the anthropometry flags that quietly ruin a stunting rate.</p>
+         Nepal, Pakistan, Maldives, Afghanistan and Sri Lanka. Gets right the three
+         things that quietly ruin a stunting rate: the weight scaling, the design variables,
+         and the anthropometry flags.</p>
       <p class="go">Read the guide &rarr;</p>
     </a>
     <a class="tile" href="data_starters/plfs-india/">
       <p class="meta">Fixed-width · layout-driven</p>
       <h3>PLFS, India</h3>
-      <p>Reads MoSPI's unit-level text using the round's own layout rather than hardcoded byte
-         positions, and applies the combined-estimate weight rule that is not simply MLTS/100.</p>
+      <p>Opens MoSPI's unit-level files using the layout that shipped with your round, and
+         applies the combined-estimate weight rule, which is not simply MLTS divided by 100.</p>
       <p class="go">Read the guide &rarr;</p>
     </a>
   </div>
-  <p class="note">No data ships and none can: both DHS and MoSPI prohibit redistribution. Each
-    folder builds synthetic fixtures instead, and the test suites run on every push.</p>
+  <p class="note">No data ships, and none can: DHS and MoSPI both forbid passing the files on. You
+    download your own copy, and each guide names exactly which files to fetch.</p>
 </section>
 
 <section class="band white" id="code">
@@ -121,106 +122,106 @@
   <div class="rows">
     <a class="row" href="https://github.com/Varnasr/InsightStack/tree/main/econometrics">
       <span class="t"><b>Econometrics</b><span>Python, R</span></span>
-      <span class="d">Causal inference: DiD, PSM, IV/2SLS, RDD and sensitivity analysis, with sample data.</span>
+      <span class="d">Did the programme work, and can you defend the answer? Difference-in-differences, matching, instrumental variables and regression discontinuity, each with data to practise on.</span>
     </a>
     <a class="row" href="https://github.com/Varnasr/InsightStack/tree/main/stata_snippets">
       <span class="t"><b>Stata snippets</b><span>44 do-files</span></span>
-      <span class="d">Data management, graphs, regression, impact evaluation and survey code.</span>
+      <span class="d">The Stata you end up rewriting on every project: merges, labels, graphs, regressions, survey settings.</span>
     </a>
     <a class="row" href="https://github.com/Varnasr/InsightStack/tree/main/spss_scripts">
       <span class="t"><b>SPSS scripts</b><span>20 files</span></span>
-      <span class="d">Survey analysis syntax: cleaning, regression, missing data, frequencies.</span>
+      <span class="d">Survey analysis for teams whose institution runs on SPSS.</span>
     </a>
     <a class="row" href="https://github.com/Varnasr/InsightStack/tree/main/network_effects_sni">
       <span class="t"><b>Network effects</b><span>Python</span></span>
-      <span class="d">Peer effects estimation, centrality analysis and diffusion modelling for self-help group networks.</span>
+      <span class="d">Who influences whom in a self-help group, and how quickly a practice spreads through one.</span>
     </a>
     <a class="row" href="https://github.com/Varnasr/InsightStack/tree/main/replication">
       <span class="t"><b>Replication template</b><span>Python, R</span></span>
-      <span class="d">A replication skeleton with parallel Python and R implementations.</span>
+      <span class="d">Hand your analysis to a reviewer and have it run on their machine, in Python or in R.</span>
     </a>
     <a class="row" href="https://github.com/Varnasr/InsightStack/tree/main/data_validation">
       <span class="t"><b>Data validation</b><span>Py, R, Stata</span></span>
-      <span class="d">Cleaning and validation workflows, with deliberately messy test data.</span>
+      <span class="d">Catch the problems in field data before they reach a finding. Ships with deliberately messy data to practise on.</span>
     </a>
     <a class="row" href="https://github.com/Varnasr/InsightStack/tree/main/label_variables">
       <span class="t"><b>Label variables</b><span>Stata, R</span></span>
-      <span class="d">Variable labelling and codebook generation.</span>
+      <span class="d">Turn cryptic variable names into a codebook a colleague can actually read.</span>
     </a>
     <a class="row" href="https://github.com/Varnasr/InsightStack/tree/main/survey_to_codebook">
       <span class="t"><b>Survey to codebook</b><span>Python</span></span>
-      <span class="d">Turn a survey instrument into a codebook.</span>
+      <span class="d">Go from questionnaire to codebook without retyping it.</span>
     </a>
     <a class="row" href="https://github.com/Varnasr/InsightStack/tree/main/vensim">
       <span class="t"><b>System dynamics</b><span>Vensim</span></span>
-      <span class="d">Eight Vensim models across health, agriculture, climate, migration and education.</span>
+      <span class="d">Where an intervention pushes back on itself: eight system models across health, agriculture, climate, migration and education.</span>
     </a>
     <a class="row" href="https://github.com/Varnasr/InsightStack/tree/main/observable_notebooks">
       <span class="t"><b>Observable notebooks</b><span>Observable</span></span>
-      <span class="d">An interactive district vulnerability dashboard.</span>
+      <span class="d">Compare districts on vulnerability, interactively.</span>
     </a>
     <a class="row" href="https://github.com/Varnasr/InsightStack/tree/main/kumu_maps">
       <span class="t"><b>Kumu maps</b><span>Kumu</span></span>
-      <span class="d">Network and systems mapping.</span>
+      <span class="d">Map who is connected to whom, and where the influence sits.</span>
     </a>
     <a class="row" href="https://github.com/Varnasr/InsightStack/tree/main/excalidraw_frameworks">
       <span class="t"><b>Excalidraw frameworks</b><span>Excalidraw</span></span>
-      <span class="d">MEL framework and ecosystem map diagrams.</span>
+      <span class="d">Framework and ecosystem diagrams you can edit and drop into a deck.</span>
     </a>
     <a class="row" href="https://github.com/Varnasr/InsightStack/tree/main/flourish_charts">
       <span class="t"><b>Flourish charts</b><span>Flourish</span></span>
-      <span class="d">Data visualisation templates.</span>
+      <span class="d">Chart templates for something going out to readers.</span>
     </a>
     <a class="row" href="https://github.com/Varnasr/InsightStack/tree/main/excel_visuals">
       <span class="t"><b>Excel visuals</b><span>Excel</span></span>
-      <span class="d">Spreadsheet visualisation templates.</span>
+      <span class="d">Charts for the colleague who will only ever open Excel.</span>
     </a>
     <a class="row" href="https://github.com/Varnasr/InsightStack/tree/main/powerbi_reports">
       <span class="t"><b>Power BI reports</b><span>Power BI</span></span>
-      <span class="d">Report templates.</span>
+      <span class="d">Dashboard templates for teams reporting through Power BI.</span>
     </a>
     <a class="row" href="https://github.com/Varnasr/InsightStack/tree/main/miro">
       <span class="t"><b>Miro boards</b><span>Miro</span></span>
-      <span class="d">Participatory analysis board templates.</span>
+      <span class="d">Boards for running an analysis session with a group rather than alone.</span>
     </a>
     <a class="row" href="https://github.com/Varnasr/InsightStack/tree/main/open_data_editor">
       <span class="t"><b>Open Data Editor</b><span>Workflows</span></span>
-      <span class="d">Cleaning workflows for the Frictionless editor.</span>
+      <span class="d">Clean a dataset without writing any code.</span>
     </a>
     <a class="row" href="https://github.com/Varnasr/InsightStack/tree/main/taguette_coding">
       <span class="t"><b>Taguette coding</b><span>Qualitative</span></span>
-      <span class="d">Qualitative coding workflows and exports.</span>
+      <span class="d">Code interview transcripts and get the tags back out for analysis.</span>
     </a>
     <a class="row" href="https://github.com/Varnasr/InsightStack/tree/main/visual_ethnography_descript">
       <span class="t"><b>Visual ethnography</b><span>Descript</span></span>
-      <span class="d">Ethnographic documentation with Descript.</span>
+      <span class="d">Work with recorded fieldwork: transcripts, clips and notes together.</span>
     </a>
     <a class="row" href="https://github.com/Varnasr/InsightStack/tree/main/annotated_research">
       <span class="t"><b>Annotated research</b><span>Reading</span></span>
-      <span class="d">Annotated bibliography and research notes.</span>
+      <span class="d">Reading notes, with the argument of each piece written down.</span>
     </a>
     <a class="row" href="https://github.com/Varnasr/InsightStack/tree/main/learning_library">
       <span class="t"><b>Learning library</b><span>Reference</span></span>
-      <span class="d">Curated reading across programming, data science, research methods and AI tools.</span>
+      <span class="d">A reading shelf: programming, data science, research methods, AI tools.</span>
     </a>
     <a class="row" href="https://github.com/Varnasr/InsightStack/tree/main/learning_layers">
       <span class="t"><b>Learning layers</b><span>Frameworks</span></span>
-      <span class="d">Learning design frameworks.</span>
+      <span class="d">Frameworks for designing a training course.</span>
     </a>
     <a class="row" href="https://github.com/Varnasr/InsightStack/tree/main/writing_guides">
       <span class="t"><b>Writing guides</b><span>Documentation</span></span>
-      <span class="d">Style guides and writing templates.</span>
+      <span class="d">Guides and templates for the writing-up, which is usually the hard part.</span>
     </a>
     <a class="row" href="https://github.com/Varnasr/InsightStack/tree/main/workflows">
       <span class="t"><b>Analysis workflows</b><span>Guides</span></span>
-      <span class="d">End-to-end guides through an analysis.</span>
+      <span class="d">Start-to-finish routes through an analysis, so you know what comes next.</span>
     </a>
     <a class="row" href="https://github.com/Varnasr/InsightStack/tree/main/latex">
       <span class="t"><b>LaTeX templates</b><span>LaTeX</span></span>
-      <span class="d">Templates for research reports.</span>
+      <span class="d">Report templates for anyone typesetting in LaTeX.</span>
     </a>
   </div>
-  <p class="note">These open on GitHub. They are source code rather than pages: scripts, templates and model files meant to be read, cloned and run, not browsed like a website.</p>
+  <p class="note">These open on GitHub, where the code lives.</p>
 
 </section>
 
@@ -231,8 +232,7 @@
   </div>
   <p class="note">This repository works and is correct, but is not under active development. Bug
     reports are welcome and issues stay open; new features are unlikely, and replies are measured
-    in weeks rather than days. Dependencies are pinned deliberately so that a clone still runs
-    years from now. See the
+    in weeks rather than days. See the
     <a href="https://github.com/Varnasr/OpenStacks-for-Change/blob/main/MAINTENANCE.md">maintenance policy</a>.</p>
   <p class="note">Citable: <a href="https://doi.org/10.5281/zenodo.15245182">10.5281/zenodo.15245182</a>.
     The companion repositories are
