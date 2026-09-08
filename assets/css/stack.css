@@ -191,3 +191,41 @@ a { color: inherit; text-decoration: none; }
   * { transition: none !important; animation: none !important; }
   html { scroll-behavior: auto; }
 }
+
+/* --- rendered markdown (Jekyll folder pages) ------------------------------
+   Without this, a folder README renders in whatever theme Jekyll supplies and
+   the site changes appearance the moment anyone clicks through. */
+.prose { max-width: 74ch; }
+.prose h1 { font-family: var(--display); font-weight: 800; text-transform: uppercase;
+            letter-spacing: -.02em; line-height: .95; font-size: clamp(1.8rem, 5vw, 3.2rem);
+            margin-bottom: 1rem; }
+.prose h2 { font-family: var(--display); font-weight: 800; font-size: 1.5rem;
+            letter-spacing: -.01em; margin: 2rem 0 .7rem; }
+.prose h3 { font-family: var(--display); font-weight: 700; font-size: 1.15rem;
+            margin: 1.5rem 0 .5rem; }
+.prose p, .prose li { font-size: .98rem; margin-bottom: .7rem; }
+.prose ul, .prose ol { margin: 0 0 .9rem 1.2rem; }
+.prose a { text-decoration: underline; text-underline-offset: 3px; }
+.prose code { font-family: var(--mono); font-size: .88em; background: var(--ash);
+              padding: .1rem .3rem; }
+.prose pre { font-family: var(--mono); font-size: .82rem; background: var(--black);
+             color: var(--white); padding: 1rem; overflow-x: auto; margin-bottom: 1rem;
+             border: 2px solid var(--black); }
+.prose pre code { background: none; padding: 0; color: inherit; }
+.prose table { border-collapse: collapse; width: 100%; margin-bottom: 1.2rem;
+               display: block; overflow-x: auto; }
+.prose th, .prose td { border: 2px solid var(--black); padding: .5rem .7rem;
+                       font-size: .88rem; text-align: left; }
+.prose th { font-family: var(--mono); font-size: .74rem; text-transform: uppercase;
+            letter-spacing: .06em; }
+.prose blockquote { border-left: 4px solid var(--saffron); padding-left: 1rem;
+                    margin: 0 0 1rem; }
+.prose img { max-width: 100%; height: auto; border: 2px solid var(--black); }
+.prose hr { border: none; border-top: 2px solid var(--black); margin: 2rem 0; }
+
+/* Descriptions in the compact source list. A visible line beats a hover title,
+   which no touch device shows and no screen reader announces reliably. */
+.row { flex-direction: column; align-items: flex-start; gap: .25rem; }
+.row .d { font-size: .8rem; opacity: .78; line-height: 1.35; }
+.row .t { display: flex; justify-content: space-between; align-items: baseline;
+          gap: .6rem; width: 100%; }
