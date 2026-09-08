@@ -5,7 +5,7 @@ A Theory of Change (ToC) note is a short, structured explanation of *how* and *w
 
 ---
 
-## ✍🏽 Core Components
+## Core Components
 
 **1. Problem Statement**  
 Briefly outline the core issue you're addressing. Ground it in evidence.
@@ -20,14 +20,14 @@ What are the key steps/activities that will trigger change? Use causal logic, no
 List what needs to be true for the ToC to work (e.g. policy stability, stakeholder buy-in).
 
 **5. Outcomes**  
-Short-term, medium-term, and long-term — and how they connect.
+Short-term, medium-term, and long-term ,  and how they connect.
 
 **6. Indicators (optional)**  
 You may include early thoughts on how you’ll measure each outcome.
 
 ---
 
-## ✏️ Sample Structure
+## Sample Structure
 
 ```
 Problem: High adolescent anemia in tribal blocks of X district, with poor uptake of IFA tablets.
@@ -50,18 +50,18 @@ Long-term: Reduced prevalence of anemia
 
 ---
 
-## ✅ Do's and Don'ts
+## Do's and Don'ts
 
 | Do's | Don'ts |
 |------|--------|
 | Use plain language | Overload with jargon |
 | Ground assumptions in reality | Leave out local risks/barriers |
-| Align with MEL plans | Treat ToC as fixed — it evolves |
+| Align with MEL plans | Treat ToC as fixed ,  it evolves |
 | Make outcomes measurable | Use vague claims like “empowerment” with no link |
 
 ---
 
-## 🔍 Quick Checklist
+## Quick Checklist
 
 - [x] Clear problem + target group  
 - [x] Plausible, evidence-based causal pathway  

@@ -45,6 +45,12 @@ Rscript test_load_dhs.R     # 33: the same ones plus the survey design object
 cd ../plfs-india && python make_fixture.py --outdir fixtures
 python test_load_plfs.py    # 28 checks
 Rscript test_load_plfs.R    # the same 28
+
+python -m network_effects_sni.test_network_effects       # 17 tests
+python data_validation/test_data_validation.py           # 18
+python label_variables/test_label_variables.py           # 8
+python survey_to_codebook/test_survey_to_codebook.py     # 9
+python replication/test_replication.py                   # 4; Rscript replication/run_regression.R for the cross-check
 ```
 
 Stata has no free runtime, so the `.do` files are the only untested ones. Each
@@ -66,6 +72,41 @@ plainly rather than implying otherwise.
 - **Published tables are the check.** `data_starters/dhs-south-asia/benchmarks/`
   holds the figures DHS published. Reproducing them is the only cheap proof a
   pipeline is right end to end.
+
+## The 2026-09-08 rebuild of the long tail
+
+An audit found twenty-one of thirty folders with fewer than six files and nine
+with no code, several of them a README and one image presented on the landing
+page as a module. What was done, so nobody re-inflates it:
+
+- **Seven tool showcases consolidated into `tool_notes/`** (Excalidraw, Kumu,
+  Observable, RawGraphs, Flourish, Power BI, Miro). Each is now a page of
+  judgement, when to use it and what goes wrong, plus its one worked file. They
+  are one landing-page row, not seven. Do not promote them back to modules;
+  the tools live on their own sites and a repository cannot hold a template
+  for them.
+- **`foundation_tools/` is gone.** It held a second, different implementation
+  of `data_validation`, `label_variables`, `replication` and
+  `survey_to_codebook`, in five-line functions that overlapped with the
+  top-level folders. The unique pieces (two `.sps` companions) were moved up
+  and the rest deleted.
+- **Four folders rebuilt as tested Python packages**, each with a plain-assert
+  suite in CI: `data_validation` (18 tests), `label_variables` (8),
+  `survey_to_codebook` (9), `replication` (4, plus an R cross-check in the R
+  job). The three share one data dictionary format (`variable,label,values,
+  min,max,allowed,required`), so a codebook generated from an XLSForm can be
+  applied as labels and used as validation rules without retyping.
+- **Five folders built out as written content**: `annotated_research` (five
+  illustrative briefs under one annotation scheme; invented programmes, no
+  real citations, said so on every page), `eval_docs`, `writing_guides`,
+  `learning_layers`, `KM_tools`.
+
+Two things caught while doing it. pandas 3 gives text columns a `str` dtype,
+so a blank check keyed on `dtype == object` silently skips every text column;
+CI here installs unpinned pandas, so it would have shipped. And the bundled
+`survey_to_codebook/input/survey.xlsx` named a choice list `hobby` that the
+form referenced as `hobbies`; the old notebook printed an empty list without
+comment, the new tool reported it on first run, and the sample is fixed.
 
 ## network_effects_sni
 
@@ -185,8 +226,10 @@ older version of this table said InsightStack used `minima` and EquityStack was
 unpublished; both were true once and neither is now.
 
 The six calculators are the largest design surface in the stack family and the
-obvious place to start. Beyond the stacks: SignalStack, Experiments,
-openstacks.dev and the ImpactMojo properties.
+obvious place to start. Beyond the stacks: Experiments, openstacks.dev and the
+ImpactMojo properties. SignalStack is dead and ViewStack, BridgeStack and
+RootStack are archived; the live family is InsightStack, FieldStack,
+EquityStack and PolicyStack under OpenStacks-for-Change.
 
 One constraint that catches people: `Experiments` serves under a strict Content
 Security Policy allowlisting specific CDNs, so a design pulling fonts or scripts

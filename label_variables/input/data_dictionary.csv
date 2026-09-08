@@ -1,5 +1,6 @@
-variable,label
-id,Unique ID of respondent
-age,Age in completed years
-gender,Gender of respondent
-income,Monthly income in INR
+variable,label,values
+id,Unique ID of respondent,
+age,Age in completed years,
+gender,Gender of respondent,1=Male|2=Female|3=Other
+income,Monthly income in INR,
+consent,Consent to interview,1=Yes|0=No|-99=Refused
