@@ -34,7 +34,7 @@ DHS_DESIGN <- list(
 
 DHS_RECODE_NAMES <- c(
   IR = "Individual Recode (women 15-49)", MR = "Men's Recode",
-  KR = "Children's Recode (living children under 5)",
+  KR = "Children's Recode (births in the last 5 years, living or dead)",
   BR = "Births Recode (full birth history)", HR = "Household Recode",
   PR = "Household Member Recode", CR = "Couples Recode"
 )

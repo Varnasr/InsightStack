@@ -42,14 +42,16 @@ explicitly instead.
 |---|---|---|---|
 | `IR` | Individual, women 15-49 | a woman | `v005` |
 | `MR` | Men | a man | `mv005` |
-| `KR` | Children under 5 | a living child | `v005` |
+| `KR` | Births in the last 5 years | a child, living or dead | `v005` |
 | `BR` | Births, full history | a birth, living or dead | `v005` |
 | `HR` | Households | a household | `hv005` |
 | `PR` | Household members | a person, any age | `hv005` |
 | `CR` | Couples | a matched couple | `v005` |
 
-Under-five mortality comes from `BR`, not `KR`. Child anthropometry is in both
-`KR` and `PR`, under different variable names.
+`KR` covers the last five years and `BR` the woman's complete birth history, so
+under-five mortality rates come from `BR`. Both include children who have died,
+which is why anthropometry work on `KR` has to filter on `b5 == 1` first. Child
+anthropometry appears in both `KR` and `PR`, under different variable names.
 
 ## Quick start
 
@@ -132,6 +134,24 @@ and remember that it is still survey-specific.
 **Century month codes.** `v008` and `b3` are months since January 1900, so
 January 2020 is 1441. `cmc_to_year_month` in each script converts them.
 
+## Checking your answer
+
+`benchmarks/nfhs5_stunting.csv` holds the figures DHS published for India's
+NFHS-5 child stunting: 35.5 percent nationally, 46.1 in the poorest wealth
+quintile falling to 22.9 in the richest, with breakdowns by residence and
+mother's education. NFHS-4's national figure of 38.4 is there for comparison.
+
+Reproducing a published table is the only cheap check that a pipeline is right
+end to end. Each of the silent errors above produces a number that looks
+reasonable on its own and visibly wrong beside the survey agency's own report.
+Two worked examples do exactly this, one in R and one in Python:
+
+- [FieldStack](https://github.com/Varnasr/FieldStack) `survey_tools/dhs_stunting.R`
+- [EquityStack](https://github.com/Varnasr/EquityStack) `survey_estimation/dhs_stunting.py`
+
+Both consume the CSV this loader writes, so the repositories are coupled through
+a file rather than a dependency.
+
 ## Across rounds
 
 `variables.csv` maps a canonical name to the variable in each recode, with its
@@ -202,6 +222,8 @@ them directly, in a different format. Afghanistan has a single round, 2015.
 | `surveys.csv` | The 28 South Asia surveys, from the DHS API |
 | `make_fixture.py` | Builds synthetic DHS-shaped files for testing |
 | `test_load_dhs.py` | 30 checks against those fixtures |
+| `test_load_dhs.R` | The same 33 checks in R, plus the survey design object |
+| `benchmarks/` | Figures DHS published, to check your pipeline against |
 
 ## Testing
 
@@ -213,13 +235,19 @@ anybody.
 
 ```
 python make_fixture.py --outdir fixtures
-python test_load_dhs.py
+python test_load_dhs.py     # 30 checks
+Rscript test_load_dhs.R     # 33: the same ones, plus the design object
 ```
 
-The Python path is covered by those 30 checks. The Stata and R files carry the
-same logic and the same guards, but neither Stata nor R runs in the environment
-this was written in, so run the fixture check at the bottom of `load_dhs.do`, and
-the equivalent in R, once on your own machine before trusting them on real data.
+The R suite mirrors the Python one check for check and adds three for the survey
+design object, so both languages are held to the same standard, and both were run: verified on Python 3 with pandas and
+pyreadstat, and on R 4.3.3 with survey 4.2.1 and haven 2.5.4. Where both read the
+same fixture they return the same numbers.
+
+Stata has no free runtime, so `load_dhs.do` is the one file here that has not been
+executed. It carries the same logic and the same guards, and the fixture check at
+the bottom of it takes about a minute. Run that once before trusting it on real
+data.
 
 ## Sources
 
