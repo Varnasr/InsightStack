@@ -1,66 +1,145 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>District Health Indicator Estimator</title>
-  <style>
-    body { font-family: sans-serif; max-width: 700px; margin: 2rem; }
-    label { display: block; margin-top: 1rem; font-weight: bold; }
-    select, input { width: 100%; max-width: 300px; padding: 0.5rem; margin-top: 0.5rem; }
-    button { margin-top: 1.5rem; padding: 0.6rem 1.5rem; }
-    #results { margin-top: 2rem; background: #eef; padding: 1rem; border-radius: 6px; }
-  </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>District Health Indicator · InsightStack</title>
+<meta name="description" content="Adjust a state NFHS indicator towards a district estimate.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Work+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../assets/css/stack.css">
 </head>
 <body>
-  <h2>🩺 District Health Indicator Estimator</h2>
+<a class="skip" href="#main">Skip to the calculator</a>
 
-  <label for="stateValue">State-level NFHS Indicator Value (%)</label>
-  <input type="number" id="stateValue" placeholder="e.g., 72.4" step="0.1">
+<header class="top">
+  <div class="in">
+    <a class="brand" href="../../"><span class="dot"></span> InsightStack</a>
+    <nav>
+      <a class="opt" href="../../#calculators">Calculators</a>
+      <a href="https://github.com/Varnasr/InsightStack">GitHub</a>
+    </nav>
+  </div>
+</header>
 
-  <label for="infra">Health Infrastructure</label>
-  <select id="infra">
-    <option value="0.9">Low</option>
-    <option value="1.0" selected>Average</option>
-    <option value="1.1">High</option>
-  </select>
+<section class="hero">
+  <h1 class="word">District<br>Health</h1>
+  <p class="lede">Take a state-level NFHS figure and adjust it towards a district, using three coarse multipliers.</p>
+</section>
 
-  <label for="roads">Road Access</label>
-  <select id="roads">
-    <option value="0.95">Poor</option>
-    <option value="1.0" selected>Average</option>
-    <option value="1.05">Good</option>
-  </select>
+<main id="main" class="band white">
+  <form class="calc" id="calc" novalidate>
+    <div class="in">
+      <h2 class="sr">Inputs</h2>
+      <div class="field">
+        <label for="stateValue">State NFHS indicator value (%)</label>
+        <input type="number" id="stateValue" name="stateValue" placeholder="e.g. 72.4" step="0.1" inputmode="decimal">
+        <span class="err">Enter a number</span>
+      </div>
+      <div class="field">
+        <label for="infra">Health infrastructure</label>
+        <select id="infra" name="infra">
+          <option value="0.9">Low</option>
+          <option value="1.0" selected>Average</option>
+          <option value="1.1">High</option>
+        </select>
+        <span class="err">Choose one</span>
+      </div>
+      <div class="field">
+        <label for="roads">Road access</label>
+        <select id="roads" name="roads">
+          <option value="0.95">Poor</option>
+          <option value="1.0" selected>Average</option>
+          <option value="1.05">Good</option>
+        </select>
+        <span class="err">Choose one</span>
+      </div>
+      <div class="field">
+        <label for="tribal">Tribal and SC/ST density</label>
+        <select id="tribal" name="tribal">
+          <option value="0.9">High</option>
+          <option value="1.0" selected>Medium</option>
+          <option value="1.1">Low</option>
+        </select>
+        <span class="err">Choose one</span>
+      </div>
 
-  <label for="tribal">Tribal / SC/ST Density</label>
-  <select id="tribal">
-    <option value="0.9">High</option>
-    <option value="1.0" selected>Medium</option>
-    <option value="1.1">Low</option>
-  </select>
+      <div class="actions">
+        <button type="submit" class="btn fill">Calculate</button>
+        <button type="reset" class="btn">Reset</button>
+      </div>
+    </div>
+    <div class="out">
+      <h2>Result</h2>
+      <div id="res" class="res" hidden></div>
+      <p class="empty" id="empty">Fill in the fields and select Calculate.</p>
+      <p class="assump">The three multipliers are judgement, not estimates: they are stated ranges applied multiplicatively, so the adjustment is at most &plusmn;27% of the state figure. Use it to think with, and cite NFHS district factsheets where they exist.</p>
+    </div>
+  </form>
+</main>
 
-  <button onclick="calculate()">Calculate</button>
-
-  <div id="results"></div>
+<footer class="foot">
+  <div class="fl">
+    <a href="../../">InsightStack</a>
+    <a href="https://openstacks.dev">OpenStacks</a>
+    <a href="https://github.com/Varnasr/InsightStack">Source</a>
+  </div>
+  <p>An estimator, not a measurement. Figures you enter are never sent anywhere: the
+     arithmetic runs entirely in your browser.</p>
+</footer>
 
 <script>
-function calculate() {
-  const stateValue = parseFloat(document.getElementById("stateValue").value);
-  const infra = parseFloat(document.getElementById("infra").value);
-  const roads = parseFloat(document.getElementById("roads").value);
-  const tribal = parseFloat(document.getElementById("tribal").value);
+(function () {
+  var form = document.getElementById('calc');
+  var res = document.getElementById('res');
+  var empty = document.getElementById('empty');
 
-  if (isNaN(stateValue)) {
-    alert("Please enter a valid state value.");
-    return;
+  function num(id) { return parseFloat(document.getElementById(id).value); }
+  function fmt(n, d) {
+    return Number(n).toLocaleString('en-IN', {minimumFractionDigits: d, maximumFractionDigits: d});
+  }
+  function mark(id, bad) {
+    document.getElementById(id).closest('.field').classList.toggle('bad', bad);
   }
 
-  const adjusted = stateValue * infra * roads * tribal;
-  document.getElementById("results").innerHTML = `
-    <h3>📊 Estimated District Value</h3>
-    <p><strong>${adjusted.toFixed(1)}%</strong></p>
-    <p>This estimate is adjusted based on infrastructure, road access, and social demographics.</p>
-  `;
-}
+  function render(rows) {
+    res.innerHTML = rows.map(function (r) {
+      return '<div class="' + (r.lead ? 'lead' : '') + '">' +
+             '<span class="k">' + r.k + '</span><span class="v">' + r.v + '</span></div>';
+    }).join('');
+    res.hidden = false;
+    empty.hidden = true;
+  }
+
+  form.addEventListener('reset', function () {
+    res.hidden = true; empty.hidden = false;
+    Array.prototype.forEach.call(form.querySelectorAll('.field'), function (f) {
+      f.classList.remove('bad');
+    });
+  });
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    var required = ["stateValue"];
+    var bad = false;
+    required.forEach(function (id) {
+      var v = num(id);
+      var missing = isNaN(v);
+      mark(id, missing);
+      if (missing) bad = true;
+    });
+    if (bad) { res.hidden = true; empty.hidden = false; return; }
+    var sv = num('stateValue');
+    var infra = num('infra'), roads = num('roads'), tribal = num('tribal');
+    var adjusted = sv * infra * roads * tribal;
+    render([
+      {k: 'Estimated district value', v: fmt(adjusted, 1) + '%', lead: true},
+      {k: 'State value', v: fmt(sv, 1) + '%'},
+      {k: 'Combined multiplier', v: fmt(infra * roads * tribal, 3)}
+    ]);
+  });
+})();
 </script>
 </body>
 </html>

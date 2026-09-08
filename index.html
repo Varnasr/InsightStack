@@ -1,104 +1,175 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>InsightStack</title>
-  <style>
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
-      background-color: #ffffff;
-      color: #222;
-      margin: 0;
-      padding: 0;
-    }
-    header {
-      background: #e5f4f7;
-      padding: 1rem 2rem;
-    }
-    header h1 {
-      font-size: 2rem;
-      margin: 0;
-    }
-    main {
-      padding: 2rem;
-    }
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-      gap: 1rem;
-      margin-top: 1rem;
-    }
-    .tile {
-      background-color: #f8f8f8;
-      padding: 1rem;
-      border-radius: 10px;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    }
-    .tile a {
-      text-decoration: none;
-      color: #222;
-      font-weight: 500;
-    }
-    .tile a:hover {
-      color: #007acc;
-    }
-    footer {
-      text-align: center;
-      padding: 2rem;
-      font-size: 0.9rem;
-      background-color: #f0f0f0;
-      margin-top: 3rem;
-    }
-    img {
-      border: 1px solid #ccc;
-      border-radius: 8px;
-      max-width: 1000px;
-      width: 100%;
-      margin: 1rem auto;
-      display: block;
-    }
-  </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>InsightStack · MEL tools, calculators and survey data loaders</title>
+<meta name="description" content="Calculators, econometrics, research documentation and loaders for real survey microdata. Part of the OpenStacks family.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Work+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/stack.css">
 </head>
 <body>
-  <img src="./banner/insightstack_banner.png" alt="InsightStack Banner" />
+<a class="skip" href="#main">Skip to content</a>
 
-  <header>
-        <p>A documentation-first knowledge repository for social impact research, MEL, and data tools.</p>
-  </header>
+<header class="top">
+  <div class="in">
+    <a class="brand" href="./"><span class="dot"></span> InsightStack</a>
+    <nav>
+      <a class="opt" href="#calculators">Calculators</a>
+      <a class="opt" href="#data">Data starters</a>
+      <a class="opt" href="#code">Code</a>
+      <a href="https://github.com/Varnasr/InsightStack">GitHub</a>
+    </nav>
+  </div>
+</header>
 
-  <main>
-    <h2>📁 Key Folders</h2>
-    <div class="grid">
-      <div class="tile"><a href="observable_notebooks/">📊 Observable Notebooks</a></div>
-      <div class="tile"><a href="open_data_editor/">📈 Open Data Editor</a></div>
-      <div class="tile"><a href="taguette_coding/">🔖 Taguette Coding</a></div>
-      <div class="tile"><a href="visual_ethnography_descript/">🎙️ Descript Visual Ethnography</a></div>
-      <div class="tile"><a href="kumu_maps/">🧭 Kumu Maps</a></div>
-      <div class="tile"><a href="stata_snippets/">📉 Stata Snippets</a></div>
-      <div class="tile"><a href="excel_visuals/">📊 Excel Visuals</a></div>
-      <div class="tile"><a href="powerbi_reports/">📊 Power BI Reports</a></div>
-      <div class="tile"><a href="spss_scripts/">📊 SPSS Scripts</a></div>
-      <div class="tile"><a href="flourish_charts/">📈 Flourish Charts</a></div>
-      <div class="tile"><a href="excalidraw_frameworks/">🖍️ Excalidraw Frameworks</a></div>
-      <div class="tile"><a href="survey_to_codebook/">🧾 Survey to Codebook</a></div>
-      <div class="tile"><a href="data_validation/">🧪 Data Validation</a></div>
-      <div class="tile"><a href="label_variables/">🏷️ Label Variables</a></div>
-      <div class="tile"><a href="replication/">🔁 Replication</a></div>
-      <div class="tile"><a href="vensim/">🔄 Vensim Models</a></div>
-    </div>
+<section class="hero">
+  <h1 class="word">Insight<span class="s2">Stack</span></h1>
+  <p class="lede">Tools, templates and thinking for knowledge work in development. Calculators you
+    can use in a browser, econometrics you can run, and loaders that open real survey microdata
+    as it actually arrives. Part of <a href="https://openstacks.dev">OpenStacks</a>.</p>
+  <div class="counts">
+    <div class="hi"><b>6</b><span>Calculators</span></div>
+    <div><b>2</b><span>Dataset loaders</span></div>
+    <div><b>101</b><span>Stata, Python, R, SPSS files</span></div>
+    <div><b>120</b><span>Checks in CI</span></div>
+  </div>
+</section>
 
-    <h2 style="margin-top:3rem;">📈 InsightStack Data Flow</h2>
-    <p>This visual shows how tools in this repository connect across the data pipeline:</p>
-    <img src="docs/data_flow_diagram.png" alt="InsightStack data flow diagram" />
+<main id="main">
 
-    <h2 style="margin-top:3rem;">📑 Changelog</h2>
-    <p>This site uses GitHub Actions to auto-update the <a href="CHANGELOG.md">changelog file</a>.</p>
-  </main>
+<section class="band white" id="calculators">
+  <div class="band-h">
+    <h2>Calculators</h2>
+    <p class="sub">Six tools · run in the browser · nothing is sent anywhere</p>
+  </div>
+  <div class="tiles">
+    <a class="tile" href="calculators/population_projection/population_projection_calculator.html">
+      <p class="meta">Demography</p>
+      <h3>Population projection</h3>
+      <p>Compound a base population forward at a constant annual growth rate.</p>
+      <p class="go">Open &rarr;</p>
+    </a>
+    <a class="tile" href="calculators/education_needs/education_calculator.html">
+      <p class="meta">Education</p>
+      <h3>Education needs</h3>
+      <p>Project school-age population, then compare schools required against schools that exist.</p>
+      <p class="go">Open &rarr;</p>
+    </a>
+    <a class="tile" href="calculators/financial_inclusion/financial_inclusion_calculator.html">
+      <p class="meta">Finance</p>
+      <h3>Financial access gap</h3>
+      <p>Count banking access points against the number a district's population implies.</p>
+      <p class="go">Open &rarr;</p>
+    </a>
+    <a class="tile" href="calculators/district_health_indicators/health_indicators_calculator.html">
+      <p class="meta">Health</p>
+      <h3>District health indicator</h3>
+      <p>Adjust a state NFHS figure towards a district with three coarse multipliers.</p>
+      <p class="go">Open &rarr;</p>
+    </a>
+    <a class="tile" href="calculators/block_level_development/block_level_development_calculator.html">
+      <p class="meta">Disaggregation</p>
+      <h3>Block-level estimator</h3>
+      <p>Split a district count down to one block by its share of district population.</p>
+      <p class="go">Open &rarr;</p>
+    </a>
+    <a class="tile" href="calculators/environmental_change/environmental_change_calculator.html">
+      <p class="meta">Environment</p>
+      <h3>Environmental fragility</h3>
+      <p>Score four indicators against thresholds and weight them into one composite.</p>
+      <p class="go">Open &rarr;</p>
+    </a>
+  </div>
+  <p class="note">Each one states its assumption on the page. They are estimators for thinking
+    with, not measurements: where a published district figure exists, cite that instead.</p>
+</section>
 
-  <footer>
-    <p>© 2025 Varna Sri Raman · Built for open knowledge 🧠</p>
-    <p>Licensed under the <a href="LICENSE" target="_blank">MIT License</a>.</p>
-  </footer>
+<section class="band navy" id="data">
+  <div class="band-h">
+    <h2>Data starters</h2>
+    <p class="sub">Loaders for real survey microdata · Stata, R, Python</p>
+  </div>
+  <div class="tiles">
+    <a class="tile" href="data_starters/dhs-south-asia/">
+      <p class="meta">28 surveys · 7 countries</p>
+      <h3>DHS, South Asia</h3>
+      <p>One loader for every DHS in the region, from India's NFHS-1 to NFHS-5 through Bangladesh,
+         Nepal, Pakistan, Maldives, Afghanistan and Sri Lanka. Handles the weight scaling, the
+         per-recode design variables and the anthropometry flags that quietly ruin a stunting rate.</p>
+      <p class="go">Read the guide &rarr;</p>
+    </a>
+    <a class="tile" href="data_starters/plfs-india/">
+      <p class="meta">Fixed-width · layout-driven</p>
+      <h3>PLFS, India</h3>
+      <p>Reads MoSPI's unit-level text using the round's own layout rather than hardcoded byte
+         positions, and applies the combined-estimate weight rule that is not simply MLTS/100.</p>
+      <p class="go">Read the guide &rarr;</p>
+    </a>
+  </div>
+  <p class="note">No data ships and none can: both DHS and MoSPI prohibit redistribution. Each
+    folder builds synthetic fixtures instead, and the test suites run on every push.</p>
+</section>
+
+<section class="band white" id="code">
+  <div class="band-h">
+    <h2>Code and tooling</h2>
+    <p class="sub">Technique, templates and worked examples</p>
+  </div>
+  <div class="rows">
+    <a class="row" href="econometrics/"><b>Econometrics</b><span>Python, R</span></a>
+    <a class="row" href="stata_snippets/"><b>Stata snippets</b><span>44 do-files</span></a>
+    <a class="row" href="spss_scripts/"><b>SPSS scripts</b><span>20 files</span></a>
+    <a class="row" href="network_effects_sni/"><b>Network effects</b><span>Python</span></a>
+    <a class="row" href="replication/"><b>Replication template</b><span>Python, R</span></a>
+    <a class="row" href="data_validation/"><b>Data validation</b><span>Py, R, Stata</span></a>
+    <a class="row" href="label_variables/"><b>Label variables</b><span>Stata, R</span></a>
+    <a class="row" href="survey_to_codebook/"><b>Survey to codebook</b><span>Python</span></a>
+    <a class="row" href="vensim/"><b>Vensim models</b><span>System dynamics</span></a>
+    <a class="row" href="kumu_maps/"><b>Kumu maps</b><span>Systems</span></a>
+    <a class="row" href="excalidraw_frameworks/"><b>Excalidraw frameworks</b><span>Diagrams</span></a>
+    <a class="row" href="observable_notebooks/"><b>Observable notebooks</b><span>JavaScript</span></a>
+    <a class="row" href="flourish_charts/"><b>Flourish charts</b><span>Visualisation</span></a>
+    <a class="row" href="excel_visuals/"><b>Excel visuals</b><span>Spreadsheets</span></a>
+    <a class="row" href="powerbi_reports/"><b>Power BI reports</b><span>Dashboards</span></a>
+    <a class="row" href="open_data_editor/"><b>Open Data Editor</b><span>Cleaning</span></a>
+    <a class="row" href="taguette_coding/"><b>Taguette coding</b><span>Qualitative</span></a>
+    <a class="row" href="visual_ethnography_descript/"><b>Visual ethnography</b><span>Descript</span></a>
+    <a class="row" href="annotated_research/"><b>Annotated research</b><span>Reading</span></a>
+    <a class="row" href="learning_library/"><b>Learning library</b><span>Reference</span></a>
+    <a class="row" href="writing_guides/"><b>Writing guides</b><span>Documentation</span></a>
+    <a class="row" href="latex/"><b>LaTeX</b><span>Typesetting</span></a>
+  </div>
+</section>
+
+<section class="band ash">
+  <div class="band-h">
+    <h2>Status</h2>
+    <p class="sub">Stable</p>
+  </div>
+  <p class="note">This repository works and is correct, but is not under active development. Bug
+    reports are welcome and issues stay open; new features are unlikely, and replies are measured
+    in weeks rather than days. Dependencies are pinned deliberately so that a clone still runs
+    years from now. See the
+    <a href="https://github.com/Varnasr/OpenStacks-for-Change/blob/main/MAINTENANCE.md">maintenance policy</a>.</p>
+  <p class="note">Citable: <a href="https://doi.org/10.5281/zenodo.15245182">10.5281/zenodo.15245182</a>.
+    The companion repositories are
+    <a href="https://github.com/Varnasr/FieldStack">FieldStack</a> for R and
+    <a href="https://github.com/Varnasr/EquityStack">EquityStack</a> for Python.</p>
+</section>
+
+</main>
+
+<footer class="foot">
+  <div class="fl">
+    <a href="https://openstacks.dev">OpenStacks</a>
+    <a href="https://github.com/Varnasr/InsightStack">GitHub</a>
+    <a href="CHANGELOG.md">Changelog</a>
+    <a href="LICENSE">MIT Licence</a>
+  </div>
+  <p>Varna Sri Raman. Built for open knowledge, and licensed so you can take it.</p>
+</footer>
 </body>
 </html>

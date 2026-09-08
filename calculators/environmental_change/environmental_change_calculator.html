@@ -1,64 +1,138 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Environmental Change Risk Estimator</title>
-  <style>
-    body { font-family: sans-serif; margin: 2rem; max-width: 700px; }
-    label { display: block; margin-top: 1rem; font-weight: bold; }
-    input { padding: 0.5rem; margin-top: 0.3rem; width: 100%; max-width: 300px; }
-    button { margin-top: 1.5rem; padding: 0.6rem 1.5rem; }
-    #results { margin-top: 2rem; background: #f3f7f3; padding: 1rem; border-radius: 6px; }
-  </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Environmental Fragility · InsightStack</title>
+<meta name="description" content="A weighted composite fragility score from four indicators.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Work+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../assets/css/stack.css">
 </head>
 <body>
-  <h2>🌱 Environmental Change Risk Estimator</h2>
+<a class="skip" href="#main">Skip to the calculator</a>
 
-  <label for="forest">Forest Cover (%)</label>
-  <input type="number" id="forest" placeholder="e.g., 21">
+<header class="top">
+  <div class="in">
+    <a class="brand" href="../../"><span class="dot"></span> InsightStack</a>
+    <nav>
+      <a class="opt" href="../../#calculators">Calculators</a>
+      <a href="https://github.com/Varnasr/InsightStack">GitHub</a>
+    </nav>
+  </div>
+</header>
 
-  <label for="water">Households with Nearby Drinking Water (%)</label>
-  <input type="number" id="water" placeholder="e.g., 55">
+<section class="hero">
+  <h1 class="word">Environmental<br>Fragility</h1>
+  <p class="lede">Score four indicators against thresholds and weight them into one composite. A screening device for deciding where to look harder.</p>
+</section>
 
-  <label for="rain">Annual Rainfall Deviation (mm)</label>
-  <input type="number" id="rain" placeholder="e.g., 120">
+<main id="main" class="band white">
+  <form class="calc" id="calc" novalidate>
+    <div class="in">
+      <h2 class="sr">Inputs</h2>
+      <div class="field">
+        <label for="forest">Forest cover (%)</label>
+        <input type="number" id="forest" name="forest" placeholder="e.g. 21" inputmode="decimal">
+        <span class="err">Enter a number</span>
+      </div>
+      <div class="field">
+        <label for="water">Households with drinking water nearby (%)</label>
+        <input type="number" id="water" name="water" placeholder="e.g. 55" inputmode="decimal">
+        <span class="err">Enter a number</span>
+      </div>
+      <div class="field">
+        <label for="rain">Annual rainfall deviation (mm)</label>
+        <input type="number" id="rain" name="rain" placeholder="e.g. 120" inputmode="decimal">
+        <span class="err">Enter a number</span>
+      </div>
+      <div class="field">
+        <label for="temp">Temperature increase (&amp;deg;C)</label>
+        <input type="number" id="temp" name="temp" placeholder="e.g. 1.8" step="0.1" inputmode="decimal">
+        <span class="err">Enter a number</span>
+      </div>
 
-  <label for="temp">Temperature Increase (°C)</label>
-  <input type="number" id="temp" placeholder="e.g., 1.8">
+      <div class="actions">
+        <button type="submit" class="btn fill">Calculate</button>
+        <button type="reset" class="btn">Reset</button>
+      </div>
+    </div>
+    <div class="out">
+      <h2>Result</h2>
+      <div id="res" class="res" hidden></div>
+      <p class="empty" id="empty">Fill in the fields and select Calculate.</p>
+      <p class="assump">Weights are 0.3 forest, 0.3 water, 0.2 rainfall, 0.2 temperature. Each indicator is flattened to 0, 0.5 or 1 at fixed thresholds, so a district just past a threshold scores the same as one far past it.</p>
+    </div>
+  </form>
+</main>
 
-  <button onclick="calculate()">Calculate</button>
+<footer class="foot">
+  <div class="fl">
+    <a href="../../">InsightStack</a>
+    <a href="https://openstacks.dev">OpenStacks</a>
+    <a href="https://github.com/Varnasr/InsightStack">Source</a>
+  </div>
+  <p>An estimator, not a measurement. Figures you enter are never sent anywhere: the
+     arithmetic runs entirely in your browser.</p>
+</footer>
 
-  <div id="results"></div>
+<script>
+(function () {
+  var form = document.getElementById('calc');
+  var res = document.getElementById('res');
+  var empty = document.getElementById('empty');
 
-  <script>
-    function calculate() {
-      const forest = parseFloat(document.getElementById("forest").value);
-      const water = parseFloat(document.getElementById("water").value);
-      const rain = parseFloat(document.getElementById("rain").value);
-      const temp = parseFloat(document.getElementById("temp").value);
+  function num(id) { return parseFloat(document.getElementById(id).value); }
+  function fmt(n, d) {
+    return Number(n).toLocaleString('en-IN', {minimumFractionDigits: d, maximumFractionDigits: d});
+  }
+  function mark(id, bad) {
+    document.getElementById(id).closest('.field').classList.toggle('bad', bad);
+  }
 
-      if ([forest, water, rain, temp].some(isNaN)) {
-        alert("Please enter all values correctly.");
-        return;
-      }
+  function render(rows) {
+    res.innerHTML = rows.map(function (r) {
+      return '<div class="' + (r.lead ? 'lead' : '') + '">' +
+             '<span class="k">' + r.k + '</span><span class="v">' + r.v + '</span></div>';
+    }).join('');
+    res.hidden = false;
+    empty.hidden = true;
+  }
 
-      const forestScore = forest < 25 ? 1 : forest < 35 ? 0.5 : 0;
-      const waterScore = water < 60 ? 1 : water < 75 ? 0.5 : 0;
-      const rainScore = rain > 100 ? 1 : rain > 50 ? 0.5 : 0;
-      const tempScore = temp > 1.5 ? 1 : temp > 1.0 ? 0.5 : 0;
+  form.addEventListener('reset', function () {
+    res.hidden = true; empty.hidden = false;
+    Array.prototype.forEach.call(form.querySelectorAll('.field'), function (f) {
+      f.classList.remove('bad');
+    });
+  });
 
-      const score = (forestScore * 0.3) + (waterScore * 0.3) + (rainScore * 0.2) + (tempScore * 0.2);
-
-      let risk = "Low Risk";
-      if (score >= 0.7) risk = "High Environmental Fragility";
-      else if (score >= 0.4) risk = "Moderate Fragility";
-
-      document.getElementById("results").innerHTML = `
-        <h3>🌍 Estimated Environmental Risk</h3>
-        <p><strong>Composite Risk Score:</strong> ${score.toFixed(2)}</p>
-        <p><strong>Category:</strong> ${risk}</p>
-      `;
-    }
-  </script>
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    var required = ["forest", "water", "rain", "temp"];
+    var bad = false;
+    required.forEach(function (id) {
+      var v = num(id);
+      var missing = isNaN(v);
+      mark(id, missing);
+      if (missing) bad = true;
+    });
+    if (bad) { res.hidden = true; empty.hidden = false; return; }
+    var forest = num('forest'), water = num('water'), rain = num('rain'), temp = num('temp');
+    var fs = forest < 25 ? 1 : forest < 35 ? 0.5 : 0;
+    var ws = water < 60 ? 1 : water < 75 ? 0.5 : 0;
+    var rs = rain > 100 ? 1 : rain > 50 ? 0.5 : 0;
+    var ts = temp > 1.5 ? 1 : temp > 1.0 ? 0.5 : 0;
+    var score = (fs * 0.3) + (ws * 0.3) + (rs * 0.2) + (ts * 0.2);
+    var risk = score >= 0.7 ? 'High fragility' : score >= 0.4 ? 'Moderate fragility' : 'Low fragility';
+    render([
+      {k: 'Category', v: risk, lead: true},
+      {k: 'Composite score (0 to 1)', v: fmt(score, 2)},
+      {k: 'Forest / water / rain / temperature',
+       v: fs.toFixed(1) + ' / ' + ws.toFixed(1) + ' / ' + rs.toFixed(1) + ' / ' + ts.toFixed(1)}
+    ]);
+  });
+})();
+</script>
 </body>
 </html>

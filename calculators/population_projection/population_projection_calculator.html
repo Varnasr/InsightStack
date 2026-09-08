@@ -1,50 +1,127 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Population Projection Calculator</title>
-  <style>
-    body { font-family: sans-serif; margin: 2rem; max-width: 700px; }
-    label { display: block; margin-top: 1rem; font-weight: bold; }
-    input { padding: 0.5rem; margin-top: 0.3rem; width: 100%; max-width: 300px; }
-    button { margin-top: 1.5rem; padding: 0.6rem 1.5rem; }
-    #results { margin-top: 2rem; background: #f0f0f0; padding: 1rem; border-radius: 6px; }
-  </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Population Projection · InsightStack</title>
+<meta name="description" content="Project a population forward at a constant annual growth rate.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Work+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../assets/css/stack.css">
 </head>
 <body>
-  <h2>📈 Population Projection Calculator</h2>
+<a class="skip" href="#main">Skip to the calculator</a>
 
-  <label for="basePop">Current Population</label>
-  <input type="number" id="basePop" placeholder="e.g., 520000">
+<header class="top">
+  <div class="in">
+    <a class="brand" href="../../"><span class="dot"></span> InsightStack</a>
+    <nav>
+      <a class="opt" href="../../#calculators">Calculators</a>
+      <a href="https://github.com/Varnasr/InsightStack">GitHub</a>
+    </nav>
+  </div>
+</header>
 
-  <label for="growth">Annual Growth Rate (%)</label>
-  <input type="number" id="growth" placeholder="e.g., 1.85" step="0.01">
+<section class="hero">
+  <h1 class="word">Population<br>Projection</h1>
+  <p class="lede">Compound a base population forward at a constant annual growth rate. The simplest of the six, and the one most often used as an input to the others.</p>
+</section>
 
-  <label for="years">Number of Years to Project</label>
-  <input type="number" id="years" placeholder="e.g., 5">
+<main id="main" class="band white">
+  <form class="calc" id="calc" novalidate>
+    <div class="in">
+      <h2 class="sr">Inputs</h2>
+      <div class="field">
+        <label for="basePop">Current population</label>
+        <input type="number" id="basePop" name="basePop" placeholder="e.g. 520000" inputmode="decimal">
+        <span class="err">Enter a number</span>
+      </div>
+      <div class="field">
+        <label for="growth">Annual growth rate (%)</label>
+        <input type="number" id="growth" name="growth" placeholder="e.g. 1.85" step="0.01" inputmode="decimal">
+        <span class="err">Enter a number</span>
+      </div>
+      <div class="field">
+        <label for="years">Years to project</label>
+        <input type="number" id="years" name="years" placeholder="e.g. 5" inputmode="decimal">
+        <span class="err">Enter a number</span>
+      </div>
 
-  <button onclick="calculate()">Calculate</button>
+      <div class="actions">
+        <button type="submit" class="btn fill">Calculate</button>
+        <button type="reset" class="btn">Reset</button>
+      </div>
+    </div>
+    <div class="out">
+      <h2>Result</h2>
+      <div id="res" class="res" hidden></div>
+      <p class="empty" id="empty">Fill in the fields and select Calculate.</p>
+      <p class="assump">Geometric growth at a constant rate: <code>P&#8341; = P&#8320;(1 + g)&#8319;</code>. It takes no account of migration, or of a growth rate that changes over the period.</p>
+    </div>
+  </form>
+</main>
 
-  <div id="results"></div>
+<footer class="foot">
+  <div class="fl">
+    <a href="../../">InsightStack</a>
+    <a href="https://openstacks.dev">OpenStacks</a>
+    <a href="https://github.com/Varnasr/InsightStack">Source</a>
+  </div>
+  <p>An estimator, not a measurement. Figures you enter are never sent anywhere: the
+     arithmetic runs entirely in your browser.</p>
+</footer>
 
 <script>
-function calculate() {
-  const basePop = parseFloat(document.getElementById("basePop").value);
-  const growth = parseFloat(document.getElementById("growth").value) / 100;
-  const years = parseInt(document.getElementById("years").value);
+(function () {
+  var form = document.getElementById('calc');
+  var res = document.getElementById('res');
+  var empty = document.getElementById('empty');
 
-  if ([basePop, growth, years].some(isNaN)) {
-    alert("Please enter all values.");
-    return;
+  function num(id) { return parseFloat(document.getElementById(id).value); }
+  function fmt(n, d) {
+    return Number(n).toLocaleString('en-IN', {minimumFractionDigits: d, maximumFractionDigits: d});
+  }
+  function mark(id, bad) {
+    document.getElementById(id).closest('.field').classList.toggle('bad', bad);
   }
 
-  const projected = basePop * Math.pow(1 + growth, years);
+  function render(rows) {
+    res.innerHTML = rows.map(function (r) {
+      return '<div class="' + (r.lead ? 'lead' : '') + '">' +
+             '<span class="k">' + r.k + '</span><span class="v">' + r.v + '</span></div>';
+    }).join('');
+    res.hidden = false;
+    empty.hidden = true;
+  }
 
-  document.getElementById("results").innerHTML = `
-    <h3>📊 Projected Population</h3>
-    <p><strong>Year ${years} Projection:</strong> ${Math.round(projected).toLocaleString()}</p>
-  `;
-}
+  form.addEventListener('reset', function () {
+    res.hidden = true; empty.hidden = false;
+    Array.prototype.forEach.call(form.querySelectorAll('.field'), function (f) {
+      f.classList.remove('bad');
+    });
+  });
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    var required = ["basePop", "growth", "years"];
+    var bad = false;
+    required.forEach(function (id) {
+      var v = num(id);
+      var missing = isNaN(v);
+      mark(id, missing);
+      if (missing) bad = true;
+    });
+    if (bad) { res.hidden = true; empty.hidden = false; return; }
+    var base = num('basePop'), g = num('growth') / 100, yrs = parseInt(num('years'), 10);
+    var projected = base * Math.pow(1 + g, yrs);
+    render([
+      {k: 'Projected population, year ' + yrs, v: fmt(Math.round(projected), 0), lead: true},
+      {k: 'Increase over base', v: fmt(Math.round(projected - base), 0)},
+      {k: 'Total growth', v: fmt(((projected / base) - 1) * 100, 1) + '%'}
+    ]);
+  });
+})();
 </script>
 </body>
 </html>

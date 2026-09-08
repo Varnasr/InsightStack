@@ -1,53 +1,126 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Block-Level Development Estimator</title>
-  <style>
-    body { font-family: sans-serif; margin: 2rem; max-width: 700px; }
-    label { display: block; margin-top: 1rem; font-weight: bold; }
-    input { padding: 0.5rem; margin-top: 0.3rem; width: 100%; max-width: 300px; }
-    button { margin-top: 1.5rem; padding: 0.6rem 1.5rem; }
-    #results { margin-top: 2rem; background: #f9f9f9; padding: 1rem; border-radius: 6px; }
-  </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Block-Level Estimator · InsightStack</title>
+<meta name="description" content="Disaggregate a district figure to block level by population share.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Work+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../assets/css/stack.css">
 </head>
 <body>
-  <h2>🧱 Block-Level Development Estimator</h2>
+<a class="skip" href="#main">Skip to the calculator</a>
 
-  <label for="districtPop">District Population</label>
-  <input type="number" id="districtPop" placeholder="e.g., 600000">
+<header class="top">
+  <div class="in">
+    <a class="brand" href="../../"><span class="dot"></span> InsightStack</a>
+    <nav>
+      <a class="opt" href="../../#calculators">Calculators</a>
+      <a href="https://github.com/Varnasr/InsightStack">GitHub</a>
+    </nav>
+  </div>
+</header>
 
-  <label for="blockPop">Block Population</label>
-  <input type="number" id="blockPop" placeholder="e.g., 75000">
+<section class="hero">
+  <h1 class="word">Block-Level<br>Estimator</h1>
+  <p class="lede">Split a district-level count down to one block, in proportion to that block's share of district population.</p>
+</section>
 
-  <label for="districtValue">District Value of the Indicator</label>
-  <input type="number" id="districtValue" placeholder="e.g., 30 (PHCs, schools, etc.)">
+<main id="main" class="band white">
+  <form class="calc" id="calc" novalidate>
+    <div class="in">
+      <h2 class="sr">Inputs</h2>
+      <div class="field">
+        <label for="districtPop">District population</label>
+        <input type="number" id="districtPop" name="districtPop" placeholder="e.g. 600000" inputmode="decimal">
+        <span class="err">Enter a number</span>
+      </div>
+      <div class="field">
+        <label for="blockPop">Block population</label>
+        <input type="number" id="blockPop" name="blockPop" placeholder="e.g. 75000" inputmode="decimal">
+        <span class="err">Enter a number</span>
+      </div>
+      <div class="field">
+        <label for="districtValue">District value of the indicator</label>
+        <input type="number" id="districtValue" name="districtValue" placeholder="e.g. 30" inputmode="decimal">
+        <span class="hint">Whatever you are disaggregating: primary health centres, schools, sanctioned posts.</span><span class="err">Enter a number</span>
+      </div>
 
-  <button onclick="calculate()">Calculate</button>
+      <div class="actions">
+        <button type="submit" class="btn fill">Calculate</button>
+        <button type="reset" class="btn">Reset</button>
+      </div>
+    </div>
+    <div class="out">
+      <h2>Result</h2>
+      <div id="res" class="res" hidden></div>
+      <p class="empty" id="empty">Fill in the fields and select Calculate.</p>
+      <p class="assump">Assumes the indicator is distributed exactly in proportion to population. Where provision is concentrated in the district headquarters, this overstates the periphery and understates the centre.</p>
+    </div>
+  </form>
+</main>
 
-  <div id="results"></div>
+<footer class="foot">
+  <div class="fl">
+    <a href="../../">InsightStack</a>
+    <a href="https://openstacks.dev">OpenStacks</a>
+    <a href="https://github.com/Varnasr/InsightStack">Source</a>
+  </div>
+  <p>An estimator, not a measurement. Figures you enter are never sent anywhere: the
+     arithmetic runs entirely in your browser.</p>
+</footer>
 
-  <script>
-    function calculate() {
-      const districtPop = parseFloat(document.getElementById("districtPop").value);
-      const blockPop = parseFloat(document.getElementById("blockPop").value);
-      const districtValue = parseFloat(document.getElementById("districtValue").value);
+<script>
+(function () {
+  var form = document.getElementById('calc');
+  var res = document.getElementById('res');
+  var empty = document.getElementById('empty');
 
-      if ([districtPop, blockPop, districtValue].some(isNaN)) {
-        alert("Please enter all values correctly.");
-        return;
-      }
+  function num(id) { return parseFloat(document.getElementById(id).value); }
+  function fmt(n, d) {
+    return Number(n).toLocaleString('en-IN', {minimumFractionDigits: d, maximumFractionDigits: d});
+  }
+  function mark(id, bad) {
+    document.getElementById(id).closest('.field').classList.toggle('bad', bad);
+  }
 
-      const share = blockPop / districtPop;
-      const blockEstimate = districtValue * share;
+  function render(rows) {
+    res.innerHTML = rows.map(function (r) {
+      return '<div class="' + (r.lead ? 'lead' : '') + '">' +
+             '<span class="k">' + r.k + '</span><span class="v">' + r.v + '</span></div>';
+    }).join('');
+    res.hidden = false;
+    empty.hidden = true;
+  }
 
-      document.getElementById("results").innerHTML = `
-        <h3>📊 Block-Level Estimate</h3>
-        <p><strong>Block Share:</strong> ${(share * 100).toFixed(2)}%</p>
-        <p><strong>Block-Level Value:</strong> ${blockEstimate.toFixed(2)}</p>
-        <p>This assumes population-based disaggregation.</p>
-      `;
-    }
-  </script>
+  form.addEventListener('reset', function () {
+    res.hidden = true; empty.hidden = false;
+    Array.prototype.forEach.call(form.querySelectorAll('.field'), function (f) {
+      f.classList.remove('bad');
+    });
+  });
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    var required = ["districtPop", "blockPop", "districtValue"];
+    var bad = false;
+    required.forEach(function (id) {
+      var v = num(id);
+      var missing = isNaN(v);
+      mark(id, missing);
+      if (missing) bad = true;
+    });
+    if (bad) { res.hidden = true; empty.hidden = false; return; }
+    var dp = num('districtPop'), bp = num('blockPop'), dv = num('districtValue');
+    var share = bp / dp;
+    render([
+      {k: 'Block-level value', v: fmt(dv * share, 2), lead: true},
+      {k: 'Block share of district population', v: fmt(share * 100, 2) + '%'}
+    ]);
+  });
+})();
+</script>
 </body>
 </html>

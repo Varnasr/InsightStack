@@ -1,66 +1,147 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Financial Access Gap Calculator</title>
-  <style>
-    body { font-family: sans-serif; margin: 2rem; max-width: 700px; }
-    label { display: block; margin-top: 1rem; font-weight: bold; }
-    input { padding: 0.5rem; margin-top: 0.3rem; width: 100%; max-width: 300px; }
-    button { margin-top: 1.5rem; padding: 0.6rem 1.5rem; }
-    #results { margin-top: 2rem; background: #f8f8f8; padding: 1rem; border-radius: 6px; }
-  </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Financial Access Gap · InsightStack</title>
+<meta name="description" content="Compare banking access points against a population-based norm.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Work+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../assets/css/stack.css">
 </head>
 <body>
-  <h2>🏦 Financial Inclusion Calculator</h2>
+<a class="skip" href="#main">Skip to the calculator</a>
 
-  <label for="population">District Population</label>
-  <input type="number" id="population" placeholder="e.g., 675000">
+<header class="top">
+  <div class="in">
+    <a class="brand" href="../../"><span class="dot"></span> InsightStack</a>
+    <nav>
+      <a class="opt" href="../../#calculators">Calculators</a>
+      <a href="https://github.com/Varnasr/InsightStack">GitHub</a>
+    </nav>
+  </div>
+</header>
 
-  <label for="norm">People per Access Point (Norm)</label>
-  <input type="number" id="norm" placeholder="e.g., 2000">
+<section class="hero">
+  <h1 class="word">Financial<br>Access Gap</h1>
+  <p class="lede">Count the access points a district has against the number its population implies at your chosen norm.</p>
+</section>
 
-  <label for="commercial">Commercial Banks</label>
-  <input type="number" id="commercial" placeholder="e.g., 42">
+<main id="main" class="band white">
+  <form class="calc" id="calc" novalidate>
+    <div class="in">
+      <h2 class="sr">Inputs</h2>
+      <div class="field">
+        <label for="population">District population</label>
+        <input type="number" id="population" name="population" placeholder="e.g. 675000" inputmode="decimal">
+        <span class="err">Enter a number</span>
+      </div>
+      <div class="field">
+        <label for="norm">People per access point (norm)</label>
+        <input type="number" id="norm" name="norm" placeholder="e.g. 2000" inputmode="decimal">
+        <span class="err">Enter a number</span>
+      </div>
+      <div class="field">
+        <label for="commercial">Commercial bank branches</label>
+        <input type="number" id="commercial" name="commercial" placeholder="e.g. 42" inputmode="decimal">
+        <span class="err">Enter a number</span>
+      </div>
+      <div class="field">
+        <label for="rural">Regional rural bank branches</label>
+        <input type="number" id="rural" name="rural" placeholder="e.g. 18" inputmode="decimal">
+        <span class="err">Enter a number</span>
+      </div>
+      <div class="field">
+        <label for="atm">ATMs</label>
+        <input type="number" id="atm" name="atm" placeholder="e.g. 64" inputmode="decimal">
+        <span class="err">Enter a number</span>
+      </div>
+      <div class="field">
+        <label for="mitras">Bank Mitras / CSPs</label>
+        <input type="number" id="mitras" name="mitras" placeholder="e.g. 156" inputmode="decimal">
+        <span class="err">Enter a number</span>
+      </div>
 
-  <label for="rural">Rural Banks</label>
-  <input type="number" id="rural" placeholder="e.g., 18">
+      <div class="actions">
+        <button type="submit" class="btn fill">Calculate</button>
+        <button type="reset" class="btn">Reset</button>
+      </div>
+    </div>
+    <div class="out">
+      <h2>Result</h2>
+      <div id="res" class="res" hidden></div>
+      <p class="empty" id="empty">Fill in the fields and select Calculate.</p>
+      <p class="assump">Every access point counts equally, so an ATM weighs the same as a full branch and a Bank Mitra the same as either. Distance is not modelled: a district can clear the norm on paper while parts of it remain far from anything.</p>
+    </div>
+  </form>
+</main>
 
-  <label for="atm">ATMs</label>
-  <input type="number" id="atm" placeholder="e.g., 64">
+<footer class="foot">
+  <div class="fl">
+    <a href="../../">InsightStack</a>
+    <a href="https://openstacks.dev">OpenStacks</a>
+    <a href="https://github.com/Varnasr/InsightStack">Source</a>
+  </div>
+  <p>An estimator, not a measurement. Figures you enter are never sent anywhere: the
+     arithmetic runs entirely in your browser.</p>
+</footer>
 
-  <label for="mitras">Bank Mitras / CSPs</label>
-  <input type="number" id="mitras" placeholder="e.g., 156">
+<script>
+(function () {
+  var form = document.getElementById('calc');
+  var res = document.getElementById('res');
+  var empty = document.getElementById('empty');
 
-  <button onclick="calculate()">Calculate</button>
+  function num(id) { return parseFloat(document.getElementById(id).value); }
+  function fmt(n, d) {
+    return Number(n).toLocaleString('en-IN', {minimumFractionDigits: d, maximumFractionDigits: d});
+  }
+  function mark(id, bad) {
+    document.getElementById(id).closest('.field').classList.toggle('bad', bad);
+  }
 
-  <div id="results"></div>
+  function render(rows) {
+    res.innerHTML = rows.map(function (r) {
+      return '<div class="' + (r.lead ? 'lead' : '') + '">' +
+             '<span class="k">' + r.k + '</span><span class="v">' + r.v + '</span></div>';
+    }).join('');
+    res.hidden = false;
+    empty.hidden = true;
+  }
 
-  <script>
-    function calculate() {
-      const pop = parseFloat(document.getElementById("population").value);
-      const norm = parseFloat(document.getElementById("norm").value);
-      const commercial = parseInt(document.getElementById("commercial").value);
-      const rural = parseInt(document.getElementById("rural").value);
-      const atm = parseInt(document.getElementById("atm").value);
-      const mitras = parseInt(document.getElementById("mitras").value);
+  form.addEventListener('reset', function () {
+    res.hidden = true; empty.hidden = false;
+    Array.prototype.forEach.call(form.querySelectorAll('.field'), function (f) {
+      f.classList.remove('bad');
+    });
+  });
 
-      if (isNaN(pop) || isNaN(norm) || isNaN(commercial) || isNaN(rural) || isNaN(atm) || isNaN(mitras)) {
-        alert("Please fill all fields with valid numbers.");
-        return;
-      }
-
-      const needed = Math.ceil(pop / norm);
-      const current = commercial + rural + atm + mitras;
-      const gap = needed - current;
-
-      document.getElementById("results").innerHTML = `
-        <h3>📊 Results</h3>
-        <p><strong>Access Points Needed:</strong> ${needed}</p>
-        <p><strong>Current Access Points:</strong> ${current}</p>
-        <p><strong>Gap:</strong> ${gap >= 0 ? gap + " more points needed" : Math.abs(gap) + " points in surplus"}</p>
-      `;
-    }
-  </script>
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    var required = ["population", "norm", "commercial", "rural", "atm", "mitras"];
+    var bad = false;
+    required.forEach(function (id) {
+      var v = num(id);
+      var missing = isNaN(v);
+      mark(id, missing);
+      if (missing) bad = true;
+    });
+    if (bad) { res.hidden = true; empty.hidden = false; return; }
+    var pop = num('population'), norm = num('norm');
+    var current = parseInt(num('commercial'), 10) + parseInt(num('rural'), 10) +
+                  parseInt(num('atm'), 10) + parseInt(num('mitras'), 10);
+    var needed = Math.ceil(pop / norm);
+    var gap = needed - current;
+    render([
+      {k: gap >= 0 ? 'More access points needed' : 'Access points in surplus',
+       v: fmt(Math.abs(gap), 0), lead: true},
+      {k: 'Access points required', v: fmt(needed, 0)},
+      {k: 'Access points now', v: fmt(current, 0)},
+      {k: 'People per existing access point', v: fmt(Math.round(pop / current), 0)}
+    ]);
+  });
+})();
+</script>
 </body>
 </html>
