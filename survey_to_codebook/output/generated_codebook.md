@@ -1,73 +1,54 @@
-# Generated Codebook
+# Codebook
 
+5 variables, of which 4 are questions and 1 are form metadata or calculations.
 
-## `name`
-**Label:** What is your name?
+| Variable | Type | Label |
+|---|---|---|
+| `personal/name` | text | What is your name? |
+| `personal/age` | integer | How old are you? |
+| `personal/gender` | select_one | Select your gender |
+| `personal/hobby` | select_multiple | Select hobbies |
+| `endnote` | note | Thank you for completing the survey! *(metadata)* |
 
-**Type:** text name
+## `personal/name`
 
-**Hint:** Enter your full name
+**What is your name?**  
+Type: `text`  
+Hint: Enter your full name  
 
-**Constraint:** ``
+## `personal/age`
 
-**Relevant if:** ``
+**How old are you?**  
+Type: `integer`  
+Hint: In completed years  
+Asked when: `${age} >= 0`  
+Constraint: `. >= 0`  
 
+## `personal/gender`
 
+**Select your gender**  
+Type: `select_one` from list `gender`  
 
-## `age`
-**Label:** How old are you?
+| Code | Label |
+|---|---|
+| `m` | Male |
+| `f` | Female |
 
-**Type:** integer age
+## `personal/hobby`
 
-**Hint:** In completed years
+**Select hobbies**  
+Type: `select_multiple` from list `hobbies`  
+Hint: Tick all that apply  
 
-**Constraint:** `. >= 0`
+| Code | Label |
+|---|---|
+| `reading` | Reading |
+| `sports` | Sports |
+| `music` | Music |
 
-**Relevant if:** `${age} >= 0`
-
-
-
-## `gender`
-**Label:** Select your gender
-
-**Type:** select_one gender gender
-
-**Hint:** 
-
-**Constraint:** ``
-
-**Relevant if:** ``
-
-**Choices:**
-- `m`: Male
-- `f`: Female
-
-
-## `hobby`
-**Label:** Select hobbies
-
-**Type:** select_multiple hobbies hobby
-
-**Hint:** Tick all that apply
-
-**Constraint:** ``
-
-**Relevant if:** ``
-
-**Choices:**
-- `reading`: Reading
-- `sports`: Sports
-- `music`: Music
-
+Exported as one space-separated string of selected codes; expand to one column per option before tabulating.
 
 ## `endnote`
-**Label:** Thank you for completing the survey!
 
-**Type:** note endnote
-
-**Hint:** 
-
-**Constraint:** ``
-
-**Relevant if:** ``
-
+**Thank you for completing the survey!**  
+Type: `note`  

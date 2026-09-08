@@ -2,19 +2,19 @@
 
 Effective file naming helps improve searchability, version control, and team coordination.
 
-### 📂 Recommended Structure
+### Recommended Structure
 
 ```
 [project/code]_[doc_type]_[location/scope]_[version/date].[ext]
 ```
 
-### ✅ Examples
+### Examples
 
 - `ihcrf_blog_khunti_v01.docx`
 - `gain_report_foodculture2024_final.pdf`
 - `mohfw_melframework_ncds_draft_2025-04-01.xlsx`
 
-### 🔁 Tips
+### Tips
 
 - Use lowercase and underscores for clarity
 - Include dates in `YYYY-MM-DD` format for sorting

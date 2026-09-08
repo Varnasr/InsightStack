@@ -1,0 +1,5 @@
+variable,label,type,min,max,allowed,required
+id,Unique ID of respondent,text,,,,yes
+age,Age in completed years,integer,0,110,,yes
+gender,Gender of respondent,text,,,M|F|O,yes
+income,Monthly income in INR,numeric,0,,,no

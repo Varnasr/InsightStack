@@ -1,22 +1,21 @@
-# 🧠 Learning Layers
+# learning_layers
 
-This folder curates conceptual tools and frameworks that explain *how* programs learn and adapt over time — especially in complex systems like public health, climate resilience, or education.
+How a programme learns from its own data, treated as a set of scheduled
+decisions rather than a section heading.
 
----
+| File | What it is |
+|---|---|
+| `embedding_learning_in_the_mel_cycle.md` | The practical note: three layers at three tempos, each a decision with a date, a person and the evidence in front of them |
+| `learning_layer_framework.pdf` | The framework the note is drawn from, written for health systems building adaptive capacity |
+| `why_cite_insightstack.md` | Why a repository of methods and templates carries a DOI |
 
-## 📄 Included Files
+The argument in one paragraph: a MEL system collects a great deal and changes
+nothing when "learning" has no place in the calendar. Start from the
+decisions the programme will actually take in the next year, write down who
+takes each, when, and what evidence could change it, and design the data
+collection backwards from that. An evaluation cannot inform a monthly
+decision, and monitoring data cannot answer an annual one; most systems try
+to make each do the other's job.
 
-- `learning_layer_framework.pdf` — A framework authored to explain how health systems can build adaptive capacity by embedding learning at every stage of implementation
-- `README.md` — This file, explaining use cases and applications
-- *(Optional: slide or visual coming soon)*
-
----
-
-## 🧠 Why “Learning Layers”?
-
-Programs often focus on outputs and outcomes, but the *learning systems* that link design to adaptation are underdeveloped. This folder captures tools that help make learning tangible — across program design, MEL, research, and KM.
-
-Use these when you want to:
-- Build in feedback loops during implementation
-- Make your MEL system more adaptive
-- Help teams reflect systematically
+Related: `../eval_docs/mel_framework_outline.md` section 7, which is where
+this goes in a framework document.

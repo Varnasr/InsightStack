@@ -1,0 +1,6 @@
+variable,path,type,label,values,required,relevant,constraint,metadata
+name,personal/name,text,What is your name?,,no,,,no
+age,personal/age,integer,How old are you?,,no,${age} >= 0,. >= 0,no
+gender,personal/gender,select_one,Select your gender,m=Male|f=Female,no,,,no
+hobby,personal/hobby,select_multiple,Select hobbies,reading=Reading|sports=Sports|music=Music,no,,,no
+endnote,endnote,note,Thank you for completing the survey!,,no,,,yes

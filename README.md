@@ -30,13 +30,13 @@ This is the **knowledge systems layer** of [OpenStacks for Change](https://opens
 |-----------|-------------|----------|--------|
 | `data_starters/` | Loaders for real public-use survey microdata, one folder per dataset. DHS across South Asia, and PLFS | Stata, R, Python | Ready |
 | `calculators/` | District-level calculators for health, education, finance, environment, and population | HTML, JavaScript | Ready |
-| `data_validation/` | Data cleaning and validation workflows with intentionally messy test data | Python, R, Stata | Ready |
+| `data_validation/` | Rule-driven validation from a data dictionary: duplicates, required, ranges, allowed values, types, name style, column set, cross-file ids; one issue row per problem, by identifier | Python (18 tests); Stata, R, SPSS companions |
 | `stata_snippets/` | Reusable Stata code: data management, graphs, regression, impact evaluation, surveys | Stata | Ready |
 | `spss_scripts/` | Survey analysis syntax: cleaning, regression, missing data, frequencies | SPSS | Ready |
 | `network_effects_sni/` | Peer effects estimation, centrality analysis, diffusion modelling for SHG networks | Python | Ready |
-| `replication/` | Replication template with parallel Python and R implementations | Python, R | Ready |
-| `label_variables/` | Variable labelling and codebook generation | Stata | Ready |
-| `survey_to_codebook/` | Survey instrument to codebook conversion | Python | Ready |
+| `replication/` | A replication package that verifies itself: one entry point, a recorded result, a Python-against-R cross-check, and a test that the verification can fail | Python, R (4 tests) |
+| `label_variables/` | Variable and value labels from a dictionary, written into `.dta` and `.sav` where they survive; round-trips both ways | Python (8 tests); Stata, R, SPSS companions |
+| `survey_to_codebook/` | XLSForm to Markdown codebook and to a label dictionary; resolves groups, repeats and choice lists; reports form defects | Python (9 tests) |
 | `econometrics/` | Causal inference: DiD, PSM, IV/2SLS, RDD, sensitivity analysis — with Python, R, and sample data | Python, R | Ready |
 
 ### Visual and Interactive Tools
@@ -44,12 +44,7 @@ This is the **knowledge systems layer** of [OpenStacks for Change](https://opens
 | Directory | What It Does | Tool |
 |-----------|-------------|------|
 | `vensim/` | 8 system dynamics models (health, agriculture, climate, migration, education) | Vensim |
-| `observable_notebooks/` | Interactive district vulnerability dashboard | Observable |
-| `excalidraw_frameworks/` | MEL framework and ecosystem map diagrams | Excalidraw |
-| `flourish_charts/` | Data visualisation templates | Flourish |
-| `miro/` | Participatory analysis board templates | Miro |
-| `kumu_maps/` | Network and systems mapping | Kumu |
-| `powerbi_reports/` | Report templates | Power BI |
+| `tool_notes/` | Seven visual and collaboration tools (Excalidraw, Kumu, Observable, RawGraphs, Flourish, Power BI, Miro): when to use each, when not, what goes wrong, one worked file apiece | Notes |
 | `excel_visuals/` | Excel visualisation templates | Excel |
 
 ### Knowledge and Documentation
@@ -57,9 +52,11 @@ This is the **knowledge systems layer** of [OpenStacks for Change](https://opens
 | Directory | What It Contains |
 |-----------|-----------------|
 | `learning_library/` | Curated PDFs across 10 categories: programming, data science, research methods, AI tools, MLE resources |
-| `writing_guides/` | Style guides and writing templates |
-| `annotated_research/` | Annotated bibliography and research notes |
-| `learning_layers/` | Learning design frameworks |
+| `writing_guides/` | Theory of change, results chain, evaluation report structure, policy brief, writing about uncertainty; the verb is decided by the design | Markdown |
+| `eval_docs/` | Logframe template, indicator reference sheet, MEL framework outline, indicator guidance, with a completed example | Markdown, CSV, XLSX |
+| `KM_tools/` | Folder structure, project README template, file naming, tagging | Markdown |
+| `annotated_research/` | Five research briefs marked up with one eight-tag annotation scheme, weakest design to strongest; illustrative, for teaching critical reading | Markdown |
+| `learning_layers/` | Embedding learning in the MEL cycle as scheduled decisions at three tempos | Markdown, PDF |
 | `taguette_coding/` | Qualitative coding workflows |
 | `visual_ethnography_descript/` | Ethnographic documentation tools |
 | `latex/` | LaTeX templates for research reports |
@@ -87,9 +84,9 @@ InsightStack is one of several stacks in the [OpenStacks](https://openstacks.dev
 | Stack | Focus |
 |-------|-------|
 | **InsightStack** (this repo) | MEL tools, calculators, documentation |
-| [FieldStack](https://github.com/Varnasr/FieldStack) | R notebooks for fieldwork and evaluation |
-| [EquityStack](https://github.com/Varnasr/EquityStack) | Python workflows for development data |
-| [SignalStack](https://github.com/Varnasr/SignalStack) | Research Rundown newsletter archive |
+| [FieldStack](https://github.com/Varnasr/FieldStack) | Field operations and survey analysis in R |
+| [EquityStack](https://github.com/Varnasr/EquityStack) | Distributional analysis and survey estimation in Python |
+| [PolicyStack](https://github.com/Varnasr/PolicyStack) | 15 flagship schemes, four years of budget data, performance indicators; superseded for new work by [PolicyDhara](https://github.com/Varnasr/PolicyDhara) |
 
 ## Contributing
 

@@ -28,7 +28,7 @@ jobs:
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install numpy pandas pyreadstat networkx statsmodels scipy
+          pip install numpy pandas pyreadstat networkx statsmodels scipy openpyxl
 
       # No survey data ships or can. Each folder builds seeded synthetic files
       # carrying the structure and nobody's data.
@@ -48,6 +48,20 @@ jobs:
       # no real respondents, so there is nothing to build first.
       - name: Network effects
         run: python -m network_effects_sni.test_network_effects
+
+      - name: Data validation
+        run: python data_validation/test_data_validation.py
+
+      - name: Label variables
+        run: python label_variables/test_label_variables.py
+
+      - name: Survey to codebook
+        run: python survey_to_codebook/test_survey_to_codebook.py
+
+      # Runs the package end to end in a temporary copy, corrupts a value, and
+      # checks that verification fails. The R cross-check runs in the R job.
+      - name: Replication
+        run: python replication/test_replication.py
 
   r:
     name: R
@@ -86,3 +100,11 @@ jobs:
       - name: Sample data
         working-directory: tests
         run: Rscript test_dummy_population.R
+
+      # The replication package fits the same model in both languages and
+      # run_all.py fails if the point estimates differ at six places.
+      - name: Replication, Python against R
+        run: |
+          pip install statsmodels scipy
+          Rscript replication/run_regression.R
+          python replication/run_all.py

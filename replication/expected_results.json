@@ -1,0 +1,18 @@
+{
+  "n": 100,
+  "r_squared": 0.665421,
+  "treatment_estimate": 11.319997,
+  "treatment_std_error": 1.844772,
+  "treatment_p_value": 0.0,
+  "outcome_mean_control": 166.14667,
+  "outcome_mean_treated": 176.213045,
+  "model": {
+    "outcome": "outcome",
+    "predictors": [
+      "treatment",
+      "age",
+      "income"
+    ],
+    "cov": "HC1"
+  }
+}

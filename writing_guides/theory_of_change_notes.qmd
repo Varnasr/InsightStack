@@ -41,7 +41,7 @@ Activities:
 |------|--------|
 | Use plain language | Overload with jargon |
 | Ground assumptions in reality | Leave out local risks/barriers |
-| Align with MEL plans | Treat ToC as fixed — it evolves |
+| Align with MEL plans | Treat ToC as fixed ,  it evolves |
 | Make outcomes measurable | Use vague claims like “empowerment” with no link |
 
 ---

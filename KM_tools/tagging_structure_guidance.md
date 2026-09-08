@@ -4,7 +4,7 @@ For internal drives, Notion, Baserow, or Dropbox-style KM systems, use structure
 
 ---
 
-## 🏷 Recommended Tag Axes
+## Recommended Tag Axes
 
 - **Thematic**: health, gender, education, foodculture, WEE, climate
 - **Geographic**: india, assam, jharkhand, district-specific
@@ -14,7 +14,7 @@ For internal drives, Notion, Baserow, or Dropbox-style KM systems, use structure
 
 ---
 
-## 📌 Sample Tags
+## Sample Tags
 
 ```
 ["health", "gender", "madhya_pradesh", "learning", "brief", "donor"]
@@ -23,7 +23,7 @@ For internal drives, Notion, Baserow, or Dropbox-style KM systems, use structure
 
 ---
 
-## 📁 Suggested Usage
+## Suggested Usage
 
 - As labels in Notion databases
 - In metadata columns in Excel/Baserow
