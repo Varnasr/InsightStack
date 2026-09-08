@@ -1,3 +1,25 @@
-title: Varna's Knowledge Repository
+title: InsightStack
+description: Tools, templates and thinking for knowledge work in development.
 markdown: kramdown
-theme: minima
+
+# GitHub Pages runs this plugin, which turns each folder's README.md into that
+# folder's index page. Declared so a local build matches what actually ships.
+plugins:
+  - jekyll-readme-index
+
+# No theme. Folder READMEs render through _layouts/default.html so a page that
+# opens when someone clicks through looks like the rest of the site, rather than
+# switching to a stock theme halfway.
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: "default"
+
+exclude:
+  - README.md
+  - CHANGELOG.md
+  - ROADMAP.md
+  - CITATION.cff
+  - tests
+  - data_starters/*/fixtures
