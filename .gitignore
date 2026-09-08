@@ -65,3 +65,6 @@ yarn-error.log*
 .nuxt/
 .serverless/
 .firebase/
+
+# Generated test fixtures (rebuild with make_fixture.py)
+data_starters/**/fixtures/

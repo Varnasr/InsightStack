@@ -28,6 +28,7 @@ This is the **knowledge systems layer** of [OpenStacks for Change](https://opens
 
 | Directory | What It Does | Language | Status |
 |-----------|-------------|----------|--------|
+| `data_starters/` | Loaders for real public-use survey microdata, one folder per dataset. DHS across South Asia, and PLFS | Stata, R, Python | Ready |
 | `calculators/` | District-level calculators for health, education, finance, environment, and population | HTML, JavaScript | Ready |
 | `data_validation/` | Data cleaning and validation workflows with intentionally messy test data | Python, R, Stata | Ready |
 | `stata_snippets/` | Reusable Stata code: data management, graphs, regression, impact evaluation, surveys | Stata | Ready |

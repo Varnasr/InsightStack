@@ -1,0 +1,32 @@
+canonical,description,ir_kr_br_var,mr_var,hr_pr_var,scale,notes
+cluster,Primary sampling unit identifier as collected,v001,mv001,hv001,none,Combine with household number to identify a household across recodes.
+household,Household number within cluster,v002,mv002,hv002,none,"caseid in IR = cluster + household + respondent line, zero padded."
+line,Respondent line number in household roster,v003,mv003,hvidx,none,PR uses hvidx for the member line; HR has no member level.
+weight,Sample weight,v005,mv005,hv005,divide by 1000000,"THE most common DHS error. Point estimates of means survive the omission because the scale cancels; any weighted count or total does not."
+psu,Primary sampling unit for variance estimation,v021,mv021,hv021,none,Usually identical to cluster. Use this one for svyset rather than v001.
+strata,Sample strata for variance estimation,v022,mv022,hv022,none,"Older rounds sometimes carry the design strata in v023 instead. Check both before assuming."
+region,Region or state of residence,v024,mv024,hv024,none,"Codes are NOT comparable across rounds. India gained Telangana in 2014 and Ladakh in 2019, so NFHS-3, NFHS-4 and NFHS-5 have different code sets."
+district,District,sdist,,shdist,none,"India only, and only from NFHS-4 onward. NFHS-5 is district representative; NFHS-3 and earlier are not."
+residence,Urban or rural,v025,mv025,hv025,none,1 = urban and 2 = rural in every round checked.
+interview_cmc,Date of interview in century month code,v008,mv008,hv008,cmc,"CMC = (year - 1900) * 12 + month. January 2020 = 1441."
+age,Age in completed years,v012,mv012,hv105,none,"IR universe is women 15-49 in every South Asia round. hv105 in PR covers all ages including children."
+edu_level,Highest education level,v106,mv106,hv106,none,0 none 1 primary 2 secondary 3 higher.
+edu_years,Years of education completed,v133,mv133,hv108,none,"Codes 97 and 98 are inconsistent and don't know. Do not average them in."
+wealth_quintile,Wealth index quintile,v190,mv190,hv270,none,"Absent from pre-2000 rounds. Quintiles are computed within the survey, so they are not comparable across countries or rounds."
+wealth_score,Wealth index factor score,v191,mv191,hv271,divide by 100000,Continuous score behind the quintile.
+marital_status,Current marital status,v501,mv501,,none,
+ceb,Children ever born,v201,,,none,
+contraceptive_current,Current contraceptive method,v312,,,none,v313 collapses this to none / traditional / folkloric / modern.
+hb_adjusted,Haemoglobin adjusted for altitude and smoking,v456,,hv? see notes,divide by 10,"Stored in g/dL times 10. v457 is the derived anaemia category. Household member haemoglobin lives in hb56 in some rounds; confirm against your codebook rather than trusting this row."
+woman_weight_kg,Woman's weight,v437,,,divide by 10,Values 9994 and above are flags or missing.
+woman_height_cm,Woman's height,v438,,,divide by 10,Values 9994 and above are flags or missing.
+child_dob_cmc,Child's date of birth in century month code,b3,,,cmc,
+child_sex,Sex of child,b4,,,none,1 male 2 female.
+child_alive,Child is alive,b5,,,none,Filter on this before any analysis of living children. Omitting it is how under-five mortality gets computed as zero.
+child_age_at_death,Age at death in months,b7,,,none,Imputed. b6 holds the raw coded value.
+haz,Height for age z score,hw70,,hc70,divide by 100,"KR uses hw70-hw73 and PR uses hc70-hc73. Same measure, different prefix, and mixing them up returns nothing rather than an error."
+waz,Weight for age z score,hw71,,hc71,divide by 100,See haz.
+whz,Weight for height z score,hw72,,hc72,divide by 100,See haz.
+bmiz,BMI for age z score,hw73,,hc73,divide by 100,See haz.
+anc_visits,Number of antenatal care visits,m14,,,none,Asked for births in the reference period. Code 98 is don't know.
+delivery_place,Place of delivery,m15,,,none,Institutional delivery is derived from this. Category codes differ across rounds.
