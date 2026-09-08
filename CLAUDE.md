@@ -67,6 +67,35 @@ plainly rather than implying otherwise.
   holds the figures DHS published. Reproducing them is the only cheap proof a
   pipeline is right end to end.
 
+## network_effects_sni
+
+Rewritten 2026-09-08 from four scripts that could not run as a chain: one wrote
+its plot to a directory that does not exist, one duplicated it under different
+column names, one read a CSV neither of them wrote, and the diffusion model
+picked its seed with `random.choice` and no seed set.
+
+Two things in the rewrite are the point of it and should survive a refactor.
+
+**`peer_association` is deliberately not called `estimate_peer_effect`.** The
+reflection problem (Manski 1993) means a positive coefficient is consistent with
+endogenous influence, response to peers' characteristics, and simple shared
+circumstances, and fully connected groups cannot separate them. The result
+carries an `interpretation` string saying so and `print_result` prints it under
+every estimate. A test asserts the string is there.
+
+**Peer means are leave-one-out.** The version this replaced computed the group
+mean including the member's own value on the line above the correct one and left
+both in the frame. `test_including_your_own_value_would_manufacture_the_finding`
+shows the cost: on pure noise the with-self version returns a large positive
+coefficient, because the regressor contains the dependent variable.
+
+Also: eigenvector centrality is computed by a dense symmetric solve rather than
+through networkx, because both networkx routes fail on the graph shape a survey
+of small groups produces. `eigenvector_centrality` raises
+`PowerIterationFailedConvergence` and `eigenvector_centrality_numpy` goes through
+ARPACK, which refuses a component of two nodes. A group of two members is
+ordinary.
+
 ## Related repositories
 
 The analysis half of the chain lives elsewhere, coupled through a CSV rather
@@ -97,11 +126,19 @@ applies across all of Varna's repositories and sites, not only this one.
 
 **A folder only becomes a page if it holds a `README.md`.** GitHub Pages runs
 `jekyll-readme-index`, which turns that README into the folder's index. A folder
-without one returns 404. Worse, **twelve** folders in this repository hold a
-*nested duplicate* directory (`spss_scripts/spss_scripts/`, `kumu_maps/kumu_maps/`,
-`latex/latex/`, `stata_snippets/stata_snippets/`, and eight more), so the README
-sits one level down and the top-level path 404s while the deeper one works.
-`network_effects_sni/` and `writing_guides/` have no README at all.
+without one returns 404.
+
+**The nested duplicates are gone (2026-09-08).** Fourteen folders held a
+directory of the same name, so clicking `taguette_coding` on GitHub showed one
+folder called `taguette_coding` and nothing else, and the repository read as
+empty. All flattened with `git mv`, with two exceptions worth knowing:
+`stata_snippets/stata_snippets/` became `stata_snippets/stata_mel/`, because its
+README described a distinct MEL set and would have collided with the top-level
+one; and `spss_scripts/` was doubly nested, holding both `spss_scripts/` and
+`spss_tools/spss_tools/`. Do not reintroduce the pattern by unzipping an archive
+into a folder of its own name.
+
+`miro/`, `network_effects_sni/` and `writing_guides/` had no README and now do.
 
 **Do not link-check with `python -m http.server`.** It generates directory
 listings, so every folder link returns 200 locally and a third of them 404 in
