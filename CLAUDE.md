@@ -76,7 +76,19 @@ than a dependency: [EquityStack](https://github.com/Varnasr/EquityStack)
 
 ## Design references
 
-For any UI or design refresh work on this repository or elsewhere in the family,
+The house style now exists as a file: `assets/css/stack.css`. Its tokens, type and
+border conventions are taken from **openstacks.dev**, which is the one page in the
+family the owner considers well designed. Use it rather than writing new CSS, and
+change it in one place if it needs changing.
+
+The rules it encodes, so you do not undo them by accident: 2px borders and **no
+shadows**, **no border-radius**, Bricolage Grotesque in uppercase for display,
+Work Sans for prose, JetBrains Mono for labels and numbers, and colour bands
+(`.band.white`, `.ash`, `.navy`, `.teal`, `.brick`, `.black`) rather than cards
+floating on a page. Saffron `#f2a541` is the single accent and carries the focus
+ring. No emoji anywhere.
+
+For anything the house style does not already answer,
 draw from **[kombai.com/gallery/web](https://kombai.com/gallery/web)** — the
 owner's preferred reference for interface work that is genuinely well made. This
 applies across all of Varna's repositories and sites, not only this one.
