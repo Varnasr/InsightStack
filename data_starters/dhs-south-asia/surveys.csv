@@ -1,0 +1,29 @@
+survey_id,country,country_code,round_label,year,fieldwork_start,fieldwork_end,release_date,women_15_49,men,implementing_org
+IA1993DHS,India,IA,1992-93,1993,1992-04-01,1993-09-01,1995-08-01,89777,,International Institute for Population Sciences (IIPS)
+IA1999DHS,India,IA,1998-99,1999,1998-11-01,1999-12-01,2000-10-01,90303,,International Institute for Population Sciences (IIPS)
+IA2006DHS,India,IA,2005-06,2006,2005-11-01,2006-08-01,2007-09-01,124385,74369,"International Institute for Population Sciences, Mumbai"
+IA2015DHS,India,IA,2015-16,2015,2015-01-01,2016-12-01,2018-01-11,699686,112122,International Institute for Population Sciences (IIPS)
+IA2020DHS,India,IA,2019-21,2020,2019-06-01,2021-04-01,2022-03-03,724115,101839,"International Institute for Population Sciences (IIPS), Mumbai"
+PK1991DHS,Pakistan,PK,1990-91,1991,1990-12-01,1991-05-01,1992-07-01,6611,1354,The National Institute of Population Studies (NIPS)
+PK2006DHS,Pakistan,PK,2006-07,2006,2006-09-01,2007-02-01,2008-07-18,10023,,The National Institute of Population Studies (NIPS)
+PK2012DHS,Pakistan,PK,2012-13,2012,2012-10-01,2013-04-01,2014-01-22,13558,3134,National Institute of Population Studies (NIPS)
+PK2017DHS,Pakistan,PK,2017-18,2017,2017-11-01,2018-04-01,2019-02-25,15068,3691,The National Institute of Population Studies (NIPS)
+BD1994DHS,Bangladesh,BD,1993-94,1994,1993-11-01,1994-03-01,1994-12-01,9640,3284,Mitra & Associates/ NIPORT
+BD1997DHS,Bangladesh,BD,1996-97,1997,1996-11-01,1997-03-01,1997-12-01,9127,3346,Mitra & Associates/ NIPORT
+BD2000DHS,Bangladesh,BD,1999-00,2000,1999-11-01,2000-03-01,2001-05-01,10544,2556,Mitra & Associates / NIPORT
+BD2004DHS,Bangladesh,BD,2004,2004,2004-01-01,2004-05-01,2005-05-01,11440,4297,Mitra & Associates
+BD2007DHS,Bangladesh,BD,2007,2007,2007-03-01,2007-08-01,2009-03-24,10996,3771,National Institute for Population Research and Training (NIPORT)
+BD2011DHS,Bangladesh,BD,2011,2011,2011-07-01,2011-12-01,2013-02-04,17842,3997,National Institute of Population Research and Training (NIPORT) and Mitra and Associates of Dhaka
+BD2014DHS,Bangladesh,BD,2014,2014,2014-06-01,2014-11-01,2016-03-23,17863,,National Institute of Population Research and Training (NIPORT) and Mitra and Associates of Dhaka
+BD2017DHS,Bangladesh,BD,2017-18,2017,2017-10-01,2018-03-01,2020-12-14,20127,,Mitra and Associates (MA)
+BD2022DHS,Bangladesh,BD,2022,2022,2022-08-01,2022-12-01,2024-09-09,30078,,NIPORT Mitra and Associates
+NP1996DHS,Nepal,NP,1996,1996,1996-01-01,1996-06-01,1997-03-01,8429,,Ministry of Health/New ERA
+NP2001DHS,Nepal,NP,2001,2001,2001-01-01,2001-06-01,2002-04-01,8726,2261,Ministry of Health/New ERA
+NP2006DHS,Nepal,NP,2006,2006,2006-02-01,2006-08-01,2007-05-01,10793,4397,New ERA
+NP2011DHS,Nepal,NP,2011,2011,2011-01-01,2011-06-01,2012-03-27,12674,4121,New ERA
+NP2016DHS,Nepal,NP,2016,2016,2016-06-01,2017-01-01,2017-11-13,12862,4063,New ERA
+NP2022DHS,Nepal,NP,2022,2022,2022-01-01,2022-06-01,2023-06-23,14845,4913,New ERA
+LK1987DHS,Sri Lanka,LK,1987,1987,1987-01-01,1987-03-01,1988-05-01,5865,,Department of Census and Statistics /Ministry of Plan Implementation
+MV2009DHS,Maldives,MV,2009,2009,2009-01-01,2009-10-01,2010-11-23,7131,1727,Ministry of Health
+MV2016DHS,Maldives,MV,2016-17,2016,2016-03-01,2017-11-01,2019-02-25,7699,4342,Ministry of Health (MOH)
+AF2015DHS,Afghanistan,AF,2015,2015,2015-06-01,2016-02-01,2017-02-15,29461,10760,
