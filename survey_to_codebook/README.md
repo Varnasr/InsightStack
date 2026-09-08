@@ -1,48 +1,35 @@
 # survey_to_codebook
 
-An XLSForm already contains everything a codebook needs, question by question.
-This writes it out as one document a reviewer or analyst can read top to
-bottom, and reports the defects it finds in the form on the way.
+Writes a codebook from an XLSForm, one document a reviewer can read top to
+bottom, and reports defects in the form.
 
 ```
 python -m survey_to_codebook input/survey.xlsx -o output/codebook.md --csv output/dictionary.csv
 python survey_to_codebook/test_survey_to_codebook.py     # 9 tests, 27 checks
 ```
 
-Exit status is 1 when the form has a problem, so it can gate a deployment.
+Exit status is 1 when the form has a problem.
 
-## What the codebook records
+## Output
 
-For every variable: the export path (`group/question`, matching the column name
-the platform will produce), type, label, hint, whether it is required, the
-relevance expression it is asked under, its constraint, and for a select the
-full choice list with codes. Metadata rows (`start`, `end`, `deviceid`,
-`calculate`, `note`) are kept and marked, so a reader knows which columns in
-the export are not answers.
+For every variable: the export path (`group/question`, matching the column
+name the platform produces), type, label, hint, whether it is required, its
+relevance expression, its constraint, and for a select the full choice list
+with codes. Metadata rows (`start`, `end`, `deviceid`, `calculate`, `note`)
+are kept and marked.
 
-The `--csv` output is a flat dictionary in the shape `label_variables/` reads,
-with the choice lists as `code=label|...` value labels. So a form's own choices
-become the value labels on its exported data, with nothing retyped.
+`--csv` writes a flat dictionary in the shape `label_variables/` reads, with
+choice lists as `code=label|...` value labels.
 
-## What it catches
+## Defects reported
 
-| Problem | Why it matters |
-|---|---|
-| A select naming a choice list that is not on the choices sheet | The form will not deploy, and a codebook that silently prints an empty list hides why |
-| A choice list no question uses | Usually a renamed question; the old list is a fossil |
+| Problem | Effect |
+| --- | --- |
+| A select names a choice list not on the choices sheet | The form will not deploy |
+| A choice list no question uses | Usually a renamed question |
 | A group opened and never closed | Every later path is wrong |
 | The same variable name twice | The export overwrites one column with the other |
-| A group name written in the `type` cell (`begin_group personal`) with `name` blank | Some exports do this; both spellings are read |
+| A group name in the `type` cell (`begin_group personal`) with `name` blank | Read either way |
 
-The bundled `input/survey.xlsx` shipped with the first of these: the form said
-`select_multiple hobbies` and the choices sheet named the list `hobby`. The
-previous notebook printed a codebook with an empty choice list and no comment.
-This tool reported it on the first run, and the sample is now fixed.
-
-## What this replaced
-
-A notebook that iterated the survey sheet and printed a heading per row. It did
-not know about groups, so every path was wrong for a grouped question; it
-handled `select_one` and not `select_multiple`; and it looked up choice lists
-by splitting on whitespace and taking the second token, which works until a
-list name has a space in it.
+The bundled `input/survey.xlsx` once had the first of these (`select_multiple
+hobbies` against a list named `hobby`); it is fixed.

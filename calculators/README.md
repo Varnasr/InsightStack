@@ -1,35 +1,18 @@
-# 🧮 Calculators for District and Program Planning
+# Calculators
 
-This folder contains practical tools for estimating health, education, infrastructure, and population needs at the district or block level — especially in data-scarce environments.
+Six browser calculators for district and block planning. Each folder holds
+an HTML file that runs locally, a note on the logic, and a README.
 
-These calculators are designed for use by:
-- Program managers and MEL teams
-- District planners or consultants
-- NGOs and policy support groups
-- Fellows or research trainees
+| Folder | What it calculates |
+| --- | --- |
+| `population_projection/` | Future population at a constant annual growth rate |
+| `education_needs/` | Schools needed from projected school-age population |
+| `district_health_indicators/` | A district estimate from a state NFHS figure and three multipliers |
+| `financial_inclusion/` | Banking access points against the number a population implies |
+| `block_level_development/` | A district value split to blocks by population share |
+| `environmental_change/` | A fragility score from rainfall, forest and water indicators |
 
-Each subfolder includes:
-- A working HTML calculator
-- A markdown file explaining the logic
-- A usage README
+Each calculator states its assumptions on the page. Where a published
+district figure exists, use that.
 
----
-
-## 📁 Included Tools
-
-| Folder | What it Calculates |
-|--------|--------------------|
-| `education_needs/` | Projects number of schools needed based on population growth |
-| `district_health_indicators/` | Estimates health indicators by adjusting NFHS data using local context |
-| `financial_inclusion/` | Computes bank access gaps based on population norms |
-| `environmental_change/` | Flags environmental fragility using rainfall, forest, and water indicators |
-| `block_level_development/` | Disaggregates district-level values to blocks using population share |
-| `population_projection/` | Forecasts future population using annual growth %
-
----
-
-Each calculator is **real**, **modular**, and **customizable**. They can be embedded, adapted, or scaled for dashboards, training kits, or planning exercises.
-
-MIT licensed. Attribution appreciated.
-
-Made with ♥ by [Varna Sri Raman](https://on-web.link/varna)
+MIT licence.

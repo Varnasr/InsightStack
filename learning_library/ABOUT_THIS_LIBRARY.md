@@ -1,6 +1,6 @@
 # ABOUT_THIS_LIBRARY.md
 
-## 📚 What Is This?
+## What Is This?
 
 This learning library is a curated collection of handbooks, guides, visual references, and templates designed to support:
 - Independent learners seeking to upskill in data science, programming, or AI tools
@@ -11,7 +11,7 @@ It brings together open-access resources and review copies in a structured, them
 
 ---
 
-## 🎯 Why It Was Built
+## Why It Was Built
 
 This library was assembled to bridge practical learning (e.g., Excel + AI, creative programming) with foundational thinking (e.g., research design, epistemology). It reflects a commitment to:
 - Open learning
@@ -20,7 +20,7 @@ This library was assembled to bridge practical learning (e.g., Excel + AI, creat
 
 ---
 
-## 📁 How It's Organized
+## How It's Organized
 
 Each folder in this library is organized by theme:
 
@@ -32,7 +32,7 @@ Each folder in this library is organized by theme:
 
 ---
 
-## ⚖️ Licensing Notes
+## Licensing Notes
 
 Many files here are educational review copies or open-licensed works:
 

@@ -22,8 +22,8 @@ good substitute for a wall and a stack of Post-its when there is no wall.
 
 A workshop where everyone is in the room. Paper is faster, needs no login, and
 the people least comfortable with a laptop are often the people whose input
-matters most. Miro in a physical room is a way of making the facilitator the
-only person who can write on the wall.
+matters most. In a physical room Miro makes the facilitator the only person who can
+write on the wall.
 
 And anything that needs to survive: a Miro board is a snapshot on a
 third-party server, and the free plan limits how many you can keep. Export the

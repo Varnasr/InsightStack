@@ -34,4 +34,4 @@ breaks when someone forks it and the file attachment does not come along. And
 `.ojs` is not JavaScript, whatever the extension suggests: cells are
 declarative and execution order is by dependency, so a cell that uses a
 variable defined "later" in the file is fine and a loop that mutates one is
-not. If you are debugging something that "should work", that is usually why.
+not. 

@@ -2,28 +2,28 @@
 
 This repository includes examples and scripts using the following open-source tools:
 
-## 🐍 Python
+## Python
 - pandas
 - numpy
 - statsmodels
 - pyreadstat (optional)
 - Jupyter Notebooks
 
-## 🧮 R
+## R
 - haven
 - labelled
 - dplyr
 - base R
 
-## 📊 STATA
+## STATA
 - .do file scripting
 - misstable, duplicates report, label variable
 
-## 📄 SPSS (notebook)
+## SPSS (notebook)
 - .sav file handling
 - visual analytics (descriptives, factor analysis)
 
-## 🧾 Others
+## Others
 - Excel (XLSForms)
 - Markdown (documentation/codebooks)
 - Excalidraw, Miro (visual diagrams)

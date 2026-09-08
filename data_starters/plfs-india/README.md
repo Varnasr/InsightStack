@@ -4,8 +4,7 @@ Starter code in Stata, R and Python for the Periodic Labour Force Survey
 unit-level data published by MoSPI.
 
 This folder does not contain data and cannot. You register at
-[microdata.gov.in](https://microdata.gov.in/) and download your own copy. What is
-here is the part that is tedious to work out and easy to get wrong.
+[microdata.gov.in](https://microdata.gov.in/) and download your own copy.
 
 ## What you are dealing with
 
@@ -27,8 +26,7 @@ complaining.
 
 ## The weight is not MLTS divided by 100
 
-This is the one to get right, and it is the reason this folder exists. MoSPI's
-README says, verbatim:
+MoSPI's README says, verbatim:
 
 > For generating sub-sample wise estimate for the Calendar Year, weight may be
 > applied as follows:
@@ -84,10 +82,9 @@ MoSPI gives the common primary key as:
 > Second Stage Stratum No. = 38(1)
 > Sample Household No. = 39(2)
 
-with the sub-sample code at byte 27. Note that the parenthetical for Quarter
-does not agree with the `11(2)` notation used for the rest, which is one more
-reason to take positions from the layout file rather than from any prose,
-including this page.
+with the sub-sample code at byte 27. The parenthetical for Quarter does not
+agree with the `11(2)` notation used for the rest; take positions from the
+layout file, not from prose.
 
 Build the key by zero-padding each part to its declared width. Concatenating the
 parts unpadded collapses distinct households onto one key: FSU 1234 with
@@ -210,9 +207,9 @@ Both suites were run and both pass, and they return identical numbers from the
 same fixture: 240 households, 1,099 persons, mean `MLTS` of 1217.72 and a
 correct sum of weights of 2190.4 against the naive rule's 2922.5.
 
-The strongest check available without real data is the last one. Household size
-is written into one file and the members into another, so the two agree only if
-the byte positions, the zero padding and the merge are all correct at once.
+Household size is written into one file and the members into another, so the
+last check passes only if the byte positions, the zero padding and the merge
+are all correct.
 
 Stata has no free runtime, so `load_plfs.do` is the one file here that has not
 been executed. The fixture check at the bottom of it takes about a minute and
@@ -230,4 +227,4 @@ names the number to look for.
   included in the download for each round. Retrieved 2026-09-08.
 
 Where this page and the documents shipped with your round disagree, your round
-is right. Positions, and occasionally field names, change.
+is right.

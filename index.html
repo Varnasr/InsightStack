@@ -27,9 +27,9 @@
 
 <section class="hero">
   <h1 class="word">Insight<span class="s2">Stack</span></h1>
-  <p class="lede">Tools, templates and thinking for knowledge work in development. Calculators that run in
-    a browser, econometrics you can actually execute, and loaders that open survey microdata
-    in the state it arrives in. Part of <a href="https://openstacks.dev">OpenStacks</a>.</p>
+  <p class="lede">Calculators that run in a browser, causal-inference code in Python and R, loaders for DHS and
+    PLFS microdata, and templates for the documents an evaluation produces. Part of
+    <a href="https://openstacks.dev">OpenStacks</a>.</p>
   <div class="counts">
     <div class="hi"><b>6</b><span>Calculators</span></div>
     <div><b>2</b><span>Dataset loaders</span></div>
@@ -43,7 +43,7 @@
 <section class="band white" id="calculators">
   <div class="band-h">
     <h2>Calculators</h2>
-    <p class="sub">Six tools · run in the browser · nothing is sent anywhere</p>
+    <p class="sub">Six tools · run in the browser · nothing is sent to a server</p>
   </div>
   <div class="tiles">
     <a class="tile" href="calculators/population_projection/population_projection_calculator.html">
@@ -83,8 +83,8 @@
       <p class="go">Open &rarr;</p>
     </a>
   </div>
-  <p class="note">Each one states its assumption on the page. Treat the output as an estimate to
-    think with. Where a published district figure exists, cite that figure instead.</p>
+  <p class="note">Each calculator states its assumptions on the page. Where a published district figure
+    exists, use that instead.</p>
 </section>
 
 <section class="band navy" id="data">
@@ -97,21 +97,20 @@
       <p class="meta">28 surveys · 7 countries</p>
       <h3>DHS, South Asia</h3>
       <p>One loader for every DHS in the region, from India's NFHS-1 to NFHS-5 through Bangladesh,
-         Nepal, Pakistan, Maldives, Afghanistan and Sri Lanka. Gets right the three
-         things that quietly ruin a stunting rate: the weight scaling, the design variables,
-         and the anthropometry flags.</p>
+         Nepal, Pakistan, Maldives, Afghanistan and Sri Lanka. Applies the weight scaling, the design
+         variables and the anthropometry flags.</p>
       <p class="go">Read the guide &rarr;</p>
     </a>
     <a class="tile" href="data_starters/plfs-india/">
       <p class="meta">Fixed-width · layout-driven</p>
       <h3>PLFS, India</h3>
-      <p>Opens MoSPI's unit-level files using the layout that shipped with your round, and
-         applies the combined-estimate weight rule, which is not simply MLTS divided by 100.</p>
+      <p>Opens MoSPI's fixed-width files using the layout shipped with the round, and applies the
+         combined-estimate weight rule.</p>
       <p class="go">Read the guide &rarr;</p>
     </a>
   </div>
-  <p class="note">No data ships, and none can: DHS and MoSPI both forbid passing the files on. You
-    download your own copy, and each guide names exactly which files to fetch.</p>
+  <p class="note">No data ships. DHS and MoSPI both prohibit redistribution; each guide names the files
+    to download.</p>
 </section>
 
 <section class="band white" id="code">
@@ -122,11 +121,11 @@
   <div class="rows">
     <a class="row" href="https://github.com/Varnasr/InsightStack/tree/main/econometrics">
       <span class="t"><b>Econometrics</b><span>Python, R</span></span>
-      <span class="d">Did the programme work, and can you defend the answer? Difference-in-differences, matching, instrumental variables and regression discontinuity, each with data to practise on.</span>
+      <span class="d">Difference-in-differences, matching, instrumental variables, regression discontinuity and sensitivity analysis, with sample data.</span>
     </a>
     <a class="row" href="https://github.com/Varnasr/InsightStack/tree/main/stata_snippets">
       <span class="t"><b>Stata snippets</b><span>44 do-files</span></span>
-      <span class="d">The Stata you end up rewriting on every project: merges, labels, graphs, regressions, survey settings.</span>
+      <span class="d">Data management, merges, labels, graphs, regressions, survey settings.</span>
     </a>
     <a class="row" href="https://github.com/Varnasr/InsightStack/tree/main/spss_scripts">
       <span class="t"><b>SPSS scripts</b><span>20 files</span></span>
@@ -134,43 +133,43 @@
     </a>
     <a class="row" href="https://github.com/Varnasr/InsightStack/tree/main/network_effects_sni">
       <span class="t"><b>Network effects</b><span>Python</span></span>
-      <span class="d">Who influences whom in a self-help group, how far a practice spreads, and why the obvious peer-effects regression cannot answer the question it looks like it answers.</span>
+      <span class="d">Centrality, peer association with leave-one-out means, and threshold diffusion for self-help group data.</span>
     </a>
     <a class="row" href="https://github.com/Varnasr/InsightStack/tree/main/replication">
       <span class="t"><b>Replication</b><span>Python, R</span></span>
-      <span class="d">A package that checks itself: one command from raw data to results, a recorded answer, R against Python, and a test that the check can fail.</span>
+      <span class="d">One command from raw data to results, a recorded answer, and an R cross-check.</span>
     </a>
     <a class="row" href="https://github.com/Varnasr/InsightStack/tree/main/data_validation">
       <span class="t"><b>Data validation</b><span>Py, R, Stata, SPSS</span></span>
-      <span class="d">Catch what is wrong with a file, by household id, before it reaches a finding. Rules come from the data dictionary; blanks in skip-pattern questions are not flagged; sentinel codes count as missing.</span>
+      <span class="d">Checks from a data dictionary, reported by household id: duplicates, required fields, ranges, allowed values, types, column set.</span>
     </a>
     <a class="row" href="https://github.com/Varnasr/InsightStack/tree/main/label_variables">
       <span class="t"><b>Label variables</b><span>Py, R, Stata, SPSS</span></span>
-      <span class="d">Put the labels from the dictionary into a Stata or SPSS file, where they survive. A CSV loses them on every round trip.</span>
+      <span class="d">Variable and value labels from a dictionary, written into Stata and SPSS files.</span>
     </a>
     <a class="row" href="https://github.com/Varnasr/InsightStack/tree/main/survey_to_codebook">
       <span class="t"><b>Survey to codebook</b><span>Python</span></span>
-      <span class="d">Turn an XLSForm into a codebook a reviewer can read top to bottom, and into the label dictionary for its own export. Reports the choice list the form names and does not have.</span>
+      <span class="d">An XLSForm to a Markdown codebook and a label dictionary. Reports form defects such as a missing choice list.</span>
     </a>
     <a class="row" href="https://github.com/Varnasr/InsightStack/tree/main/vensim">
       <span class="t"><b>System dynamics</b><span>Vensim</span></span>
-      <span class="d">Where an intervention pushes back on itself: eight system models across health, agriculture, climate, migration and education.</span>
+      <span class="d">Eight system models across health, agriculture, climate, migration and education.</span>
     </a>
     <a class="row" href="https://github.com/Varnasr/InsightStack/tree/main/tool_notes">
       <span class="t"><b>Tool notes</b><span>9 tools</span></span>
-      <span class="d">Excalidraw, Kumu, Observable, RawGraphs, Flourish, Power BI and Miro: when each is worth the setup, when it is not, and what goes wrong, with one worked file apiece.</span>
+      <span class="d">Excalidraw, Kumu, Observable, RawGraphs, Flourish, Power BI, Miro, Excel and LaTeX: when to use each, when not to, and one example file apiece.</span>
     </a>
     <a class="row" href="https://github.com/Varnasr/InsightStack/tree/main/taguette_coding">
       <span class="t"><b>Qualitative coding</b><span>Taguette</span></span>
-      <span class="d">One focus group coded start to finish, and the method: decide the frame first, code two transcripts twice, count carefully. Eleven of fourteen groups is a sentence; 78 per cent of respondents is a survey result a focus group cannot give.</span>
+      <span class="d">One focus group coded start to finish in Taguette, with the method.</span>
     </a>
     <a class="row" href="https://github.com/Varnasr/InsightStack/tree/main/visual_ethnography_descript">
       <span class="t"><b>Recorded fieldwork</b><span>Descript</span></span>
-      <span class="d">From recording to clip to quote, and what is decided at each step. Three separate consents, every quote checked against the audio, and a clip cut with its context visible to whoever approves it.</span>
+      <span class="d">Recorded interviews: consent, transcription, clips and quotes.</span>
     </a>
     <a class="row" href="https://github.com/Varnasr/InsightStack/tree/main/annotated_research">
       <span class="t"><b>Annotated research</b><span>5 briefs</span></span>
-      <span class="d">Five research briefs marked up with the same eight questions, weakest design to strongest. Hand one out unmarked, have readers tag it, compare.</span>
+      <span class="d">Five illustrative research briefs annotated with one eight-tag scheme, weakest design to strongest.</span>
     </a>
     <a class="row" href="https://github.com/Varnasr/InsightStack/tree/main/learning_library">
       <span class="t"><b>Learning library</b><span>Reference</span></span>
@@ -178,22 +177,22 @@
     </a>
     <a class="row" href="https://github.com/Varnasr/InsightStack/tree/main/learning_layers">
       <span class="t"><b>Learning layers</b><span>Practice</span></span>
-      <span class="d">A MEL system that changes nothing has no learning in the calendar. Three layers at three tempos, each a decision with a date, a person and the evidence in front of them.</span>
+      <span class="d">Learning in the MEL cycle as scheduled decisions, at three tempos.</span>
     </a>
     <a class="row" href="https://github.com/Varnasr/InsightStack/tree/main/writing_guides">
       <span class="t"><b>Writing guides</b><span>5 guides</span></span>
-      <span class="d">Theory of change, results chain, the evaluation report, the policy brief, and how to write uncertainty into the same sentence as the number. The verb is decided by the design.</span>
+      <span class="d">Theory of change, results chain, evaluation report, policy brief, writing about uncertainty.</span>
     </a>
     <a class="row" href="https://github.com/Varnasr/InsightStack/tree/main/eval_docs">
       <span class="t"><b>Evaluation documents</b><span>Templates</span></span>
-      <span class="d">Logframe, indicator reference sheet and MEL framework: the template, how to fill it in outcome-first, and the errors that recur. The assumptions column is the programme's theory.</span>
+      <span class="d">Logframe, indicator reference sheet and MEL framework templates, with a completed example.</span>
     </a>
     <a class="row" href="https://github.com/Varnasr/InsightStack/tree/main/KM_tools">
       <span class="t"><b>Knowledge management</b><span>Conventions</span></span>
-      <span class="d">One folder structure and a README template, so a file's location says what it is. Raw data is never edited; every table came from a script still in the folder.</span>
+      <span class="d">A folder structure, a README template, file naming and tagging conventions.</span>
     </a>
   </div>
-  <p class="note">These open on GitHub, where the code lives.</p>
+  <p class="note">Links open on GitHub.</p>
 
 </section>
 
@@ -202,12 +201,11 @@
     <h2>Status</h2>
     <p class="sub">Stable</p>
   </div>
-  <p class="note">This repository works and is correct, but is not under active development. Bug
-    reports are welcome and issues stay open; new features are unlikely, and replies are measured
-    in weeks rather than days. See the
+  <p class="note">The code works and is not under active development. Bug reports are welcome; new
+    features are unlikely, and replies take weeks. See the
     <a href="https://github.com/Varnasr/OpenStacks-for-Change/blob/main/MAINTENANCE.md">maintenance policy</a>.</p>
-  <p class="note">Citable: <a href="https://doi.org/10.5281/zenodo.15245182">10.5281/zenodo.15245182</a>.
-    The companion repositories are
+  <p class="note">DOI <a href="https://doi.org/10.5281/zenodo.15245182">10.5281/zenodo.15245182</a>.
+    Companion repositories:
     <a href="https://github.com/Varnasr/FieldStack">FieldStack</a> for R and
     <a href="https://github.com/Varnasr/EquityStack">EquityStack</a> for Python.</p>
 </section>
@@ -221,7 +219,7 @@
     <a href="https://github.com/Varnasr/InsightStack/blob/main/CHANGELOG.md">Changelog</a>
     <a href="https://github.com/Varnasr/InsightStack/blob/main/LICENSE">MIT Licence</a>
   </div>
-  <p>Varna Sri Raman. Built for open knowledge, and licensed so you can take it.</p>
+  <p>Varna Sri Raman. MIT licence.</p>
 </footer>
 </body>
 </html>

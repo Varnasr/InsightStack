@@ -1,24 +1,18 @@
 # DHS recode files, South Asia
 
 Starter code in Stata, R and Python for the Demographic and Health Surveys of
-India, Bangladesh, Nepal, Pakistan, Maldives, Afghanistan and Sri Lanka. Twenty
-eight surveys, one loader, because the recode structure is the same in all of
+India, Bangladesh, Nepal, Pakistan, Maldives, Afghanistan and Sri Lanka. Twenty-eight surveys, one loader: the recode structure is the same in all of
 them.
 
 This folder does not contain data and cannot. The DHS Program licence lets you
-use the files, not pass them on, so everyone downloads their own copy. What is
-here is the part that takes a week to work out and five minutes to get wrong.
+use the files, not pass them on, so everyone downloads their own copy. 
 
-## What this is for
+## What the loaders do
 
-You have `IAIR7EFL.DTA` on your desktop. It holds 724,115 women and roughly five
-thousand variables named `v106`, `v190`, `hw70`. Opening it fills your memory,
-the codebook is 800 pages, and the first four numbers you compute will be wrong
-in ways that do not announce themselves.
-
-These scripts read only the columns you name, attach the right weight and design
-for the recode you are holding, apply the documented scale factors, and stop with
-an explanation when something is off. They are a starting point, not an analysis.
+They read only the columns you name from a recode such as `IAIR7EFL.DTA`
+(724,115 women, about five thousand variables), attach the weight and design
+variables for that recode, apply the documented scale factors, and stop with an
+explanation when something is off.
 
 ## Getting the files
 
@@ -89,8 +83,7 @@ python load_dhs.py IAKR7EFL.DTA --vars v190 hw70 hw71 b5 --anthro --out stunting
 
 ## What goes wrong silently
 
-Every item here produces a plausible number rather than an error. That is why the
-scripts handle them rather than leaving them to a checklist.
+Each of these produces a plausible number rather than an error.
 
 **Weights are stored with six implied decimals.** `v005` averages about a million
 and has to be divided by 1,000,000. Leaving it out does not change a weighted
@@ -108,9 +101,7 @@ back to `v023` in older rounds.
 **Anthropometry is stored times 100, with flags above it.** `hw70` of `-162` means
 a height-for-age z-score of -1.62. Values of 9996 and up are flags and missing.
 Divide before you drop them and every flagged child becomes a plausible 99.96,
-then a plausible 0.9996, and your stunting rate falls. This bug appeared in this
-folder's own first draft and the test suite caught it, which is the argument for
-the test suite.
+then a plausible 0.9996, and your stunting rate falls.
 
 **The anthropometry columns are named differently in different recodes.** `hw70`
 to `hw73` in the children's recode, `hc70` to `hc73` in the household member
@@ -141,10 +132,7 @@ NFHS-5 child stunting: 35.5 percent nationally, 46.1 in the poorest wealth
 quintile falling to 22.9 in the richest, with breakdowns by residence and
 mother's education. NFHS-4's national figure of 38.4 is there for comparison.
 
-Reproducing a published table is the only cheap check that a pipeline is right
-end to end. Each of the silent errors above produces a number that looks
-reasonable on its own and visibly wrong beside the survey agency's own report.
-Two worked examples do exactly this, one in R and one in Python:
+Two worked examples reproduce the table, one in R and one in Python:
 
 - [FieldStack](https://github.com/Varnasr/FieldStack) `survey_tools/dhs_stunting.R`
 - [EquityStack](https://github.com/Varnasr/EquityStack) `survey_estimation/dhs_stunting.py`
@@ -239,10 +227,10 @@ python test_load_dhs.py     # 30 checks
 Rscript test_load_dhs.R     # 33: the same ones, plus the design object
 ```
 
-The R suite mirrors the Python one check for check and adds three for the survey
-design object, so both languages are held to the same standard, and both were run: verified on Python 3 with pandas and
-pyreadstat, and on R 4.3.3 with survey 4.2.1 and haven 2.5.4. Where both read the
-same fixture they return the same numbers.
+The R suite mirrors the Python one and adds three checks for the survey
+design object. Verified on Python 3 with pandas and pyreadstat, and on R 4.3.3
+with survey 4.2.1 and haven 2.5.4; both return the same numbers from the same
+fixture.
 
 Stata has no free runtime, so `load_dhs.do` is the one file here that has not been
 executed. It carries the same logic and the same guards, and the fixture check at
@@ -258,5 +246,4 @@ data.
   [dhsprogram.com/publications](https://dhsprogram.com/publications/).
 - Anthropometry plausibility bounds: WHO Child Growth Standards, 2006.
 
-Where this folder and your survey's own codebook disagree, the codebook is right.
-Rounds vary more than any summary of them does.
+Where this folder and your survey's codebook disagree, the codebook is right.

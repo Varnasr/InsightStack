@@ -1,10 +1,10 @@
-# 🌱 Environmental Change Risk Calculator
+# Environmental Change Risk Calculator
 
 This tool estimates environmental fragility for a district using ecological indicators like forest cover, rainfall, and temperature change.
 
 ---
 
-## 📦 Files
+## Files
 
 - `environmental_change_calculator.html`: Interactive calculator
 - `environmental_change_logic.md`: Explanation of indicators and scoring
@@ -12,7 +12,7 @@ This tool estimates environmental fragility for a district using ecological indi
 
 ---
 
-## 🧠 How It Works
+## How It Works
 
 Enter values for:
 - Forest cover (%)
@@ -24,4 +24,4 @@ The calculator gives a composite score and risk category based on predefined thr
 
 ---
 
-📍 Example based on Bundelkhand-style exposure
+ Example based on Bundelkhand-style exposure

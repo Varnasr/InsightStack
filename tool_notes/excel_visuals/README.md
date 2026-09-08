@@ -19,8 +19,7 @@ report needs and a default Excel chart does badly.
 ## When not to
 
 Anything that will be produced more than once from data that arrives as a
-file. Paste-into-a-template is a manual step every time, and it is the step
-that gets done wrong at 6 p.m. before a deadline. FieldStack's
+file. Pasting into a template is a manual step every time. FieldStack's
 `custom_viz/` has the bullet and waterfall charts as R code that reads the
 data and draws.
 

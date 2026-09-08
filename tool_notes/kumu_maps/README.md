@@ -15,8 +15,7 @@ lays it out; you adjust.
 
 Stakeholder and influence mapping where the point is the *structure* of a
 system rather than any number in it, and where the map will be presented and
-talked through rather than analysed. Kumu's strength is that a non-technical
-audience reads it immediately. Power and interest analysis, supervision chains,
+talked through rather than analysed. Power and interest analysis, supervision chains,
 who-talks-to-whom in a district health system.
 
 ## When not to

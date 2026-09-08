@@ -1,4 +1,4 @@
-# Welcome to the Learning Library 📚
+# Welcome to the Learning Library 
 
 This documentation index introduces the curated resource library found in this repository.  
 You’ll find books, handbooks, visual aids, and templates across:

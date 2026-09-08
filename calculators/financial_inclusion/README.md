@@ -1,10 +1,10 @@
-# 🏦 Financial Inclusion Calculator
+# Financial Inclusion Calculator
 
 This tool estimates how many access points (banks, ATMs, Bank Mitras) are needed in a district to meet population norms for financial access.
 
 ---
 
-## 📦 Files
+## Files
 
 - `financial_inclusion_calculator.html`: Calculator for estimating service gaps
 - `financial_inclusion_logic.md`: Explanation of how the tool works
@@ -12,7 +12,7 @@ This tool estimates how many access points (banks, ATMs, Bank Mitras) are needed
 
 ---
 
-## 🧠 How It Works
+## How It Works
 
 You enter:
 - Total population
@@ -23,4 +23,4 @@ The calculator compares required vs existing access points and shows whether the
 
 ---
 
-📍 Example District: Any in India (default data inspired by Chitrakoot, UP)
+ Example District: Any in India (default data inspired by Chitrakoot, UP)

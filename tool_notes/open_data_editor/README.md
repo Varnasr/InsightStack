@@ -15,7 +15,7 @@ data that is already clean. RawGraphs (rawgraphs.io) runs in the browser and
 keeps nothing, so it is safe with real data. Datawrapper hosts the chart and
 gives you an embed, so it is the right choice when the chart is going on a web
 page. The Open Data Editor (from Frictionless Data) is for checking a CSV's
-structure before charting it, which is more useful than it sounds.
+structure before charting it, before charting it.
 
 ## When not to
 

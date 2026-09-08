@@ -2,13 +2,13 @@
 
 This file lists commonly used tags across the learning library to aid discoverability and future search/filtering.
 
-## 🎨 Programming & Visual Coding
+## Programming & Visual Coding
 - #processing
 - #creativecoding
 - #generativeart
 - #visuallearners
 
-## 📊 Data Science & Analytics
+## Data Science & Analytics
 - #rstats
 - #datavis
 - #excel
@@ -16,19 +16,19 @@ This file lists commonly used tags across the learning library to aid discoverab
 - #openai
 - #chatgpt
 
-## 🎓 Research Methods
+## Research Methods
 - #epistemology
 - #paradigms
 - #qualitativemethods
 - #digitalmethods
 - #mixedmethods
 
-## 🤖 AI Tools
+## AI Tools
 - #copilot
 - #promptengineering
 - #automation
 
-## 📚 Resource Types
+## Resource Types
 - #handbook
 - #cheatsheet
 - #template

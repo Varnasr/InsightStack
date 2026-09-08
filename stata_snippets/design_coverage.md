@@ -1,8 +1,8 @@
-# 🧪 Research Designs Covered in This Repository
+# Research Designs Covered in This Repository
 
 This repository includes working Stata scripts and datasets aligned to multiple real-world research designs commonly used in evaluation, development economics, and applied social science.
 
-## ✅ Design Types and Coverage
+## Yes Design Types and Coverage
 
 | Design Type | Folder | Script(s) | Description |
 |-------------|--------|-----------|-------------|
@@ -17,6 +17,6 @@ This repository includes working Stata scripts and datasets aligned to multiple 
 
 ---
 
-## 📌 All scripts are paired with synthetic, simulated Indian datasets and annotated for clarity and reproducibility.
+## All scripts are paired with synthetic, simulated Indian datasets and annotated for clarity and reproducibility.
 
 For questions or extensions (e.g., RDD, synthetic controls), please open an issue or contact the repository author.

@@ -4,7 +4,7 @@ This folder focuses on creative and generative programming — particularly for 
 
 ## Contents
 
-### 📘 An Artist's Guide to Programming (2022)
+### An Artist's Guide to Programming (2022)
 **Author:** Jim Parker  
 **Tags:** #processing #creativecoding #generativeart  
 A beautifully structured guide for artists learning how to program visually using Processing. Includes practical sketches with code and visuals, covering motion, interactivity, graphics, and audio.
