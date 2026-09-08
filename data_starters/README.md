@@ -28,6 +28,7 @@ personally, and the READMEs say which.
 | Folder | Covers | Languages |
 |---|---|---|
 | [`dhs-south-asia/`](dhs-south-asia/) | 28 DHS surveys: India (NFHS 1 to 5), Bangladesh, Nepal, Pakistan, Maldives, Afghanistan, Sri Lanka | Stata, R, Python |
+| [`plfs-india/`](plfs-india/) | Periodic Labour Force Survey unit-level data: fixed-width text read from the round's own layout | Stata, R, Python |
 
 ## Adding one
 
