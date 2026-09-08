@@ -44,8 +44,7 @@ This is the **knowledge systems layer** of [OpenStacks for Change](https://opens
 | Directory | What It Does | Tool |
 |-----------|-------------|------|
 | `vensim/` | 8 system dynamics models (health, agriculture, climate, migration, education) | Vensim |
-| `tool_notes/` | Seven visual and collaboration tools (Excalidraw, Kumu, Observable, RawGraphs, Flourish, Power BI, Miro): when to use each, when not, what goes wrong, one worked file apiece | Notes |
-| `excel_visuals/` | Excel visualisation templates | Excel |
+| `tool_notes/` | Nine tool notes (Excalidraw, Kumu, Observable, RawGraphs, Flourish, Power BI, Miro, Excel, LaTeX): when each is worth the setup, when it is not, what goes wrong, with one worked file each | Notes |
 
 ### Knowledge and Documentation
 
@@ -57,9 +56,8 @@ This is the **knowledge systems layer** of [OpenStacks for Change](https://opens
 | `KM_tools/` | Folder structure, project README template, file naming, tagging | Markdown |
 | `annotated_research/` | Five research briefs marked up with one eight-tag annotation scheme, weakest design to strongest; illustrative, for teaching critical reading | Markdown |
 | `learning_layers/` | Embedding learning in the MEL cycle as scheduled decisions at three tempos | Markdown, PDF |
-| `taguette_coding/` | Qualitative coding workflows |
-| `visual_ethnography_descript/` | Ethnographic documentation tools |
-| `latex/` | LaTeX templates for research reports |
+| `taguette_coding/` | One focus group coded start to finish in Taguette, with the method: frame first, double-code two transcripts, count carefully | Qualitative |
+| `visual_ethnography_descript/` | From recording to clip to quote: three consents, quotes checked against audio, clips cut with context visible | Qualitative |
 | `workflows/` | End-to-end analysis workflow guides |
 
 ## Getting Started
@@ -83,10 +81,11 @@ InsightStack is one of several stacks in the [OpenStacks](https://openstacks.dev
 
 | Stack | Focus |
 |-------|-------|
-| **InsightStack** (this repo) | MEL tools, calculators, documentation |
-| [FieldStack](https://github.com/Varnasr/FieldStack) | Field operations and survey analysis in R |
-| [EquityStack](https://github.com/Varnasr/EquityStack) | Distributional analysis and survey estimation in Python |
-| [PolicyStack](https://github.com/Varnasr/PolicyStack) | 15 flagship schemes, four years of budget data, performance indicators; superseded for new work by [PolicyDhara](https://github.com/Varnasr/PolicyDhara) |
+| **InsightStack** (this repo) | MEL tools, calculators, research documentation, and loaders for real survey microdata. Stata, Python, R, SPSS |
+| [FieldStack](https://github.com/Varnasr/FieldStack) | Field operations while a survey is being collected, and survey analysis after. R |
+| [EquityStack](https://github.com/Varnasr/EquityStack) | Equity from a development economics perspective: distributional analysis, the concentration index, and design-based survey estimation. Python |
+
+[openstacks.dev](https://openstacks.dev) is the index for all of it. [SignalStack](https://github.com/Varnasr/SignalStack) is the companion archive for the [Research Rundown](https://researchrundown.substack.com) newsletter, alongside the stacks rather than one of them. [PolicyStack](https://github.com/Varnasr/PolicyStack) is superseded by [PolicyDhara](https://github.com/Varnasr/PolicyDhara). RootStack, BridgeStack and ViewStack are archived.
 
 ## Contributing
 

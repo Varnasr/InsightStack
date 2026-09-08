@@ -1,13 +1,13 @@
 # tool_notes
 
-Short, honest notes on seven visual and collaboration tools, with the one
+Short, honest notes on nine visual, document and collaboration tools, with the one
 worked file each note needs to make its point. When the tool is worth the
 setup, when it is not, and what will go wrong.
 
-These were seven top-level folders, each presented as a module. None of them
+These were nine top-level folders, each presented as a module. None of them
 is: the tools live on their own sites, and what a repository can usefully hold
 about them is a page of judgement plus a small example, which is what each
-folder now contains. The seven are here together so nobody mistakes a
+folder now contains. They are here together so nobody mistakes a
 screenshot for a template again.
 
 | Note | Tool | What is actually in the folder |
@@ -19,6 +19,8 @@ screenshot for a template again.
 | [`flourish_charts/`](flourish_charts/) | Flourish | The iframe embed snippet, and a screenshot of a chart |
 | [`powerbi_reports/`](powerbi_reports/) | Power BI | An adaptation note. No `.pbix` ships; the note links to Microsoft's sample |
 | [`miro/`](miro/) | Miro | A human-centred design session outline and links. No board ships |
+| [`excel_visuals/`](excel_visuals/) | Excel | Three chart templates as `.xlsx`: bullet, waterfall, Gantt |
+| [`latex/`](latex/) | LaTeX | A report skeleton that compiles with `pdflatex`, and where it is worth the learning curve |
 
 ## The one judgement that applies to all seven
 
