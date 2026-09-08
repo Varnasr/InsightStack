@@ -28,7 +28,7 @@ jobs:
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install numpy pandas pyreadstat
+          pip install numpy pandas pyreadstat networkx statsmodels scipy
 
       # No survey data ships or can. Each folder builds seeded synthetic files
       # carrying the structure and nobody's data.
@@ -43,6 +43,11 @@ jobs:
         run: |
           python make_fixture.py --outdir fixtures
           python test_load_plfs.py
+
+      # Sample data ships for this one: 50 synthetic self-help group members,
+      # no real respondents, so there is nothing to build first.
+      - name: Network effects
+        run: python -m network_effects_sni.test_network_effects
 
   r:
     name: R
