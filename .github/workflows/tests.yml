@@ -15,6 +15,20 @@ on:
     branches: [ main ]
 
 jobs:
+  site:
+    name: Published pages
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      # The suites below cover the code. This covers the nine HTML files the
+      # repository actually serves, and the GitHub Pages traps CLAUDE.md
+      # records: a folder becomes a page only if it holds a README.md, and a
+      # theme in _config.yml makes every rendered README open in stock styling.
+      - run: python3 scripts/check_site.py
+
   python:
     name: Python
     runs-on: ubuntu-latest
