@@ -14,6 +14,10 @@ on:
   push:
     branches: [ main ]
 
+# Read-only: this workflow checks the repository and writes nothing back to it.
+permissions:
+  contents: read
+
 jobs:
   site:
     name: Published pages
