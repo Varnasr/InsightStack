@@ -1,5 +1,7 @@
 # InsightStack
 
+Shared engineering standard: @.claude/engineering-standards.md. It applies to all work in this repository. This file adds what is specific to the project, and wins where the two disagree.
+
 MEL tools, calculators, research documentation, and loaders for real survey
 microdata. Part of the [OpenStacks](https://openstacks.dev) family. Status:
 Stable, per the family [maintenance policy](https://github.com/Varnasr/OpenStacks-for-Change/blob/main/MAINTENANCE.md).
