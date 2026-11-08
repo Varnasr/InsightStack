@@ -1,5 +1,7 @@
 title: InsightStack
 description: Tools, templates and thinking for knowledge work in development.
+url: https://varnasr.github.io
+baseurl: /InsightStack
 markdown: kramdown
 
 # GitHub Pages runs this plugin, which turns each folder's README.md into that
