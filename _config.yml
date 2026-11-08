@@ -2,6 +2,9 @@ title: InsightStack
 description: Tools, templates and thinking for knowledge work in development.
 url: https://varnasr.github.io
 baseurl: /InsightStack
+# Default link-preview card, drawn by scripts/make_share_card.py. A page can set image and image_alt.
+share_image: /assets/share-card.jpg
+share_image_alt: "InsightStack. Calculators, econometrics, research documentation and loaders for real survey microdata. Part of the OpenStacks family."
 markdown: kramdown
 
 # GitHub Pages runs this plugin, which turns each folder's README.md into that
